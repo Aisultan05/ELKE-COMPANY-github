@@ -1,0 +1,546 @@
+/* ---------- Base & Reset ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    background: #fff;
+    line-height: 1.4;
+}
+
+a, ul {
+    text-decoration: none;
+    color: inherit;
+    list-style: none;
+}
+
+/* ---------- Containers ---------- */
+.container,
+.container-footer {
+    width: 1200px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.container {
+    padding: 0;
+}
+
+.container-footer {
+    padding: 0 20px;
+}
+
+/* ---------- Header ---------- */
+header {
+    border-bottom: 1px solid #eee;
+    position: sticky;
+    top: 0;
+    background-color: #fff;
+    z-index: 1000;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+    padding: 0 20px;
+}
+
+.logo-content {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-content img {
+    width: 75px;
+}
+
+.logo-text {
+    font-family: 'Bank Gothic(RUS BY LYAJKA)', sans-serif;
+    color: #5F737E;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1;
+}
+
+.main-nav {
+    display: flex;
+    align-items: center;
+}
+
+.main-nav ul {
+    display: flex;
+    gap: 8px;
+    margin-right: 8px;
+}
+
+.nav-item {
+    font-weight: 500;
+    color: #5F737E;
+    text-decoration: none;
+    transition: color .3s, border-color .3s;
+    border: 1px solid #eee;
+    padding: 10px 24px;
+    box-sizing: border-box;
+    outline: none;
+    position: relative;
+    display: inline-block;
+}
+
+.nav-item span {
+    display: inline-block;
+    transition: transform .3s;
+}
+
+.nav-item:hover span {
+    transform: translateX(5px);
+}
+
+.nav-item:hover::before {
+    content: '';
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 8px;
+    height: 8px;
+    background-color: #007bff;
+    border-radius: 50%;
+}
+
+.icons {
+    display: flex;
+    gap: 20px;
+}
+
+.icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 20px;
+    width: 35px;
+    height: 35px;
+    border: 1px solid #eee;
+    transition: background-color .3s, color .3s;
+}
+
+.icon:hover {}
+
+.icon i {
+    font-size: 18px;
+}
+
+/* ---------- Krones Page Specific Styles ---------- */
+
+.krones-page-content {
+    padding: 30px 0; /* Add padding top and bottom */
+}
+
+/* Breadcrumbs */
+.breadcrumbs {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 20px;
+    padding: 0 20px; /* Match container padding if needed */
+}
+
+.breadcrumbs a {
+    color: #007bff; /* Link color */
+    text-decoration: none;
+}
+
+.breadcrumbs a:hover {
+    text-decoration: underline;
+}
+
+.breadcrumbs span {
+    color: #333; /* Current page color */
+}
+
+/* Main Title & Intro */
+.krones-page-content h1 {
+    font-size: 36px; /* Adjust size as needed */
+    font-weight: bold;
+    color: #1A1A1A; /* Dark color */
+    margin-bottom: 15px;
+    padding: 0 20px;
+}
+
+.intro-text {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 30px;
+    max-width: 800px; /* Limit width if needed */
+    padding: 0 20px;
+}
+
+/* Banner */
+.krones-banner {
+    margin-bottom: 40px;
+    line-height: 0; /* Prevent extra space below image */
+}
+
+.krones-banner img {
+    width: 100%;
+    height: auto;
+    display: block; /* Remove bottom space */
+}
+
+/* Tabbed Section */
+.tabs-section {
+    margin-bottom: 40px;
+}
+
+.tab-nav {
+    display: flex;
+    border-bottom: 1px solid #eee; /* Separator line below tabs */
+    margin-bottom: -1px; /* Overlap border for active tab */
+    padding: 0 20px;
+}
+
+.tab-link {
+    padding: 15px 25px;
+    cursor: pointer;
+    background-color: #f8f8f8; /* Light background for inactive tabs */
+    border: 1px solid #eee;
+    border-bottom: none;
+    margin-right: 5px; /* Space between tabs */
+    font-size: 16px;
+    color: #555;
+    font-weight: 500;
+    transition: background-color 0.3s, color 0.3s;
+    position: relative; /* For potential future styling */
+    top: 1px; /* Align with bottom border */
+    border-radius: 4px 4px 0 0; /* Slightly rounded top corners */
+}
+
+.tab-link:hover {
+    background-color: #efefef;
+    color: #333;
+}
+
+.tab-link.active-tab {
+    background-color: #0056b3; /* Blue background for active tab */
+    color: #fff; /* White text for active tab */
+    border-color: #0056b3;
+    font-weight: bold;
+}
+
+/* Tab Content Area */
+.tab-content {
+    border: 1px solid #eee;
+    padding: 30px 20px; /* Padding inside content area */
+    background-color: #fff; /* White background */
+}
+
+.tab-panel {
+    display: none; /* Hide inactive panels */
+    animation: fadeIn 0.5s ease-in-out; /* Simple fade-in animation */
+}
+
+.tab-panel.active-panel {
+    display: block; /* Show active panel */
+}
+
+/* Specific styles for "Технологии" tab */
+#tab-tech {
+    display: flex; /* Default state hidden, overridden by active-panel */
+    gap: 30px; /* Space between images and text */
+}
+
+#tab-tech.active-panel {
+    display: flex; /* Ensure flex layout when active */
+}
+
+.tech-images {
+    flex: 0 0 40%; /* Image section takes ~40% width */
+    max-width: 40%;
+}
+
+.main-tech-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 15px;
+    border: 1px solid #eee; /* Optional subtle border */
+}
+
+.tech-thumbnails {
+    display: flex;
+    gap: 10px; /* Space between thumbnails */
+    justify-content: space-between; /* Distribute thumbnails */
+}
+
+.tech-thumbnails img {
+    width: calc(33.333% - 7px); /* Adjust width considering gap */
+    height: auto;
+    display: block;
+    border: 1px solid #ddd; /* Optional subtle border */
+    object-fit: cover; /* Ensure images cover the area */
+     aspect-ratio: 4 / 3; /* Maintain aspect ratio */
+}
+
+.tech-description {
+    flex: 1; /* Text section takes remaining space */
+}
+
+.tech-description h3 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #0056b3; /* Accent line */
+    padding-bottom: 5px;
+    display: inline-block; /* Limit border width */
+}
+
+.tech-description p {
+    font-size: 15px;
+    line-height: 1.7;
+    color: #444;
+    margin-bottom: 15px;
+}
+
+.tech-description p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* Placeholder box styles for "Стратегическое видение" */
+.placeholder-box {
+    border: 1px dashed #ccc;
+    min-height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    margin-top: 20px;
+    color: #aaa;
+}
+
+.placeholder-box .arrow {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+
+/* Partnership Section */
+.partnership-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px; /* Padding around the section */
+    margin-top: 30px; /* Space above this section */
+    border-top: 1px solid #eee; /* Optional separator */
+}
+
+.partnership-section h2 {
+    font-size: 24px;
+    color: #333;
+    margin: 0;
+}
+
+.partnership-nav {
+    display: flex;
+    gap: 10px; /* Space between arrows */
+}
+
+.arrow-btn {
+    background: none;
+    border: 1px solid #ccc;
+    color: #555;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    border-radius: 4px;
+}
+
+.arrow-btn:hover {
+    background-color: #f0f0f0;
+    color: #000;
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+    background: #1A1A1A;
+    color: #ccc;
+    padding: 40px 0;
+    font-family: Arial, sans-serif;
+}
+
+.site-footer a {
+    color: #fff;
+    transition: color .3s;
+}
+
+.site-footer a:hover {
+    color: #ddd;
+}
+
+.footer-row {
+    display: flex;
+    gap: 20px;
+    align-items: stretch;
+}
+
+.footer-group {
+    display: flex;
+    flex: 3;
+    gap: 20px;
+    border: 1px solid #333;
+    padding: 20px;
+}
+
+.phone-box {
+    flex: 1;
+    border: 1px solid #333;
+    padding: 20px;
+}
+
+.top-button-box {
+    flex: 0 0 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #333;
+    padding: 20px;
+}
+
+.top-button-box:hover {
+    background: #333;
+}
+
+.vertical-btn {
+    writing-mode: vertical-rl;
+    color: #fff;
+    padding: 10px 6px;
+    font-weight: 700;
+}
+
+.footer-middle {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 30px;
+    padding: 24px 0;
+    align-items: flex-end;
+    min-height: 150px;
+}
+
+.footer-form {
+    flex: 1;
+    min-width: 260px;
+}
+
+.input-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.country-code {
+    display: flex;
+    align-items: center;
+    background: #1a1a1a;
+    padding: 8px 12px;
+    border-radius: 4px;
+    border: 1px solid #333;
+    gap: 4px;
+    color: #ffb800;
+}
+
+.input-row input {
+    flex: 1;
+    border: 1px solid #333;
+    color: #ccc;
+    padding: 8px;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.call-btn {
+    background: 0;
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 8px 14px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.call-btn:hover {
+    background: #333;
+}
+
+.consent-text {
+    font-size: 12px;
+    color: #666;
+    max-width: 300px;
+    line-height: 1.4;
+}
+
+.consent-text a {
+    color: #666;
+}
+
+.consent-text a:hover {
+    color: #fff;
+}
+
+.middle-cert,
+.middle-links {
+    flex: 1;
+    min-width: 160px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.middle-cert {
+    text-align: center;
+    color: #bbb;
+    font-size: 14px;
+}
+
+.middle-links {
+    text-align: right;
+}
+
+.footer-bottom {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 20px;
+    justify-content: space-between;
+    padding-top: 10px;
+    border-top: 1px solid #333;
+}
+
+.bottom-left {
+    font-size: 14px;
+}
+
+.footer-biglogo {
+    flex: 1;
+    text-align: center;
+}
+
+.footer-biglogo img {
+    width: 1760px;
+    max-width: 100%;
+}

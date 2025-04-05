@@ -1,0 +1,482 @@
+/* ---------- Base & Reset ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    background: #fff;
+    line-height: 1.4;
+}
+
+a, ul {
+    text-decoration: none;
+    color: inherit;
+    list-style: none;
+}
+
+/* ---------- Containers ---------- */
+.container,
+.container-footer {
+    width: 1200px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.container {
+    padding: 0;
+}
+
+.container-footer {
+    padding: 0 20px;
+}
+
+/* ---------- Header ---------- */
+header {
+    border-bottom: 1px solid #eee;
+    position: sticky;
+    top: 0;
+    background-color: #fff;
+    z-index: 1000;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+    padding: 0 20px;
+}
+
+.logo-content {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-content img {
+    width: 75px;
+}
+
+.logo-text {
+    font-family: 'Bank Gothic(RUS BY LYAJKA)', sans-serif;
+    color: #5F737E;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1;
+}
+
+.main-nav {
+    display: flex;
+    align-items: center;
+}
+
+.main-nav ul {
+    display: flex;
+    gap: 8px;
+    margin-right: 8px;
+}
+
+.nav-item {
+    font-weight: 500;
+    color: #5F737E;
+    text-decoration: none;
+    transition: color .3s, border-color .3s;
+    border: 1px solid #eee;
+    padding: 10px 24px;
+    box-sizing: border-box;
+    outline: none;
+    position: relative;
+    display: inline-block;
+}
+
+.nav-item span {
+    display: inline-block;
+    transition: transform .3s;
+}
+
+.nav-item:hover span {
+    transform: translateX(5px);
+}
+
+.nav-item:hover::before {
+    content: '';
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 8px;
+    height: 8px;
+    background-color: #007bff;
+    border-radius: 50%;
+}
+
+.icons {
+    display: flex;
+    gap: 20px;
+}
+
+.icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 20px;
+    width: 35px;
+    height: 35px;
+    border: 1px solid #eee;
+    transition: background-color .3s, color .3s;
+}
+
+.icon:hover {}
+
+.icon i {
+    font-size: 18px;
+}
+
+/* ---------- Main Content & Breadcrumbs ---------- */
+main {
+    padding: 40px 0; /* Add spacing above and below main content */
+  }
+  
+  .breadcrumbs {
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 25px; /* Space below breadcrumbs */
+      padding: 0 20px; /* Match container padding */
+  }
+  
+  .breadcrumbs a {
+      color: #007bff; /* Or your link color */
+      text-decoration: none;
+  }
+  
+  .breadcrumbs a:hover {
+      text-decoration: underline;
+  }
+  
+  .breadcrumbs span {
+      color: #333; /* Color for the current page */
+  }
+  
+  
+  /* ---------- News Section ---------- */
+  .news-section {
+      padding: 0 20px; /* Match container padding */
+  }
+  
+  .news-title {
+      font-size: 48px; /* Large title */
+      font-weight: bold;
+      color: #1A1A1A; /* Dark title color */
+      margin-bottom: 40px; /* Space below title */
+  }
+  
+  .news-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 25px; /* Spacing between cards */
+      margin-bottom: 40px; /* Space below grid before button */
+  }
+  
+  .news-card {
+      background-color: #f9f9f9; /* Light background for card */
+      /* Calculate width for 4 columns with gap */
+      width: calc(25% - (25px * 3 / 4));
+      display: flex;
+      flex-direction: column;
+      min-height: 400px; /* Ensure cards have a minimum height */
+      transition: box-shadow 0.3s ease;
+  }
+  
+  .news-card:hover {
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow on hover */
+  }
+  
+  .news-card-image img {
+      width: 100%;
+      height: 180px; /* Fixed height for images */
+      object-fit: cover; /* Crop images nicely */
+      display: block;
+  }
+  
+  .news-card-content-wrapper {
+      display: flex;
+      padding: 15px;
+      flex-grow: 1; /* Allow content to fill remaining space */
+      position: relative; /* Needed for absolute positioning if used later */
+  }
+  
+  .news-card-text {
+      flex-grow: 1; /* Text takes available width */
+      padding-right: 15px; /* Space between text and side element */
+  }
+  
+  .news-card-title {
+      font-size: 18px;
+      font-weight: bold;
+      color: #333;
+      margin-bottom: 10px;
+      line-height: 1.3;
+  }
+  
+  .news-card-description {
+      font-size: 14px;
+      color: #555;
+      line-height: 1.5;
+      /* Limit text lines if needed */
+       display: -webkit-box;
+      -webkit-line-clamp: 4; /* Adjust number of lines */
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      margin-bottom: 10px; /* Space before potential arrow alignment issue */
+  }
+  
+  
+  .news-card-side {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between; /* Pushes date up, arrow down */
+      align-items: center; /* Center items horizontally */
+      flex-shrink: 0; /* Prevent shrinking */
+      width: 20px; /* Width for the vertical date */
+  }
+  
+  .news-card-date {
+      writing-mode: vertical-rl;
+      transform: rotate(180deg); /* Correct orientation */
+      font-size: 12px;
+      color: #888;
+      white-space: nowrap; /* Prevent wrapping */
+      text-align: center;
+      margin-bottom: 10px; /* Space below date */
+      height: 150px; /* Give it some space */
+  }
+  
+  .news-card-arrow {
+      font-size: 24px;
+      font-weight: bold;
+      color: #333;
+      text-decoration: none;
+      line-height: 1;
+      display: block; /* Ensure it takes space */
+      align-self: flex-end; /* Align to the bottom of the side container */
+      margin-top: auto; /* Push to bottom relative to description */
+  }
+  
+  .news-card-arrow:hover {
+      color: #007bff;
+  }
+  
+  .show-more-button {
+      display: block; /* Center block element */
+      margin: 0 auto; /* Center horizontally */
+      padding: 12px 30px;
+      background-color: #333;
+      color: #fff;
+      border: none;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      border-radius: 4px; /* Optional rounded corners */
+  }
+  
+  .show-more-button:hover {
+      background-color: #555;
+  }
+  
+
+/* ---------- Footer ---------- */
+.site-footer {
+    background: #1A1A1A;
+    color: #ccc;
+    padding: 40px 0;
+    font-family: Arial, sans-serif;
+}
+
+.site-footer a {
+    color: #fff;
+    transition: color .3s;
+}
+
+.site-footer a:hover {
+    color: #ddd;
+}
+
+.footer-row {
+    display: flex;
+    gap: 20px;
+    align-items: stretch;
+}
+
+.footer-group {
+    display: flex;
+    flex: 3;
+    gap: 20px;
+    border: 1px solid #333;
+    padding: 20px;
+}
+
+.phone-box {
+    flex: 1;
+    border: 1px solid #333;
+    padding: 20px;
+}
+
+.top-button-box {
+    flex: 0 0 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #333;
+    padding: 20px;
+}
+
+.top-button-box:hover {
+    background: #333;
+}
+
+.vertical-btn {
+    writing-mode: vertical-rl;
+    color: #fff;
+    padding: 10px 6px;
+    font-weight: 700;
+}
+
+.footer-middle {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 30px;
+    padding: 24px 0;
+    align-items: flex-end;
+    min-height: 150px;
+}
+
+.footer-form {
+    flex: 1;
+    min-width: 260px;
+}
+
+.input-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.country-code {
+    display: flex;
+    align-items: center;
+    background: #1a1a1a;
+    padding: 8px 12px;
+    border-radius: 4px;
+    border: 1px solid #333;
+    gap: 4px;
+    color: #ffb800;
+}
+
+.input-row input {
+    flex: 1;
+    border: 1px solid #333;
+    color: #ccc;
+    padding: 8px;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.call-btn {
+    background: 0;
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 8px 14px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.call-btn:hover {
+    background: #333;
+}
+
+.consent-text {
+    font-size: 12px;
+    color: #666;
+    max-width: 300px;
+    line-height: 1.4;
+}
+
+.consent-text a {
+    color: #666;
+}
+
+.consent-text a:hover {
+    color: #fff;
+}
+
+.middle-cert,
+.middle-links {
+    flex: 1;
+    min-width: 160px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.middle-cert {
+    text-align: center;
+    color: #bbb;
+    font-size: 14px;
+}
+
+.middle-links {
+    text-align: right;
+}
+
+.footer-bottom {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 20px;
+    justify-content: space-between;
+    padding-top: 10px;
+    border-top: 1px solid #333;
+}
+
+.bottom-left {
+    font-size: 14px;
+}
+
+.footer-biglogo {
+    flex: 1;
+    text-align: center;
+}
+
+.footer-biglogo img {
+    width: 1760px;
+    max-width: 100%;
+}
+
+  /* Responsive Adjustments (Example for smaller screens) */
+  @media (max-width: 992px) {
+    .news-card {
+        /* 2 columns */
+        width: calc(50% - (25px / 2));
+    }
+}
+
+@media (max-width: 768px) {
+    .news-title {
+        font-size: 36px;
+    }
+    .news-card {
+        /* 1 column */
+        width: 100%;
+    }
+    .news-card-date {
+        height: auto; /* Adjust height for vertical space */
+    }
+}

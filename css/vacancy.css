@@ -1,0 +1,692 @@
+/* ---------- Base & Reset ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    background: #fff;
+    line-height: 1.4;
+}
+
+a, ul {
+    text-decoration: none;
+    color: inherit;
+    list-style: none;
+}
+
+/* ---------- Containers ---------- */
+.container,
+.container-footer {
+    width: 1200px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.container {
+    padding: 0;
+}
+
+.container-footer {
+    padding: 0 20px;
+}
+
+/* ---------- Header ---------- */
+header {
+    border-bottom: 1px solid #eee;
+    position: sticky;
+    top: 0;
+    background-color: #fff;
+    z-index: 1000;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+    padding: 0 20px;
+}
+
+.logo-content {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-content img {
+    width: 75px;
+}
+
+.logo-text {
+    font-family: 'Bank Gothic(RUS BY LYAJKA)', sans-serif;
+    color: #5F737E;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1;
+}
+
+.main-nav {
+    display: flex;
+    align-items: center;
+}
+
+.main-nav ul {
+    display: flex;
+    gap: 8px;
+    margin-right: 8px;
+}
+
+.nav-item {
+    font-weight: 500;
+    color: #5F737E;
+    text-decoration: none;
+    transition: color .3s, border-color .3s;
+    border: 1px solid #eee;
+    padding: 10px 24px;
+    box-sizing: border-box;
+    outline: none;
+    position: relative;
+    display: inline-block;
+}
+
+.nav-item span {
+    display: inline-block;
+    transition: transform .3s;
+}
+
+.nav-item:hover span {
+    transform: translateX(5px);
+}
+
+.nav-item:hover::before {
+    content: '';
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 8px;
+    height: 8px;
+    background-color: #007bff;
+    border-radius: 50%;
+}
+
+.icons {
+    display: flex;
+    gap: 20px;
+}
+
+.icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 20px;
+    width: 35px;
+    height: 35px;
+    border: 1px solid #eee;
+    transition: background-color .3s, color .3s;
+}
+
+.icon:hover {}
+
+.icon i {
+    font-size: 18px;
+}
+
+/* ---------- Main Content Area ---------- */
+.main-content {
+    padding: 40px 0; /* Отступы сверху и снизу для всего контента */
+}
+
+/* ---------- Page Title ---------- */
+.page-title {
+    font-size: 48px; /* Размер как на макете */
+    font-weight: bold; /* Или подберите вес шрифта */
+    margin-bottom: 30px;
+    color: #1A1A1A; /* Темный цвет заголовка */
+}
+
+/* ---------- Intro Text ---------- */
+.intro-text {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #555; /* Цвет текста */
+    max-width: 900px; /* Ограничение ширины для читаемости */
+    margin-bottom: 50px;
+}
+
+/* ---------- Section Titles ---------- */
+.section-title {
+    font-size: 32px; /* Размер подзаголовков */
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: #1A1A1A;
+    border-bottom: 2px solid #eee; /* Линия под заголовком */
+    padding-bottom: 10px;
+}
+
+/* ---------- Advantages Section ---------- */
+.advantages {
+    margin-bottom: 50px;
+}
+
+.advantages-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Адаптивная сетка */
+    gap: 30px; /* Пространство между блоками */
+}
+
+.advantage-item {
+    background-color: #f9f9f9; /* Легкий фон для карточек */
+    padding: 20px;
+    border: 1px solid #eee; /* Тонкая граница */
+    border-radius: 5px; /* Скругление углов */
+}
+
+.advantage-item img {
+    width: 100%; /* Картинка на всю ширину блока */
+    height: 200px; /* Фиксированная высота для единообразия */
+    object-fit: cover; /* Масштабирование с обрезкой */
+    margin-bottom: 15px;
+    border-radius: 4px; /* Легкое скругление картинки */
+}
+
+.advantage-item h3 {
+    font-size: 20px;
+    color: #007bff; /* Синий цвет заголовков преимуществ */
+    margin-bottom: 10px;
+}
+
+.advantage-item p {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #666;
+}
+
+/* ---------- Vacancies Section ---------- */
+.vacancies {
+    margin-bottom: 50px;
+}
+
+.vacancy-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Расстояние между вакансиями */
+}
+
+.vacancy-item {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    overflow: hidden; /* Чтобы скругление работало */
+}
+
+.vacancy-summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: #fff;
+    cursor: pointer;
+    font-weight: 500;
+    list-style: none; /* Убрать стандартный маркер */
+    position: relative; /* Для псевдоэлемента стрелки */
+}
+
+.vacancy-summary::-webkit-details-marker {
+    display: none; /* Убрать стандартный маркер в Chrome/Safari */
+}
+
+/* Стрелка для details/summary */
+.vacancy-summary::after {
+    content: '▼'; /* Стрелка вниз по умолчанию */
+    font-size: 14px;
+    color: #555;
+    transition: transform 0.2s ease-in-out;
+    margin-left: 10px;
+}
+
+.vacancy-item[open] > .vacancy-summary::after {
+    transform: rotate(180deg); /* Перевернуть стрелку при открытии */
+}
+
+
+.vacancy-title {
+    font-size: 18px;
+    color: #333;
+}
+
+.vacancy-experience {
+    font-size: 14px;
+    color: #777;
+}
+
+.vacancy-details {
+    padding: 20px;
+    background-color: #f9f9f9; /* Фон для деталей */
+    border-top: 1px solid #ddd;
+}
+
+.vacancy-details h4 {
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    color: #333;
+}
+.vacancy-details h4:first-child {
+    margin-top: 0;
+}
+
+.vacancy-details ul {
+    list-style: disc; /* Маркеры списка */
+    padding-left: 20px; /* Отступ для маркеров */
+    font-size: 14px;
+    color: #555;
+    line-height: 1.6;
+}
+
+.vacancy-details li {
+    margin-bottom: 8px;
+}
+
+
+/* ---------- Resume Form Section ---------- */
+.resume-section {
+    margin-bottom: 50px;
+    padding: 30px;
+    background-color: #f0f4f8; /* Фон секции формы */
+    border: 1px solid #e0e6ec;
+    border-radius: 5px;
+}
+
+.resume-form .form-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 колонки */
+    gap: 20px;
+    align-items: center; /* Выровнять элементы по центру вертикально */
+    margin-bottom: 15px;
+}
+
+.form-group {
+    display: flex; /* Для выравнивания внутри группы */
+    flex-direction: column;
+}
+
+.resume-form input[type="text"],
+.resume-form input[type="tel"],
+.file-input-label {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    background-color: #fff;
+    box-sizing: border-box; /* Учитывать padding и border в ширине */
+}
+
+.resume-form input::placeholder {
+    color: #999;
+}
+
+/* Стилизация группы телефонного номера */
+.phone-input-group {
+    display: flex;
+    flex-direction: row; /* Расположить элементы в ряд */
+    align-items: center;
+    border: 1px solid #ccc; /* Общая рамка */
+    border-radius: 4px;
+    background-color: #fff; /* Фон для всей группы */
+    padding: 0; /* Убираем внутренний отступ группы */
+}
+
+.phone-input-group .country-code-form {
+    display: flex;
+    align-items: center;
+    padding: 12px 10px 12px 15px;
+    border-right: 1px solid #ccc; /* Разделитель */
+    background-color: #f8f8f8; /* Легкий фон для кода страны */
+    cursor: pointer; /* Указатель на возможность выбора */
+    white-space: nowrap; /* Не переносить код страны */
+}
+
+.phone-input-group .country-code-form img {
+    margin-right: 8px;
+}
+.phone-input-group .country-code-form span {
+     margin-right: 5px;
+     font-weight: 500;
+     color: #333;
+}
+.phone-input-group .country-code-form .arrow-down {
+    font-size: 10px;
+    color: #777;
+}
+
+
+.phone-input-group input[type="tel"] {
+    flex-grow: 1; /* Занять оставшееся место */
+    border: none; /* Убрать свою рамку */
+    border-radius: 0 4px 4px 0; /* Скругление только справа */
+    padding: 12px 15px;
+    background: none; /* Убрать свой фон */
+}
+
+/* Стилизация инпута файла */
+.file-input-group {
+    position: relative; /* Для позиционирования скрытого инпута */
+}
+
+.hidden-file-input {
+    position: absolute;
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.file-input-label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    color: #999; /* Цвет плейсхолдера */
+}
+
+/* Если файл выбран (нужен JS для добавления класса), можно изменить цвет текста */
+.file-input-label.has-file .file-name-display {
+    color: #333; /* Цвет текста имени файла */
+}
+
+.file-delete-btn {
+    color: #aaa;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 0 5px;
+}
+.file-delete-btn:hover {
+    color: #555;
+}
+
+
+/* Кнопка отправки */
+.submit-group {
+     align-self: stretch; /* Растянуть по высоте */
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 12px 20px;
+    background-color: #000; /* Черный фон кнопки */
+    color: #fff; /* Белый текст */
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    height: 100%; /* Занять всю высоту ячейки грида */
+}
+
+.submit-btn:hover {
+    background-color: #333; /* Затемнение при наведении */
+}
+
+/* Текст согласия */
+.form-consent {
+    font-size: 12px;
+    color: #666;
+    text-align: left; /* Выравнивание по левому краю под формой */
+    line-height: 1.4;
+    padding-left: 5px; /* Небольшой отступ слева, как у полей */
+}
+
+.form-consent a {
+    color: #555; /* Цвет ссылки */
+    text-decoration: underline;
+}
+.form-consent a:hover {
+    color: #000;
+}
+
+/* ---------- Page Navigation Arrows ---------- */
+.page-navigation {
+    margin-top: 40px; /* Отступ сверху */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    border-top: 1px solid #eee; /* Линия сверху */
+}
+
+.page-navigation span {
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+}
+
+.nav-arrows a {
+    font-size: 24px;
+    font-weight: bold;
+    color: #555;
+    text-decoration: none;
+    margin-left: 15px; /* Расстояние между стрелками */
+    transition: color 0.3s ease;
+}
+
+.nav-arrows a:hover {
+    color: #000;
+}
+
+
+/* ---------- Footer ---------- */
+.site-footer {
+    background: #1A1A1A;
+    color: #ccc;
+    padding: 40px 0;
+    font-family: Arial, sans-serif;
+}
+
+.site-footer a {
+    color: #fff;
+    transition: color .3s;
+}
+
+.site-footer a:hover {
+    color: #ddd;
+}
+
+.footer-row {
+    display: flex;
+    gap: 20px;
+    align-items: stretch;
+}
+
+.footer-group {
+    display: flex;
+    flex: 3;
+    gap: 20px;
+    border: 1px solid #333;
+    padding: 20px;
+}
+
+.phone-box {
+    flex: 1;
+    border: 1px solid #333;
+    padding: 20px;
+}
+
+.top-button-box {
+    flex: 0 0 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #333;
+    padding: 20px;
+}
+
+.top-button-box:hover {
+    background: #333;
+}
+
+.vertical-btn {
+    writing-mode: vertical-rl;
+    color: #fff;
+    padding: 10px 6px;
+    font-weight: 700;
+}
+
+.footer-middle {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 30px;
+    padding: 24px 0;
+    align-items: flex-end;
+    min-height: 150px;
+}
+
+.footer-form {
+    flex: 1;
+    min-width: 260px;
+}
+
+.input-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.country-code {
+    display: flex;
+    align-items: center;
+    background: #1a1a1a;
+    padding: 8px 12px;
+    border-radius: 4px;
+    border: 1px solid #333;
+    gap: 4px;
+    color: #ffb800;
+}
+
+.input-row input {
+    flex: 1;
+    border: 1px solid #333;
+    color: #ccc;
+    padding: 8px;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.call-btn {
+    background: 0;
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 8px 14px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.call-btn:hover {
+    background: #333;
+}
+
+.consent-text {
+    font-size: 12px;
+    color: #666;
+    max-width: 300px;
+    line-height: 1.4;
+}
+
+.consent-text a {
+    color: #666;
+}
+
+.consent-text a:hover {
+    color: #fff;
+}
+
+.middle-cert,
+.middle-links {
+    flex: 1;
+    min-width: 160px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.middle-cert {
+    text-align: center;
+    color: #bbb;
+    font-size: 14px;
+}
+
+.middle-links {
+    text-align: right;
+}
+
+.footer-bottom {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 20px;
+    justify-content: space-between;
+    padding-top: 10px;
+    border-top: 1px solid #333;
+}
+
+.bottom-left {
+    font-size: 14px;
+}
+
+.footer-biglogo {
+    flex: 1;
+    text-align: center;
+}
+
+.footer-biglogo img {
+    width: 1760px;
+    max-width: 100%;
+}
+
+/* ---------- Адаптивность (Пример) ---------- */
+@media (max-width: 992px) {
+    .resume-form .form-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 колонки на средних экранах */
+    }
+}
+
+@media (max-width: 768px) {
+     .page-title {
+        font-size: 36px;
+    }
+    .section-title {
+        font-size: 28px;
+    }
+    .advantages-grid {
+        grid-template-columns: 1fr; /* 1 колонка на малых экранах */
+    }
+     .resume-form .form-grid {
+        grid-template-columns: 1fr; /* 1 колонка */
+    }
+    .page-navigation {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    .nav-arrows {
+        align-self: flex-end;
+    }
+    .nav-arrows a {
+        margin-left: 0;
+        margin-right: 15px;
+    }
+
+}

@@ -1,0 +1,645 @@
+/* ---------- Base & Reset ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    background: #fff;
+    line-height: 1.4;
+}
+
+a, ul {
+    text-decoration: none;
+    color: inherit;
+    list-style: none;
+}
+
+/* ---------- Containers ---------- */
+.container,
+.container-footer {
+    width: 1200px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.container {
+    padding: 0;
+}
+
+.container-footer {
+    padding: 0 20px;
+}
+
+/* ---------- Header ---------- */
+header {
+    border-bottom: 1px solid #eee;
+    position: sticky;
+    top: 0;
+    background-color: #fff;
+    z-index: 1000;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+    padding: 0 20px;
+}
+
+.logo-content {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-content img {
+    width: 75px;
+}
+
+.logo-text {
+    font-family: 'Bank Gothic(RUS BY LYAJKA)', sans-serif;
+    color: #5F737E;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1;
+}
+
+.main-nav {
+    display: flex;
+    align-items: center;
+}
+
+.main-nav ul {
+    display: flex;
+    gap: 8px;
+    margin-right: 8px;
+}
+
+.nav-item {
+    font-weight: 500;
+    color: #5F737E;
+    text-decoration: none;
+    transition: color .3s, border-color .3s;
+    border: 1px solid #eee;
+    padding: 10px 24px;
+    box-sizing: border-box;
+    outline: none;
+    position: relative;
+    display: inline-block;
+}
+
+.nav-item span {
+    display: inline-block;
+    transition: transform .3s;
+}
+
+.nav-item:hover span {
+    transform: translateX(5px);
+}
+
+.nav-item:hover::before {
+    content: '';
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 8px;
+    height: 8px;
+    background-color: #007bff;
+    border-radius: 50%;
+}
+
+.icons {
+    display: flex;
+    gap: 20px;
+}
+
+.icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 20px;
+    width: 35px;
+    height: 35px;
+    border: 1px solid #eee;
+    transition: background-color .3s, color .3s;
+}
+
+.icon:hover {}
+
+.icon i {
+    font-size: 18px;
+}
+
+/* ---------- Main Content Area Specific Styles ---------- */
+
+.main-content {
+    padding-top: 40px;
+    padding-bottom: 60px;
+}
+
+.content-container {
+    width: 1200px;
+    max-width: 95%; /* Allow slight shrinking on smaller screens */
+    margin: 0 auto;
+    background-color: #FFFFFF; /* White background for the content box */
+    padding: 40px 60px; /* Inner padding for content */
+    position: relative; /* Needed for absolute positioning of back button */
+}
+
+/* Page Header (Title + Back Button) */
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* Align button to top */
+    margin-bottom: 30px;
+    position: relative; /* Context for button positioning */
+}
+
+.page-header h1 {
+    font-size: 42px;
+    font-weight: bold;
+    color: #1A1A1A; /* Darker heading color */
+    margin: 0; /* Reset margin */
+}
+
+.back-button {
+    /* Positioning requires careful adjustment based on container padding */
+    position: absolute; 
+    top: 0; /* Align with top of the container padding */
+    right: 60px; /* Align with right padding of container */
+    /* Or use flexbox alignment if preferred */
+    /* margin-left: auto; */ /* Pushes button to the right if using flex */
+    
+    display: inline-block;
+    padding: 10px 20px;
+    border: 1px solid #CCCCCC;
+    color: #5F737E; /* Match header nav color */
+    background-color: #FFFFFF;
+    text-decoration: none;
+    font-size: 14px;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.back-button:hover {
+    background-color: #f0f0f0;
+    border-color: #AAAAAA;
+}
+
+
+/* Engineering Intro Section (Text + Image) */
+.engineering-intro {
+    display: flex;
+    gap: 40px; /* Space between text and image */
+    margin-bottom: 40px;
+    align-items: flex-start; /* Align items at the top */
+}
+
+.intro-text {
+    flex: 1; /* Allow text block to take available space */
+    min-width: 0; /* Prevent flex item overflow */
+}
+
+.intro-text h2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #005689; /* Blueish color */
+    margin-top: 0;
+    margin-bottom: 15px;
+    line-height: 1.3;
+}
+
+.intro-text p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 1em;
+}
+.intro-text p:last-child {
+    margin-bottom: 0;
+}
+
+
+.intro-image {
+    flex-basis: 550px; /* Give image a fixed base width */
+    flex-shrink: 0; /* Prevent image from shrinking */
+    margin-top: 10px; /* Small top margin to align better visually */
+}
+
+.intro-image img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+}
+
+/* General Text Blocks */
+.engineering-text-block {
+    margin-bottom: 40px;
+}
+
+.engineering-text-block h2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #005689; /* Blueish color */
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.engineering-text-block p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 1em;
+}
+.engineering-text-block p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* Engineering Gallery */
+.engineering-gallery {
+    margin-bottom: 50px;
+}
+
+.gallery-images {
+    display: flex;
+    gap: 20px; /* Space between images */
+    margin-bottom: 20px;
+    /* overflow: hidden; */ /* Add if implementing a real slider */
+}
+
+.gallery-images img {
+    display: block;
+    /* Adjust width/height as needed, maybe use flex-basis */
+    width: calc( (100% - 40px) / 3 ); /* Example for 3 images with gap */
+    height: 250px; /* Fixed height */
+    object-fit: cover; /* Crop images nicely */
+    flex-shrink: 0;
+}
+
+/* Make the last image slightly darker/different if needed */
+/* .gallery-images img:last-child { */
+    /* filter: brightness(0.8); */
+/* } */
+
+.gallery-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pagination {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+}
+.pagination .dot {
+    color: #005689; /* Blue dot */
+    font-weight: bold;
+    margin: 0 5px;
+}
+
+.arrows,
+.nav-arrows {
+    display: flex;
+    gap: 10px;
+}
+
+.arrow {
+    background: none;
+    border: 1px solid #CCCCCC;
+    color: #005689; /* Blue arrows */
+    font-size: 20px;
+    font-weight: bold;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s;
+    padding: 0;
+    line-height: 1; /* Ensure arrows are centered */
+}
+
+.arrow:hover {
+    background-color: #f0f0f0;
+    border-color: #AAAAAA;
+}
+
+/* CTA Form Section */
+.cta-form-section {
+    background-color: #F8F8F8; /* Grey background for the form section */
+    margin: 60px -60px -40px -60px; /* Extend to container edges, adjust padding */
+    padding: 40px 60px; /* Padding inside the grey box */
+}
+
+.cta-container {
+    /* max-width: 800px; */ /* Optional: constrain width */
+    margin: 0 auto;
+}
+
+.cta-prompt {
+    font-size: 16px;
+    color: #555;
+    text-align: center;
+    margin-bottom: 30px;
+    border: 1px dashed #AAAAAA; /* Dashed border */
+    padding: 15px;
+    display: inline-block; /* Fit border to text */
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.form-wrapper {
+    /* Optional: Add background/border if needed */
+}
+
+.form-wrapper h2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #1A1A1A; /* Dark heading */
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.callback-form {
+    /* display: flex; */ /* Could use flex for layout */
+    /* flex-wrap: wrap; */
+    /* gap: 15px; */
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.callback-form input[type="text"],
+.callback-form input[type="tel"] {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #CCCCCC;
+    font-size: 14px;
+    box-sizing: border-box; /* Include padding in width */
+}
+
+.callback-form input::placeholder {
+    color: #999999;
+}
+
+.phone-group {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.country-code-select {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 10px 12px;
+    border: 1px solid #CCCCCC;
+    background-color: #FFFFFF; /* White background */
+    font-size: 14px;
+    color: #333;
+    cursor: pointer; /* Indicate it might be interactive */
+}
+.country-code-select img {
+    display: block;
+}
+.country-code-select span {
+    line-height: 1;
+}
+.dropdown-arrow {
+    font-size: 12px; /* Smaller arrow */
+}
+
+.phone-group input[type="tel"] {
+    flex: 1; /* Take remaining space */
+    width: auto; /* Override 100% width */
+}
+
+.submit-button {
+    padding: 12px 25px;
+    background-color: #1A1A1A; /* Dark button */
+    color: #FFFFFF;
+    border: none;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.submit-button:hover {
+    background-color: #333333;
+}
+
+.form-disclaimer {
+    font-size: 12px;
+    color: #666666;
+    line-height: 1.5;
+    margin-top: 10px; /* Space above disclaimer */
+}
+
+.form-disclaimer a {
+    color: #666666;
+    text-decoration: underline;
+}
+.form-disclaimer a:hover {
+    color: #333333;
+}
+
+/* Bottom Page Navigation */
+.bottom-page-nav {
+    margin-top: 50px; /* Space above navigation */
+    padding-top: 30px; /* Space below form section */
+    border-top: 1px solid #EEEEEE; /* Separator line */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.bottom-page-nav h3 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #005689; /* Blueish color */
+    margin: 0;
+}
+
+/* Re-use .nav-arrows and .arrow styles from gallery */
+
+/* ---------- Footer ---------- */
+.site-footer {
+    background: #1A1A1A;
+    color: #ccc;
+    padding: 40px 0;
+    font-family: Arial, sans-serif;
+}
+
+.site-footer a {
+    color: #fff;
+    transition: color .3s;
+}
+
+.site-footer a:hover {
+    color: #ddd;
+}
+
+.footer-row {
+    display: flex;
+    gap: 20px;
+    align-items: stretch;
+}
+
+.footer-group {
+    display: flex;
+    flex: 3;
+    gap: 20px;
+    border: 1px solid #333;
+    padding: 20px;
+}
+
+.phone-box {
+    flex: 1;
+    border: 1px solid #333;
+    padding: 20px;
+}
+
+.top-button-box {
+    flex: 0 0 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #333;
+    padding: 20px;
+}
+
+.top-button-box:hover {
+    background: #333;
+}
+
+.vertical-btn {
+    writing-mode: vertical-rl;
+    color: #fff;
+    padding: 10px 6px;
+    font-weight: 700;
+}
+
+.footer-middle {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 30px;
+    padding: 24px 0;
+    align-items: flex-end;
+    min-height: 150px;
+}
+
+.footer-form {
+    flex: 1;
+    min-width: 260px;
+}
+
+.input-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.country-code {
+    display: flex;
+    align-items: center;
+    background: #1a1a1a;
+    padding: 8px 12px;
+    border-radius: 4px;
+    border: 1px solid #333;
+    gap: 4px;
+    color: #ffb800;
+}
+
+.input-row input {
+    flex: 1;
+    border: 1px solid #333;
+    color: #ccc;
+    padding: 8px;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.call-btn {
+    background: 0;
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 8px 14px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.call-btn:hover {
+    background: #333;
+}
+
+.consent-text {
+    font-size: 12px;
+    color: #666;
+    max-width: 300px;
+    line-height: 1.4;
+}
+
+.consent-text a {
+    color: #666;
+}
+
+.consent-text a:hover {
+    color: #fff;
+}
+
+.middle-cert,
+.middle-links {
+    flex: 1;
+    min-width: 160px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.middle-cert {
+    text-align: center;
+    color: #bbb;
+    font-size: 14px;
+}
+
+.middle-links {
+    text-align: right;
+}
+
+.footer-bottom {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 20px;
+    justify-content: space-between;
+    padding-top: 10px;
+    border-top: 1px solid #333;
+}
+
+.bottom-left {
+    font-size: 14px;
+}
+
+.footer-biglogo {
+    flex: 1;
+    text-align: center;
+}
+
+.footer-biglogo img {
+    width: 1760px;
+    max-width: 100%;
+}

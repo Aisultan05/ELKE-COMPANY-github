@@ -1,0 +1,734 @@
+/* ---------- Base & Reset ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    background: #fff;
+    line-height: 1.4;
+}
+
+a, ul {
+    text-decoration: none;
+    color: inherit;
+    list-style: none;
+}
+
+/* ---------- Containers ---------- */
+.container,
+.container-footer {
+    width: 1200px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.container {
+    padding: 0;
+}
+
+.container-footer {
+    padding: 0 20px;
+}
+
+/* ---------- Header ---------- */
+header {
+    border-bottom: 1px solid #eee;
+    position: sticky;
+    top: 0;
+    background-color: #fff;
+    z-index: 1000;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+    padding: 0 20px;
+}
+
+.logo-content {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-content img {
+    width: 75px;
+}
+
+.logo-text {
+    font-family: 'Bank Gothic(RUS BY LYAJKA)', sans-serif;
+    color: #5F737E;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1;
+}
+
+.main-nav {
+    display: flex;
+    align-items: center;
+}
+
+.main-nav ul {
+    display: flex;
+    gap: 8px;
+    margin-right: 8px;
+}
+
+.nav-item {
+    font-weight: 500;
+    color: #5F737E;
+    text-decoration: none;
+    transition: color .3s, border-color .3s;
+    border: 1px solid #eee;
+    padding: 10px 24px;
+    box-sizing: border-box;
+    outline: none;
+    position: relative;
+    display: inline-block;
+}
+
+.nav-item span {
+    display: inline-block;
+    transition: transform .3s;
+}
+
+.nav-item:hover span {
+    transform: translateX(5px);
+}
+
+.nav-item:hover::before {
+    content: '';
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 8px;
+    height: 8px;
+    background-color: #007bff;
+    border-radius: 50%;
+}
+
+.icons {
+    display: flex;
+    gap: 20px;
+}
+
+.icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 20px;
+    width: 35px;
+    height: 35px;
+    border: 1px solid #eee;
+    transition: background-color .3s, color .3s;
+}
+
+.icon:hover {}
+
+.icon i {
+    font-size: 18px;
+}
+
+/* ---------- Base & Reset (Keep existing if suitable) ---------- */
+/* ... (your existing resets) ... */
+
+body { /* Ensure background is white if not set */
+    background-color: #fff;
+}
+
+/* ---------- Containers (Keep existing) ---------- */
+.container {
+    width: 1200px; /* Or your preferred width */
+    max-width: 95%; /* Prevent overflow on smaller screens */
+    margin: 0 auto;
+    padding: 0 15px; /* Add some horizontal padding */
+}
+
+
+/* ---------- Hero Section ---------- */
+.hero-projects {
+    background-image: url('../img/projects-hero-bg.jpg'); /* CHANGE TO YOUR ACTUAL HERO IMAGE PATH */
+    background-size: cover;
+    background-position: center center;
+    color: #fff;
+    text-align: center;
+    padding: 100px 20px; /* Adjust padding as needed */
+    position: relative; /* For potential overlay */
+}
+
+/* Optional overlay for better text contrast */
+.hero-projects::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative; /* To stay above overlay */
+    z-index: 2;
+    max-width: 800px; /* Limit content width */
+    margin: 0 auto;
+}
+
+.hero-projects h1 {
+    font-size: 48px; /* Adjust size */
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-transform: uppercase; /* Matches image */
+}
+
+.hero-projects p {
+    font-size: 18px; /* Adjust size */
+    line-height: 1.6;
+}
+
+/* ---------- Breadcrumbs ---------- */
+.breadcrumbs {
+    padding: 20px 15px; /* Use container padding + extra vertical */
+    font-size: 14px;
+    color: #666;
+    border-bottom: 1px solid #eee; /* Separator */
+    margin-bottom: 40px; /* Space before next section */
+}
+
+.breadcrumbs a {
+    color: #007bff; /* Link color */
+    text-decoration: none;
+}
+
+.breadcrumbs a:hover {
+    text-decoration: underline;
+}
+
+.breadcrumbs span {
+    color: #333; /* Current page color */
+}
+
+/* ---------- Projects Geography Section ---------- */
+.projects-geography {
+    padding: 40px 0; /* Vertical padding */
+    margin-bottom: 40px;
+}
+
+.projects-geography h2 {
+    font-size: 36px; /* Adjust size */
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+/* --- Tabs --- */
+.geo-tabs {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    gap: 10px;
+    margin-bottom: 30px;
+    align-items: center; /* Align items vertically */
+}
+
+.geo-tabs .tab {
+    padding: 12px 25px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+    background-color: #f0f0f0; /* Default tab background */
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.geo-tabs .tab:hover {
+    background-color: #e0e0e0;
+}
+
+.geo-tabs .tab.active {
+    background-color: #0056b3; /* Active tab background (blue) */
+    color: #fff;
+    border-color: #0056b3;
+}
+
+.reset-selection-btn {
+    padding: 10px 20px;
+    font-size: 14px;
+    color: #fff;
+    background-color: #555; /* Dark gray button */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: auto; /* Pushes button to the right */
+    transition: background-color 0.3s;
+}
+
+.reset-selection-btn:hover {
+    background-color: #333;
+}
+
+/* --- Geo Content Area (List + Map) --- */
+.geo-content {
+    display: flex;
+    gap: 30px;
+    /* Initially hidden, shown via JS or by default if only one tab */
+    /* display: none; */
+}
+
+.geo-content.active-geo-content {
+    display: flex; /* Show active content */
+}
+
+/* --- Project List --- */
+.projects-list {
+    flex: 0 0 300px; /* Fixed width for the list column */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.project-card {
+    display: flex;
+    border: 1px solid #eee;
+    background-color: #fff;
+    overflow: hidden; /* Contain elements */
+    gap: 0; /* Remove gap between internal divs */
+}
+
+.project-card-image {
+    flex: 0 0 100px; /* Fixed width for image container */
+    height: 120px; /* Fixed height */
+    overflow: hidden;
+}
+
+.project-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cover the area */
+}
+
+.project-card-info {
+    flex: 1; /* Take remaining space */
+    padding: 10px 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align text left */
+    position: relative; /* For logo positioning */
+}
+
+.project-card .project-logo {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 60px; /* Adjust logo size */
+    height: auto;
+    opacity: 0.8;
+}
+
+
+.project-card h3 {
+    font-size: 15px; /* Smaller heading inside card */
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.project-card p {
+    font-size: 13px;
+    color: #555;
+    line-height: 1.4;
+}
+
+
+/* --- Map Area --- */
+.kz-map-container {
+    flex: 1; /* Take remaining space */
+    position: relative; /* For tooltip positioning */
+    background-color: #f8f9fa; /* Light background for map area */
+    border: 1px solid #eee;
+    display: flex; /* Center map if needed */
+    align-items: center;
+    justify-content: center;
+    min-height: 400px; /* Ensure minimum height */
+}
+
+.kz-map {
+    max-width: 90%; /* Limit map size within container */
+    max-height: 500px; /* Limit map height */
+    height: auto;
+    display: block; /* Remove extra space below image */
+    margin: auto; /* Center map */
+}
+
+.map-tooltip {
+    position: absolute;
+    /* Adjust top/left based on where the highlighted area is on your map image */
+    top: 40%;
+    left: 65%;
+    transform: translate(-50%, -50%); /* Center tooltip roughly */
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 1px solid #ccc;
+    padding: 10px 15px;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    font-size: 12px;
+    line-height: 1.5;
+    color: #333;
+    white-space: nowrap; /* Prevent wrapping */
+}
+
+/* ---------- Companies Logos Section ---------- */
+.companies-logos {
+    padding: 40px 0;
+    margin-bottom: 40px;
+    text-align: center; /* Center heading */
+    background-color: #f8f9fa; /* Light gray background */
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+}
+
+.companies-logos h3 {
+    font-size: 24px; /* Adjust size */
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.logos-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center logos horizontally */
+    align-items: center; /* Center logos vertically */
+    gap: 40px; /* Space between logos */
+}
+
+.logo-item {
+    flex: 0 1 120px; /* Allow logos to shrink but base width 120px */
+    text-align: center;
+}
+
+.logo-item img {
+    max-width: 100%;
+    height: auto;
+    max-height: 50px; /* Limit logo height */
+    filter: grayscale(100%); /* Make logos grayscale */
+    opacity: 0.7;
+    transition: filter 0.3s, opacity 0.3s;
+}
+
+.logo-item img:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+}
+
+/* ---------- Main Directions Section ---------- */
+.main-directions {
+    padding: 50px 0;
+    margin-bottom: 50px;
+}
+
+.main-directions h2 {
+    font-size: 36px; /* Adjust size */
+    font-weight: bold;
+    margin-bottom: 40px;
+    color: #333;
+}
+
+.directions-grid {
+    display: grid;
+    /* Adjust columns for responsiveness if needed */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.direction-card {
+    border: 1px solid #eee;
+    padding: 25px;
+    background-color: #fff;
+    text-align: left; /* Align text left */
+    transition: box-shadow 0.3s, border-color 0.3s;
+    min-height: 150px; /* Ensure consistent height */
+    display: flex;
+    flex-direction: column; /* Stack icon and text vertically */
+    position: relative;
+}
+
+.direction-icon {
+    width: 40px; /* Size of icon */
+    height: 40px;
+    margin-bottom: 15px; /* Space below icon */
+}
+
+.direction-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.direction-card h4 {
+    font-size: 16px; /* Adjust size */
+    font-weight: bold; /* Make it bold */
+    color: #333;
+    line-height: 1.4;
+    margin-top: auto; /* Push text to bottom if needed, works with flex */
+}
+
+/* Active/Highlight State for Direction Card */
+.direction-card.active {
+    background-color: #0056b3; /* Blue background */
+    border-color: #004085;
+}
+
+.direction-card.active h4 {
+    color: #fff; /* White text */
+}
+
+/* Style the icon specifically in the active card if needed */
+.direction-card.active .direction-icon img {
+   /* Example: change filter if icons are SVGs you can style */
+   filter: brightness(0) invert(1); /* Makes black icons white */
+}
+
+/* Hover effect for non-active cards */
+.direction-card:not(.active):hover {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-color: #ccc;
+}
+
+
+/* Responsive Adjustments (Example) */
+@media (max-width: 992px) {
+    .geo-content {
+        flex-direction: column; /* Stack list and map */
+    }
+    .projects-list {
+        flex: 1 1 auto; /* Allow list to take full width */
+        max-width: 100%;
+        flex-direction: row; /* Show cards side-by-side */
+        flex-wrap: wrap; /* Allow wrapping */
+        justify-content: center; /* Center cards */
+    }
+    .project-card {
+        flex: 0 0 calc(50% - 10px); /* Two cards per row */
+    }
+     .kz-map-container {
+        min-height: 300px; /* Reduce map height */
+    }
+    .directions-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Smaller cards */
+    }
+     .reset-selection-btn {
+        margin-left: 10px; /* Adjust spacing */
+        margin-top: 10px; /* Add top margin when wrapping */
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-projects h1 {
+        font-size: 36px;
+    }
+    .hero-projects p {
+        font-size: 16px;
+    }
+    .projects-geography h2,
+    .main-directions h2 {
+        font-size: 28px;
+    }
+    .companies-logos h3 {
+        font-size: 20px;
+    }
+    .project-card {
+        flex: 0 0 100%; /* One card per row */
+    }
+     .geo-tabs {
+        justify-content: center;
+    }
+    .reset-selection-btn {
+        width: 100%; /* Full width button on small screens */
+        margin-left: 0;
+        margin-top: 15px;
+        text-align: center;
+    }
+     .kz-map-container {
+        order: -1; /* Move map above list on small screens */
+    }
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+    background: #1A1A1A;
+    color: #ccc;
+    padding: 40px 0;
+    font-family: Arial, sans-serif;
+}
+
+.site-footer a {
+    color: #fff;
+    transition: color .3s;
+}
+
+.site-footer a:hover {
+    color: #ddd;
+}
+
+.footer-row {
+    display: flex;
+    gap: 20px;
+    align-items: stretch;
+}
+
+.footer-group {
+    display: flex;
+    flex: 3;
+    gap: 20px;
+    border: 1px solid #333;
+    padding: 20px;
+}
+
+.phone-box {
+    flex: 1;
+    border: 1px solid #333;
+    padding: 20px;
+}
+
+.top-button-box {
+    flex: 0 0 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #333;
+    padding: 20px;
+}
+
+.top-button-box:hover {
+    background: #333;
+}
+
+.vertical-btn {
+    writing-mode: vertical-rl;
+    color: #fff;
+    padding: 10px 6px;
+    font-weight: 700;
+}
+
+.footer-middle {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 30px;
+    padding: 24px 0;
+    align-items: flex-end;
+    min-height: 150px;
+}
+
+.footer-form {
+    flex: 1;
+    min-width: 260px;
+}
+
+.input-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.country-code {
+    display: flex;
+    align-items: center;
+    background: #1a1a1a;
+    padding: 8px 12px;
+    border-radius: 4px;
+    border: 1px solid #333;
+    gap: 4px;
+    color: #ffb800;
+}
+
+.input-row input {
+    flex: 1;
+    border: 1px solid #333;
+    color: #ccc;
+    padding: 8px;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.call-btn {
+    background: 0;
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 8px 14px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.call-btn:hover {
+    background: #333;
+}
+
+.consent-text {
+    font-size: 12px;
+    color: #666;
+    max-width: 300px;
+    line-height: 1.4;
+}
+
+.consent-text a {
+    color: #666;
+}
+
+.consent-text a:hover {
+    color: #fff;
+}
+
+.middle-cert,
+.middle-links {
+    flex: 1;
+    min-width: 160px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.middle-cert {
+    text-align: center;
+    color: #bbb;
+    font-size: 14px;
+}
+
+.middle-links {
+    text-align: right;
+}
+
+.footer-bottom {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 20px;
+    justify-content: space-between;
+    padding-top: 10px;
+    border-top: 1px solid #333;
+}
+
+.bottom-left {
+    font-size: 14px;
+}
+
+.footer-biglogo {
+    flex: 1;
+    text-align: center;
+}
+
+.footer-biglogo img {
+    width: 1760px;
+    max-width: 100%;
+}

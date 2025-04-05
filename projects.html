@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ELKE COMPANY – Проекты</title>
+  <link rel="stylesheet" href="css/projects.css" />
+</head>
+<body>
+
+<!-- Шапка сайта -->
+<header>
+  <div class="container header-container">
+    <!-- Логотип -->
+    <div class="logo">
+      <a href="#">
+        <div class="logo-content">
+          <img src="img/Header-logo.png" alt="Логотип Elke Company">
+          <p class="logo-text">Инжиниринговая<br> компания</p>
+        </div>
+      </a>
+    </div>      
+    <nav class="main-nav">
+      <ul>
+        <li><a href="#" class="nav-item"><span>О компании</span></a></li>
+        <li><a href="#" class="nav-item"><span>Услуги</span></a></li>
+        <li><a href="#" class="nav-item"><span>Проекты</span></a></li>
+        <li><a href="#" class="nav-item"><span>KRONES</span></a></li>
+        <li><a href="#" class="nav-item"><span>Контакты</span></a></li>        
+      </ul>
+      <div class="icons">
+        <a href="#" class="icon"><img src="img/call.svg" alt="Phone Icon"></a>
+        <a href="#" class="icon"><img src="img/mail.svg" alt="Email Icon"></a>
+        <a href="#" class="icon"><img src="img/language.svg" alt="Globe Icon"></a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+  <!-- Крупный баннер (Hero) с фоновым изображением -->
+  <section class="hero-projects">
+    <div class="hero-content">
+      <h1>Проекты</h1>
+      <p>
+        Среди наших клиентов – как крупные международные концерны, так и
+        малые локальные предприятия. Мы гордимся тем, что смогли помочь многим
+        компаниям оптимизировать свои производственные процессы по всему миру.
+      </p>
+    </div>
+  </section>
+
+  <!-- Хлебные крошки (навигация) -->
+  <div class="breadcrumbs container">  <!-- Added container for consistent width -->
+    <a href="index.html">Главная</a>   /   <span>Проекты</span>
+  </div>
+
+  <!-- Блок «География проектов» -->
+  <section class="projects-geography container"> <!-- Added container -->
+    <h2>География проектов</h2>
+
+    <!-- Табы регионов -->
+    <div class="geo-tabs">
+      <button class="tab active">Казахстан</button>
+      <button class="tab">Европа</button>
+      <button class="tab">Азия</button>
+      <button class="tab">СНГ</button>
+      <!-- Updated tabs based on image rather than initial HTML snippet -->
+      <button class="tab">Саудовская Аравия</button>
+      <button class="tab">Африка</button>
+      <!-- The 'Reset' button seems related to map interaction, adding it structurally -->
+      <button class="reset-selection-btn">Сбросить выделение</button>
+    </div>
+
+    <!-- Контент для выбранного таба (Пример для Казахстана) -->
+    <div class="geo-content active-geo-content">
+      <!-- Левая колонка со списком проектов -->
+      <div class="projects-list">
+        <div class="project-card">
+          <div class="project-card-image">
+             <img src="img/coca-cola-kz.png" alt="Завод Coca-Cola в Казахстане">
+          </div>
+          <div class="project-card-info">
+            <img src="img/cocacola.png" alt="Coca-Cola Logo" class="project-logo">
+            <h3>«Coca-Cola»</h3>
+            <p>Республика Казахстан,<br> г. Астана</p>
+          </div>
+        </div>
+        <div class="project-card">
+          <div class="project-card-image">
+             <img src="img/coca-cola-kz2.png" alt="Другой объект Coca-Cola в Казахстане">
+          </div>
+          <div class="project-card-info">
+             <img src="img/cocacola.png" alt="Coca-Cola Logo" class="project-logo">
+             <h3>«Coca-Cola»</h3>
+             <p>Республика Казахстан,<br> г. Астана</p>
+           </div>
+        </div>
+        <!-- ...дополнительные карточки можно добавить сюда -->
+      </div>
+
+      <!-- Правая колонка с картой -->
+      <div class="kz-map-container">
+         <!-- Map image needs to have the highlighted region included -->
+        <img src="img/map-kz-highlighted.png" alt="Карта Казахстана с отмеченными проектами" class="kz-map">
+         <!-- Tooltip/Label on map -->
+         <div class="map-tooltip">
+           АО «Кокшетауские минеральные воды»<br>
+           г. Кокшетау<br>
+           Coca-Cola Казахстан
+         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- «Все компании (Казахстан)» -->
+  <section class="companies-logos container"> <!-- Added container -->
+    <h3>Все компании (Казахстан)</h3>
+    <div class="logos-grid">
+      <div class="logo-item"><img src="img/borjomi.png" alt="Borjomi"></div>
+      <!-- Placeholder for ERDINGER WEISSBRAU, assuming image exists -->
+      <div class="logo-item"><img src="img/erdinger.png" alt="Erdinger Weissbrau"></div>
+      <div class="logo-item"><img src="img/heineken.png" alt="Heineken"></div>
+      <div class="logo-item"><img src="img/cocacola.png" alt="Coca-Cola"></div>
+      <div class="logo-item"><img src="img/efes.png" alt="Efes"></div>
+      <div class="logo-item"><img src="img/pepsi.png" alt="Pepsi"></div>
+      <!-- Borjomi logo seems repeated in the screenshot -->
+      <div class="logo-item"><img src="img/borjomi2.png" alt="Borjomi"></div>
+      <!-- ...дополнительные лого -->
+    </div>
+  </section>
+
+  <!-- Основные направления -->
+  <section class="main-directions container"> <!-- Added container -->
+    <h2>Основные направления:</h2>
+    <div class="directions-grid">
+      <div class="direction-card">
+        <div class="direction-icon"><img src="img/icon-mech.svg" alt=""></div>
+        <h4>механический монтаж технологического оборудования</h4>
+        <!-- Removed <p> as text is short and fits in h4 -->
+      </div>
+
+      <div class="direction-card active">
+         <div class="direction-icon"><img src="img/icon-elec.svg" alt=""></div>
+         <h4>электрический монтаж технологического оборудования</h4>
+      </div>
+
+      <div class="direction-card">
+         <div class="direction-icon"><img src="img/icon-pipeline.svg" alt=""></div>
+         <h4>монтаж технологических трубопроводов и металлоконструкций</h4>
+      </div>
+
+      <div class="direction-card">
+         <div class="direction-icon"><img src="img/icon-thermal.svg" alt=""></div>
+        <h4>теплоизоляция трубопроводов и емкостного оборудования</h4>
+      </div>
+
+      <div class="direction-card">
+        <!-- Assuming icon path: img/icon-turnkey.svg -->
+        <div class="direction-icon"><img src="img/icon-turnkey.svg" alt=""></div>
+        <h4>запуск объекта под ключ</h4>
+      </div>
+
+      <div class="direction-card">
+        <!-- Assuming icon path: img/icon-engineering.svg -->
+         <div class="direction-icon"><img src="img/icon-engineering.svg" alt=""></div>
+         <h4>инжиниринг (разработка индивидуальных технологических решений)</h4>
+      </div>
+       <div class="direction-card">
+        <!-- Assuming icon path: img/icon-blending.svg -->
+         <div class="direction-icon"><img src="img/icon-blending.svg" alt=""></div>
+         <h4>купажные отделения (собственное производство)</h4>
+      </div>
+
+      <!-- ... Add other direction cards if needed -->
+    </div>
+  </section>
+  
+<!-- Подвал сайта -->
+<footer class="site-footer">
+  <div class="container-footer">
+    <div class="footer-row">
+      <!-- Левая группа: Карта сайта, Услуги, Адрес -->
+      <div class="footer-group">
+        <!-- Карта сайта -->
+        <div class="footer-col">
+          <h4>Карта сайта</h4>
+          <ul>
+            <li><a href="#">Главная</a></li>
+            <li><a href="#">Услуги ▾</a></li>
+            <li><a href="#">О нас</a></li>
+            <li><a href="#">Галерея</a></li>
+            <li><a href="#">Наши клиенты</a></li>
+            <li><a href="#">Krones ▾</a></li>
+            <li><a href="#">Контакты</a></li>
+          </ul>
+        </div>
+    
+        <!-- Услуги -->
+        <div class="footer-col">
+          <h4>Услуги</h4>
+          <ul>
+            <li><a href="#">Механический монтаж</a></li>
+            <li><a href="#">Электрический монтаж</a></li>
+            <li><a href="#">Монтаж трубопроводов</a></li>
+            <li><a href="#">Теплоизоляция трубопроводов</a></li>
+            <li><a href="#">Инжиниринг</a></li>
+            <li><a href="#">Купажные отделения</a></li>
+            <li><a href="#">Запуск объекта под ключ</a></li>
+          </ul>
+        </div>
+    
+        <!-- Адрес -->
+        <div class="footer-col">
+          <h4>Адрес</h4>
+          <p>
+            Алматинская обл., Карасайский район,<br>
+            Райымбекский с.о., с. Буланты,<br>
+            Учётный квартал 587, 263
+          </p>
+          <p>
+            Республика Казахстан, г. Астана,<br>
+            пр. Аль-Фараби, д.65
+          </p>
+        </div>
+      </div>
+    
+      <!-- Отдельная коробка: Телефон -->
+      <div class="phone-box">
+        <h4>Телефон</h4>
+        <p>8 (727) 258 25 68</p>
+        <p>8 (727) 258 37 71</p>
+        <p>8 (727) 258 25 69</p>
+      </div>
+
+      <!-- Кнопка "В начало страницы" (отдельная коробка с вертикальной надписью) -->
+      <div class="footer-box top-button-box">
+        <a href="#top" class="vertical-btn">В начало страницы</a>
+      </div>
+    
+    </div>
+
+    <!-- Средняя полоса: заявка + ISO + политика -->
+    <div class="footer-middle">
+      <div class="footer-form">
+        <h4>Оставить заявку</h4>
+        <div class="input-row">
+          <div class="country-code">
+            <span>kz</span>
+            <span>+7</span>
+          </div>
+          <input type="text" placeholder="___ ___ __ __">
+          <button class="call-btn">Заказать звонок</button>
+        </div>
+        <p class="consent-text">
+          Нажимая на номер, я даю своё согласие на 
+          <a href="#" style="color: white;">обработку персональных данных</a>
+        </p>
+      </div>
+      <div class="middle-cert">
+        <p>Сертификат регистрации</p>
+        <p style="color: white;">ISO 9001:2015</p>
+      </div>
+      <div class="middle-links">
+        <a href="#">Политика конфиденциальности</a><br>
+        <a href="#">Персональные данные</a>
+      </div>
+    </div><!-- /.footer-middle -->
+
+    <!-- Нижняя полоса: копирайт, большой логотип, «Дизайн» -->
+    <div class="footer-bottom">
+      <p class="bottom-left">ТОО «ELKE COMPANY», 2025©</p>
+      <p class="bottom-right">
+        Дизайн и разработка <a href="#">StudioXYZ</a>
+      </p>
+    </div>
+
+    <div class="footer-biglogo">
+      <img src="img/logo.png" alt="ELKE COMPANY">
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

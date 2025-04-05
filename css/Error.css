@@ -1,0 +1,444 @@
+/* ---------- Base & Reset ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    background: #fff;
+    line-height: 1.4;
+}
+
+a, ul {
+    text-decoration: none;
+    color: inherit;
+    list-style: none;
+}
+
+/* ---------- Containers ---------- */
+.container,
+.container-footer {
+    width: 1200px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.container {
+    padding: 0;
+}
+
+.container-footer {
+    padding: 0 20px;
+}
+
+/* ---------- Header ---------- */
+header {
+    border-bottom: 1px solid #eee;
+    position: sticky;
+    top: 0;
+    background-color: #fff;
+    z-index: 1000;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+    padding: 0 20px;
+}
+
+.logo-content {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-content img {
+    width: 75px;
+}
+
+.logo-text {
+    font-family: 'Bank Gothic(RUS BY LYAJKA)', sans-serif;
+    color: #5F737E;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1;
+}
+
+.main-nav {
+    display: flex;
+    align-items: center;
+}
+
+.main-nav ul {
+    display: flex;
+    gap: 8px;
+    margin-right: 8px;
+}
+
+.nav-item {
+    font-weight: 500;
+    color: #5F737E;
+    text-decoration: none;
+    transition: color .3s, border-color .3s;
+    border: 1px solid #eee;
+    padding: 10px 24px;
+    box-sizing: border-box;
+    outline: none;
+    position: relative;
+    display: inline-block;
+}
+
+.nav-item span {
+    display: inline-block;
+    transition: transform .3s;
+}
+
+.nav-item:hover span {
+    transform: translateX(5px);
+}
+
+.nav-item:hover::before {
+    content: '';
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 8px;
+    height: 8px;
+    background-color: #007bff;
+    border-radius: 50%;
+}
+
+.icons {
+    display: flex;
+    gap: 20px;
+}
+
+.icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 20px;
+    width: 35px;
+    height: 35px;
+    border: 1px solid #eee;
+    transition: background-color .3s, color .3s;
+}
+
+.icon:hover {}
+
+.icon i {
+    font-size: 18px;
+}
+
+/* ---------- 404 Error Content Specific Styles ---------- */
+
+.error-content-section {
+    padding: 60px 20px; /* Add some vertical spacing */
+    text-align: center; /* Center align text content */
+    background-color: #fff; /* Ensure white background for this section */
+    min-height: calc(100vh - 80px - 400px); /* Example: Try to fill space between header (80px) and footer (adjust footer height estimate) */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Vertically center content if possible */
+    align-items: center; /* Horizontally center content */
+  }
+  
+  .error-graphic-container {
+    /* Container if needed for specific background or positioning */
+    margin-bottom: 40px; /* Space below the graphic */
+    width: 100%;
+    max-width: 800px; /* Limit the max width of the graphic area */
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .error-graphic {
+    display: flex;
+    align-items: center; /* Vertically align digits and gear */
+    justify-content: center; /* Horizontally center */
+    line-height: 0.8; /* Adjust line height to bring elements closer vertically if needed */
+    color: #0056a0; /* Approximate blue color from the image */
+    font-weight: bold; /* Make digits bold */
+  }
+  
+  .graphic-digit {
+    font-size: 25rem; /* VERY large font size for the '4's - adjust as needed */
+    /* Use 'rem' or 'vw' for better scaling potential */
+  }
+  
+  .graphic-gear {
+    display: inline-flex; /* Use flex to center the inner shape */
+    align-items: center;
+    justify-content: center;
+    width: 18rem; /* Width relative to font size */
+    height: 18rem; /* Height relative to font size */
+    margin: 0 1rem; /* Add some horizontal space around the gear */
+  }
+  
+  .gear-shape {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%; /* Make it a circle */
+    /* Using a thick border to mimic the gear visual */
+    border: 4rem solid #0056a0; /* Thick blue border */
+    box-sizing: border-box; /* Include border in width/height */
+  
+    /* A more accurate gear would require SVG, an image, or complex CSS */
+  }
+  
+  .error-text-container {
+    /* Styles for the text block below the graphic */
+  }
+  
+  .error-text-container h1 {
+    font-size: 2.5rem; /* Large heading */
+    color: #333;
+    margin-bottom: 15px;
+    font-weight: 600;
+  }
+  
+  .error-text-container p {
+    font-size: 1.1rem;
+    color: #555; /* Slightly lighter text color */
+    margin-bottom: 30px;
+    max-width: 450px; /* Limit text width */
+    margin-left: auto;
+    margin-right: auto; /* Center the paragraph */
+    line-height: 1.6;
+  }
+  
+  .btn-return-home {
+    display: inline-block; /* Allow padding and treat as block */
+    background-color: #1A1A1A; /* Dark background like footer */
+    color: #fff; /* White text */
+    padding: 15px 30px; /* Button padding */
+    font-size: 1rem;
+    font-weight: 500;
+    text-decoration: none; /* Remove underline */
+    border-radius: 4px; /* Slightly rounded corners */
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+    border: none; /* Remove default border */
+    cursor: pointer;
+  }
+  
+  .btn-return-home:hover {
+    background-color: #333; /* Slightly lighter dark on hover */
+  }
+  
+
+
+/* ---------- Footer ---------- */
+.site-footer {
+    background: #1A1A1A;
+    color: #ccc;
+    padding: 40px 0;
+    font-family: Arial, sans-serif;
+}
+
+.site-footer a {
+    color: #fff;
+    transition: color .3s;
+}
+
+.site-footer a:hover {
+    color: #ddd;
+}
+
+.footer-row {
+    display: flex;
+    gap: 20px;
+    align-items: stretch;
+}
+
+.footer-group {
+    display: flex;
+    flex: 3;
+    gap: 20px;
+    border: 1px solid #333;
+    padding: 20px;
+}
+
+.phone-box {
+    flex: 1;
+    border: 1px solid #333;
+    padding: 20px;
+}
+
+.top-button-box {
+    flex: 0 0 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #333;
+    padding: 20px;
+}
+
+.top-button-box:hover {
+    background: #333;
+}
+
+.vertical-btn {
+    writing-mode: vertical-rl;
+    color: #fff;
+    padding: 10px 6px;
+    font-weight: 700;
+}
+
+.footer-middle {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 30px;
+    padding: 24px 0;
+    align-items: flex-end;
+    min-height: 150px;
+}
+
+.footer-form {
+    flex: 1;
+    min-width: 260px;
+}
+
+.input-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.country-code {
+    display: flex;
+    align-items: center;
+    background: #1a1a1a;
+    padding: 8px 12px;
+    border-radius: 4px;
+    border: 1px solid #333;
+    gap: 4px;
+    color: #ffb800;
+}
+
+.input-row input {
+    flex: 1;
+    border: 1px solid #333;
+    color: #ccc;
+    padding: 8px;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.call-btn {
+    background: 0;
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 8px 14px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.call-btn:hover {
+    background: #333;
+}
+
+.consent-text {
+    font-size: 12px;
+    color: #666;
+    max-width: 300px;
+    line-height: 1.4;
+}
+
+.consent-text a {
+    color: #666;
+}
+
+.consent-text a:hover {
+    color: #fff;
+}
+
+.middle-cert,
+.middle-links {
+    flex: 1;
+    min-width: 160px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.middle-cert {
+    text-align: center;
+    color: #bbb;
+    font-size: 14px;
+}
+
+.middle-links {
+    text-align: right;
+}
+
+.footer-bottom {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 20px;
+    justify-content: space-between;
+    padding-top: 10px;
+    border-top: 1px solid #333;
+}
+
+.bottom-left {
+    font-size: 14px;
+}
+
+.footer-biglogo {
+    flex: 1;
+    text-align: center;
+}
+
+.footer-biglogo img {
+    width: 1760px;
+    max-width: 100%;
+}
+
+  /* Basic Responsive Adjustments (Example) */
+  @media (max-width: 768px) {
+    .graphic-digit {
+      font-size: 15rem; /* Reduce size on smaller screens */
+    }
+    .graphic-gear {
+      width: 11rem;
+      height: 11rem;
+    }
+    .gear-shape {
+      border-width: 2.5rem;
+    }
+    .error-text-container h1 {
+      font-size: 2rem;
+    }
+    .error-text-container p {
+      font-size: 1rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .graphic-digit {
+      font-size: 10rem; /* Further reduce size */
+    }
+    .graphic-gear {
+      width: 7rem;
+      height: 7rem;
+      margin: 0 0.5rem;
+    }
+    .gear-shape {
+      border-width: 1.8rem;
+    }
+    .error-text-container h1 {
+      font-size: 1.8rem;
+    }
+     .btn-return-home {
+      padding: 12px 25px;
+     }
+  }

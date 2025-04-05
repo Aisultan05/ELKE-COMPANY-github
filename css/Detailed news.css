@@ -1,0 +1,665 @@
+/* ---------- Base & Reset ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    background: #fff;
+    line-height: 1.4;
+}
+
+a, ul {
+    text-decoration: none;
+    color: inherit;
+    list-style: none;
+}
+
+/* ---------- Containers ---------- */
+.container,
+.container-footer {
+    width: 1200px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.container {
+    padding: 0;
+}
+
+.container-footer {
+    padding: 0 20px;
+}
+
+/* ---------- Header ---------- */
+header {
+    border-bottom: 1px solid #eee;
+    position: sticky;
+    top: 0;
+    background-color: #fff;
+    z-index: 1000;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+    padding: 0 20px;
+}
+
+.logo-content {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-content img {
+    width: 75px;
+}
+
+.logo-text {
+    font-family: 'Bank Gothic(RUS BY LYAJKA)', sans-serif;
+    color: #5F737E;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1;
+}
+
+.main-nav {
+    display: flex;
+    align-items: center;
+}
+
+.main-nav ul {
+    display: flex;
+    gap: 8px;
+    margin-right: 8px;
+}
+
+.nav-item {
+    font-weight: 500;
+    color: #5F737E;
+    text-decoration: none;
+    transition: color .3s, border-color .3s;
+    border: 1px solid #eee;
+    padding: 10px 24px;
+    box-sizing: border-box;
+    outline: none;
+    position: relative;
+    display: inline-block;
+}
+
+.nav-item span {
+    display: inline-block;
+    transition: transform .3s;
+}
+
+.nav-item:hover span {
+    transform: translateX(5px);
+}
+
+.nav-item:hover::before {
+    content: '';
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 8px;
+    height: 8px;
+    background-color: #007bff;
+    border-radius: 50%;
+}
+
+.icons {
+    display: flex;
+    gap: 20px;
+}
+
+.icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 20px;
+    width: 35px;
+    height: 35px;
+    border: 1px solid #eee;
+    transition: background-color .3s, color .3s;
+}
+
+.icon:hover {}
+
+.icon i {
+    font-size: 18px;
+}
+
+/* ---------- Main Content Area ---------- */
+main {
+    padding: 40px 0; /* Add padding top and bottom */
+}
+
+/* ---------- Breadcrumbs ---------- */
+.breadcrumbs {
+    margin-bottom: 30px;
+    font-size: 14px;
+    color: #666;
+}
+
+.breadcrumbs ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.breadcrumbs li {
+    display: inline-block;
+}
+
+.breadcrumbs li + li::before {
+    content: "/";
+    margin: 0 8px;
+    color: #ccc;
+}
+
+.breadcrumbs a {
+    color: #007bff; /* Or your link color */
+    text-decoration: none;
+}
+
+.breadcrumbs a:hover {
+    text-decoration: underline;
+}
+
+.breadcrumbs span {
+    color: #333; /* Current page color */
+}
+
+
+/* ---------- News Article Detail ---------- */
+.news-detail {
+    margin-bottom: 60px;
+}
+
+.news-detail h1 {
+    font-size: 36px; /* Large title */
+    font-weight: bold;
+    color: #1A1A1A; /* Dark color */
+    margin-bottom: 30px;
+}
+
+.news-content-wrapper {
+    display: flex;
+    gap: 40px; /* Space between columns */
+    align-items: flex-start; /* Align items to the top */
+}
+
+/* Left Meta Column */
+.news-meta {
+    flex: 0 0 180px; /* Fixed width for the left column */
+    border-right: 1px solid #eee; /* Optional separator */
+    padding-right: 40px; /* Space before the separator */
+}
+
+.news-date {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 25px;
+}
+
+.share-title {
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.social-share {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 10px; /* Space between icons */
+}
+
+.social-icon {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background-color: #007bff; /* Blue background */
+    border-radius: 50%; /* Make it circular */
+    text-decoration: none;
+    position: relative; /* For potential icon positioning */
+    /* Add background images for each icon */
+    background-size: 60%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    transition: opacity 0.3s ease;
+}
+.social-icon:hover {
+    opacity: 0.8;
+}
+
+/* You'll need actual icon files (SVG or PNG) */
+.social-icon.vk { background-image: url('img/vk_icon_white.svg'); } /* Add path to white VK icon */
+.social-icon.tg { background-image: url('img/tg_icon_white.svg'); } /* Add path to white Telegram icon */
+.social-icon.ok { background-image: url('img/ok_icon_white.svg'); } /* Add path to white OK icon */
+.social-icon.link { background-image: url('img/link_icon_white.svg'); background-color: #6c757d;} /* Add path to white link/bookmark icon, grey background*/
+
+
+/* Right Content Column */
+.news-body {
+    flex: 1; /* Takes remaining space */
+    min-width: 0; /* Prevents flexbox overflow issues */
+}
+
+.main-news-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 25px;
+    background-color: #f0f0f0; /* Placeholder bg */
+}
+
+.news-body p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 1.2em; /* Paragraph spacing */
+}
+
+.image-gallery {
+    display: flex;
+    gap: 20px; /* Space between images */
+    margin: 30px 0;
+}
+
+.image-gallery img {
+    flex: 1; /* Distribute space equally */
+    width: 30%; /* Approximate width, flex handles the rest */
+    height: 180px; /* Fixed height */
+    object-fit: cover; /* Crop images nicely */
+    display: block;
+    background-color: #f0f0f0; /* Placeholder bg */
+}
+
+/* ---------- Other News Section ---------- */
+.other-news {
+    margin-top: 60px;
+    padding-top: 40px;
+    border-top: 1px solid #eee; /* Separator line */
+}
+
+.other-news h2 {
+    font-size: 28px;
+    font-weight: bold;
+    color: #1A1A1A;
+    margin-bottom: 30px;
+}
+
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 equal columns */
+    gap: 25px; /* Space between cards */
+    margin-bottom: 40px;
+}
+
+.news-card {
+    border: 1px solid #eee;
+    background-color: #fff;
+    display: flex; /* Use flex for content alignment */
+    flex-direction: column; /* Stack image and content */
+    text-decoration: none;
+    color: inherit;
+    transition: box-shadow 0.3s ease;
+}
+.news-card:hover {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+.card-link-wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Make link wrapper fill the card */
+    text-decoration: none;
+    color: inherit;
+}
+
+
+.card-image {
+    width: 100%;
+    height: 160px; /* Fixed height for card images */
+    object-fit: cover; /* Crop nicely */
+    display: block;
+    background-color: #f0f0f0; /* Placeholder bg */
+}
+
+.card-content {
+    padding: 20px;
+    position: relative; /* For absolute positioning of date/arrow */
+    flex-grow: 1; /* Allow content to grow and push arrow down */
+    display: flex;
+    flex-direction: column;
+}
+
+.card-date {
+    position: absolute;
+    top: 20px;
+    right: -10px; /* Position outside padding slightly */
+    writing-mode: vertical-rl; /* Vertical text */
+    transform: rotate(180deg); /* Flip text direction */
+    font-size: 12px;
+    color: #888;
+    background: #fff; /* Background to cover border if overlapping */
+    padding: 8px 4px;
+    line-height: 1;
+    white-space: nowrap; /* Prevent wrapping */
+}
+
+.card-content h3 {
+    font-size: 16px;
+    font-weight: bold;
+    color: #222;
+    margin-bottom: 10px;
+    line-height: 1.3;
+    /* Limit lines if needed */
+     display: -webkit-box;
+    -webkit-line-clamp: 3; /* Limit to 3 lines */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-height: calc(1.3em * 3); /* Reserve space for 3 lines */
+}
+
+.card-content p {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.5;
+    margin-bottom: 20px; /* Space before arrow */
+    /* Limit lines if needed */
+    display: -webkit-box;
+    -webkit-line-clamp: 4; /* Limit to 4 lines */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+     flex-grow: 1; /* Pushes arrow down */
+}
+
+.read-more-arrow {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    width: 24px; /* Adjust size */
+    height: 24px; /* Adjust size */
+    background-image: url('img/arrow-right-up.svg'); /* Use your arrow icon */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    /* background-color: #eee; */ /* remove this if using icon */
+    display: block;
+    align-self: flex-end; /* Align to bottom right within flex content */
+    margin-top: auto; /* Pushes to bottom */
+}
+
+
+.all-news-button-container {
+    text-align: center; /* Center the button */
+    margin-top: 10px; /* Space above button */
+}
+
+.btn.all-news-btn {
+    display: inline-block;
+    background-color: #333; /* Dark background */
+    color: #fff;
+    padding: 12px 30px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn.all-news-btn:hover {
+    background-color: #555; /* Darker on hover */
+}
+
+
+
+/* ---------- Footer ---------- */
+.site-footer {
+    background: #1A1A1A;
+    color: #ccc;
+    padding: 40px 0;
+    font-family: Arial, sans-serif;
+}
+
+.site-footer a {
+    color: #fff;
+    transition: color .3s;
+}
+
+.site-footer a:hover {
+    color: #ddd;
+}
+
+.footer-row {
+    display: flex;
+    gap: 20px;
+    align-items: stretch;
+}
+
+.footer-group {
+    display: flex;
+    flex: 3;
+    gap: 20px;
+    border: 1px solid #333;
+    padding: 20px;
+}
+
+.phone-box {
+    flex: 1;
+    border: 1px solid #333;
+    padding: 20px;
+}
+
+.top-button-box {
+    flex: 0 0 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #333;
+    padding: 20px;
+}
+
+.top-button-box:hover {
+    background: #333;
+}
+
+.vertical-btn {
+    writing-mode: vertical-rl;
+    color: #fff;
+    padding: 10px 6px;
+    font-weight: 700;
+}
+
+.footer-middle {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 30px;
+    padding: 24px 0;
+    align-items: flex-end;
+    min-height: 150px;
+}
+
+.footer-form {
+    flex: 1;
+    min-width: 260px;
+}
+
+.input-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.country-code {
+    display: flex;
+    align-items: center;
+    background: #1a1a1a;
+    padding: 8px 12px;
+    border-radius: 4px;
+    border: 1px solid #333;
+    gap: 4px;
+    color: #ffb800;
+}
+
+.input-row input {
+    flex: 1;
+    border: 1px solid #333;
+    color: #ccc;
+    padding: 8px;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.call-btn {
+    background: 0;
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 8px 14px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.call-btn:hover {
+    background: #333;
+}
+
+.consent-text {
+    font-size: 12px;
+    color: #666;
+    max-width: 300px;
+    line-height: 1.4;
+}
+
+.consent-text a {
+    color: #666;
+}
+
+.consent-text a:hover {
+    color: #fff;
+}
+
+.middle-cert,
+.middle-links {
+    flex: 1;
+    min-width: 160px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.middle-cert {
+    text-align: center;
+    color: #bbb;
+    font-size: 14px;
+}
+
+.middle-links {
+    text-align: right;
+}
+
+.footer-bottom {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 20px;
+    justify-content: space-between;
+    padding-top: 10px;
+    border-top: 1px solid #333;
+}
+
+.bottom-left {
+    font-size: 14px;
+}
+
+.footer-biglogo {
+    flex: 1;
+    text-align: center;
+}
+
+.footer-biglogo img {
+    width: 1760px;
+    max-width: 100%;
+}
+
+/* Optional: Responsive Adjustments for smaller screens */
+@media (max-width: 1200px) {
+    .news-grid {
+       grid-template-columns: repeat(3, 1fr); /* 3 columns on medium screens */
+   }
+}
+@media (max-width: 992px) {
+   .news-content-wrapper {
+       flex-direction: column; /* Stack columns */
+       gap: 30px;
+   }
+   .news-meta {
+       flex: 0 0 auto; /* Reset flex basis */
+       width: 100%;   /* Full width */
+       border-right: none;
+       padding-right: 0;
+       border-bottom: 1px solid #eee; /* Separator below meta */
+       padding-bottom: 20px;
+       margin-bottom: 30px;
+   }
+    .social-share {
+       justify-content: flex-start; /* Align icons left */
+   }
+    .news-grid {
+       grid-template-columns: repeat(2, 1fr); /* 2 columns on smaller screens */
+   }
+   .image-gallery {
+       flex-direction: column; /* Stack gallery images */
+       gap: 15px;
+   }
+    .image-gallery img {
+       width: 100%;
+       height: 200px; /* Adjust height if needed */
+   }
+}
+
+@media (max-width: 768px) {
+   .news-detail h1 {
+       font-size: 28px; /* Smaller title */
+   }
+    .other-news h2 {
+       font-size: 24px;
+   }
+   .news-grid {
+       grid-template-columns: 1fr; /* 1 column on mobile */
+   }
+   .card-date {
+        /* Adjust positioning for single column maybe */
+        right: 5px;
+        top: 5px;
+        writing-mode: horizontal-tb;
+        transform: none;
+        padding: 4px 8px;
+        font-size: 11px;
+        background: rgba(255,255,255,0.8); /* Semi-transparent background */
+        border-radius: 3px;
+   }
+    .card-content h3 {
+       font-size: 15px;
+    }
+    .card-content p {
+       font-size: 13px;
+       -webkit-line-clamp: 3; /* Show fewer lines */
+    }
+
+}
