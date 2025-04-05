@@ -180,7 +180,6 @@ header {
 }
 
 .advantage-item {
-    background-color: #f9f9f9; /* Легкий фон для карточек */
     padding: 20px;
     border: 1px solid #eee; /* Тонкая граница */
     border-radius: 5px; /* Скругление углов */

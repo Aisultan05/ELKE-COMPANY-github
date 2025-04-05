@@ -145,11 +145,11 @@ header {
 
 .content-container {
     width: 1200px;
-    max-width: 95%; /* Allow slight shrinking on smaller screens */
+    max-width: 95%; 
     margin: 0 auto;
-    background-color: #FFFFFF; /* White background for the content box */
-    padding: 40px 60px; /* Inner padding for content */
-    position: relative; /* Needed for absolute positioning of back button */
+    background-color: #FFFFFF; 
+    padding: 40px 60px; 
+    position: relative; 
 }
 
 /* Page Header (Title + Back Button) */
@@ -335,7 +335,6 @@ header {
 
 /* CTA Form Section */
 .cta-form-section {
-    background-color: #F8F8F8; /* Grey background for the form section */
     margin: 60px -60px -40px -60px; /* Extend to container edges, adjust padding */
     padding: 40px 60px; /* Padding inside the grey box */
 }

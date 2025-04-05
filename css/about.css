@@ -138,24 +138,23 @@ header {
 
 /* ---------- Main Content General Styles ---------- */
 main {
-    padding-top: 40px; /* Add space below sticky header */
-    padding-bottom: 60px; /* Add space above footer */
+    padding-top: 40px;
+    padding-bottom: 60px; 
 }
 
 h1, h2 {
-    font-family: 'Bank Gothic(RUS BY LYAJKA)', sans-serif; /* Assuming this font is loaded */
     color: #1A1A1A;
-    font-weight: 500; /* Adjust as needed */
+    font-weight: 500; 
     margin-bottom: 20px;
 }
 
 h2 {
-    font-size: 32px; /* Adjust as needed */
+    font-size: 32px;
     margin-bottom: 30px;
 }
 
 section {
-    margin-bottom: 60px; /* Space between sections */
+    margin-bottom: 60px; 
 }
 
 .container {
@@ -169,10 +168,10 @@ section {
 
 /* ---------- Hero Section ---------- */
 .hero-section {
-    background-image: url('img/hero-background.jpg'); /* Add your background image */
+    background-image: url('../img/krones-171.svg');
     background-size: cover;
     background-position: center;
-    padding: 80px 0;
+    padding: 250px 20px;
     margin-bottom: 20px; /* Reduced margin before breadcrumbs */
     position: relative;
     color: #fff; /* Text color on background */
@@ -383,25 +382,32 @@ section {
     display: flex;
     gap: 40px;
     align-items: flex-start; /* Align content and image top */
+    flex-wrap: wrap; /* Позволяет элементам переноситься на новую строку при нехватке места */
+    margin-top: 40px; /* Отступ сверху */
+    margin-bottom: 40px; /* Отступ снизу */
+    padding-top: 20px; /* Внутренний отступ сверху */
+    padding-bottom: 20px; /* Внутренний отступ снизу */
 }
 
 .goal-content {
     flex: 1;
+    min-width: 300px; /* Минимальная ширина контента, чтобы избежать сжатия */
 }
 
 .goal-content h2 {
     margin-bottom: 15px;
 }
 
-.goal-content > p { /* Target the main paragraph */
+.goal-content > p {
     font-size: 16px;
     line-height: 1.6;
     margin-bottom: 40px;
 }
 
 .goal-image {
-    flex-basis: 45%; /* Adjust width of the image container */
+    flex-basis: 45%; /* Контейнер изображения займет 45% ширины */
     max-width: 500px;
+    min-width: 250px; /* Минимальная ширина контейнера изображения */
 }
 
 .goal-image img {
@@ -410,6 +416,7 @@ section {
     display: block;
     opacity: 0.7; /* Slight transparency as in mock */
 }
+
 
 /* Quick Navigation */
 .quick-nav {
