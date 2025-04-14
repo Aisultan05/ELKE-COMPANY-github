@@ -6,63 +6,126 @@
   <title>ELKE COMPANY – Сотрудники</title>
   <link rel="stylesheet" href="css/Staff.css" />
 </head>
-<body>
+<body id="top"> <!-- Добавили id="top" для ссылки "В начало страницы" -->
 
 <!-- Шапка сайта -->
-<header>
-  <div class="container header-container">
-    <!-- Логотип -->
-    <div class="logo">
-      <a href="#">
-        <div class="logo-content">
-          <img src="img/Header-logo.png" alt="Логотип Elke Company">
-          <p class="logo-text">Инжиниринговая<br> компания</p>
-        </div>
-      </a>
-    </div>      
-    <nav class="main-nav">
-      <ul>
-        <li><a href="#" class="nav-item"><span>О компании</span></a></li>
-        <li><a href="#" class="nav-item"><span>Услуги</span></a></li>
-        <li><a href="#" class="nav-item"><span>Проекты</span></a></li>
-        <li><a href="#" class="nav-item"><span>KRONES</span></a></li>
-        <li><a href="#" class="nav-item"><span>Контакты</span></a></li>        
-      </ul>
-      <div class="icons">
-        <a href="#" class="icon"><img src="img/call.svg" alt="Phone Icon"></a>
-        <a href="#" class="icon"><img src="img/mail.svg" alt="Email Icon"></a>
-        <a href="#" class="icon"><img src="img/language.svg" alt="Globe Icon"></a>
+<header class="site-header">
+  <div class="header-container">
+      <!-- Логотип -->
+      <div class="logo">
+          <a href="main.html">
+              <img src="img/Header-logo.svg" alt="ELKE COMPANY Инжиниринговая компания">
+              <p class="logo-text">Инжиниринговая<br> компания</p>
+          </a>
       </div>
-    </nav>
+
+      <!-- Навигация (Десктоп) -->
+      <nav class="main-nav">
+          <ul>
+              <li><a href="about.html" class="nav-item"><span>О компании</span></a></li>
+              <li><a href="Services.html" class="nav-item"><span>Услуги</span></a></li>
+              <li><a href="projects.html" class="nav-item"><span>Проекты</span></a></li>
+              <li><a href="Krones.html" class="nav-item"><span>Krones</span></a></li>
+              <li><a href="Contacts.html" class="nav-item"><span>Контакты</span></a></li>
+          </ul>
+      </nav>
+
+      <div class="header-actions">
+
+        <!-- Телефон -->
+        <a href="tel:+77272582568" class="action-item icon-link phone-icon" aria-label="Позвонить">
+          <img src="img/call.svg" alt="Телефон">
+        </a>
+      
+        <!-- Почта -->
+        <div class="action-item mail-container">
+          <a href="mailto:krones.kz@gmail.com" class="icon-link mail-icon" aria-label="Написать Email">
+            <img src="img/mail.svg" alt="Email">
+          </a>
+          <span class="email-text">krones.kz@gmail.com</span>
+        </div>
+      
+        <!-- Язык -->
+        <div class="action-item language-container">
+          <!-- Ссылки языков -->
+          <div class="language-options">
+            <a href="#" lang="en">EN</a>
+            <a href="#" lang="kz">KZ</a>
+            <a href="#" lang="ru" class="active-lang">RU</a>
+          </div>
+          <!-- Иконка -->
+          <a href="#" class="icon-link globe-icon" aria-label="Выбор языка">
+            <img src="img/language.svg" alt="Язык">
+          </a>
+        </div>
+      
+      </div>
+      
+      <!-- Кнопка Бургер-меню (для мобильных) -->
+      <button class="burger-menu-button" aria-label="Открыть меню" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+      </button>
+  </div>
+
+  <!-- Мобильное меню (скрыто по умолчанию) -->
+  <div class="mobile-nav" id="mobileNav">
+       <button class="close-menu-button" aria-label="Закрыть меню">×</button>
+      <nav>
+          <ul>
+               <!-- Дублируем ссылки для мобильного меню -->
+               <li><a href="about.html" class="nav-item"><span>О компании</span></a></li>
+               <li><a href="Services.html" class="nav-item"><span>Услуги</span></a></li>
+               <li><a href="projects.html" class="nav-item"><span>Проекты</span></a></li>
+               <li><a href="Krones.html" class="nav-item"><span>Krones</span></a></li>
+               <li><a href="Contacts.html" class="nav-item"><span>Контакты</span></a></li>
+          </ul>
+      </nav>
+       <!-- Можно добавить контакты/языки и в мобильное меню при желании -->
+       <div class="mobile-actions">
+          <a href="tel:+77272582568">8 (727) 258 25 68</a>
+          <a href="mailto:krones.kz@gmail.com">krones.kz@gmail.com</a>
+          <div class="mobile-language-options">
+               <a href="#" lang="en">EN</a>
+               <a href="#" lang="kz">KZ</a>
+               <a href="#" lang="ru" class="active-lang">RU</a>
+           </div>
+       </div>
   </div>
 </header>
 
+
 <!-- Main Content Area -->
-<main class="main-content">
     <div class="container">
 
-        <!-- Breadcrumbs (Optional static example) -->
-        <nav class="breadcrumbs" aria-label="breadcrumb">
-          <ol>
-            <li><a href="#">Главная</a></li>
-            <li><a href="#">О компании</a></li>
-            <li><span aria-current="page">Сотрудники</span></li>
-          </ol>
+      <!-- Breadcrumbs -->
+      <div class="container breadcrumbs-container">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumbs">
+            <li><a href="main.html" class="plain-link">Главная</a></li>
+            <li><span class="separator">/</span></li>
+            <li><a href="about.html" class="plain-link">О компании</a></li>
+            <li><span class="separator">/</span></li>
+            <li aria-current="page" class="active">Сотрудники</li>
+          </ol>          
         </nav>
+      </div>
 
         <!-- Staff Introduction -->
         <section class="staff-intro">
           <h1>Сотрудники</h1>
           <h2>Наша команда – <span class="highlight">ключ к успеху</span></h2>
           <p>
-            Выбор ТОО «Elke Company» – это выбор безупречного качества. Мы понимаем, что качество наших услуг критически важно для ваших бизнес-процессов. На каждом этапе монтажа мы следуем самым строгим стандартам, гарантируя, что ваше оборудование будет работать эффективно и надежно
+            Выбор ТОО «Elke Company» – это выбор безупречного качества. Мы понимаем, что качество наших услуг критически важно для ваших бизнес-процессов. На каждом этапе монтажа мы следуем самым строгим стандартам, гарантируя, что ваше оборудование будет работать эффективно и надежно.
           </p>
         </section>
 
         <!-- Staff Grid -->
         <section class="staff-grid-section">
           <div class="staff-grid">
-            <!-- Staff Card 1 (Collapsed) -->
+
+            <!-- Card 1 -->
             <article class="staff-card">
               <div class="staff-image">
                 <img src="img/image 281.png" alt="Фото сотрудника">
@@ -71,17 +134,17 @@
                 <h3>Фамилия Имя Отчество</h3>
                 <p class="staff-title">Название должности</p>
                 <p class="staff-company">ТОО "Elke Company"</p>
-                <button class="staff-button expand-button">Развернуть</button>
-                <div class="staff-details" style="display: none;">
+                <div class="staff-details">
+                  <hr>
                   <p><strong>Стаж работы:</strong> N лет</p>
                   <p><strong>Образование:</strong> Название учебного заведения, специальность "Название"</p>
                 </div>
-                <button class="staff-button collapse-button" style="display: none;">Свернуть</button>
+                <button class="staff-button toggle-button">Развернуть</button>
               </div>
             </article>
 
-            <!-- Staff Card 2 (Expanded Example) -->
-            <article class="staff-card is-expanded">
+            <!-- Card 2 -->
+            <article class="staff-card">
               <div class="staff-image">
                 <img src="img/senior-woman-with-crossed-arms-glasses-see 1.png" alt="Фото сотрудника">
               </div>
@@ -89,19 +152,16 @@
                 <h3>Фамилия Имя Отчество</h3>
                 <p class="staff-title">Название должности</p>
                 <p class="staff-company">ТОО "Elke Company"</p>
-                 <!-- Hidden expand button for expanded state -->
-                <button class="staff-button expand-button" style="display: none;">Развернуть</button>
-                <!-- Visible details for expanded state -->
                 <div class="staff-details">
                     <hr>
                     <p><strong>Стаж работы:</strong> 20 лет</p>
-                    <p><strong>Образование:</strong> Название высшего учебного заведения, по специальности "Название специальности"</p>
+                    <p><strong>Образование:</strong> Название высшего учебного заведения, специальность "Название специальности"</p>
                 </div>
-                <button class="staff-button collapse-button">Свернуть</button>
+                <button class="staff-button toggle-button">Развернуть</button>
               </div>
             </article>
 
-            <!-- Staff Card 3 (Collapsed) -->
+            <!-- Card 3 -->
             <article class="staff-card">
               <div class="staff-image">
                 <img src="img/image 281.png" alt="Фото сотрудника">
@@ -110,109 +170,103 @@
                 <h3>Фамилия Имя Отчество</h3>
                 <p class="staff-title">Название должности</p>
                 <p class="staff-company">ТОО "Elke Company"</p>
-                <button class="staff-button expand-button">Развернуть</button>
-                <div class="staff-details" style="display: none;">
+                <div class="staff-details">
                     <hr>
                     <p><strong>Стаж работы:</strong> N лет</p>
                     <p><strong>Образование:</strong> Название учебного заведения, специальность "Название"</p>
                 </div>
-                <button class="staff-button collapse-button" style="display: none;">Свернуть</button>
+                <button class="staff-button toggle-button">Развернуть</button>
               </div>
             </article>
 
-            <!-- Staff Card 4 (Collapsed) -->
+            <!-- Card 4 -->
             <article class="staff-card">
               <div class="staff-image">
-                  <img src="img/senior-woman-with-crossed-arms-glasses-see 1.png" alt="Фото сотрудника">
+                <img src="img/senior-woman-with-crossed-arms-glasses-see 1.png" alt="Фото сотрудника">
               </div>
               <div class="staff-info">
-                  <h3>Фамилия Имя Отчество</h3>
-                  <p class="staff-title">Название должности</p>
-                  <p class="staff-company">ТОО "Elke Company"</p>
-                  <button class="staff-button expand-button">Развернуть</button>
-                  <div class="staff-details" style="display: none;">
+                <h3>Фамилия Имя Отчество</h3>
+                <p class="staff-title">Название должности</p>
+                <p class="staff-company">ТОО "Elke Company"</p>
+                <div class="staff-details">
                       <hr>
                       <p><strong>Стаж работы:</strong> N лет</p>
                       <p><strong>Образование:</strong> Название учебного заведения, специальность "Название"</p>
-                  </div>
-                  <button class="staff-button collapse-button" style="display: none;">Свернуть</button>
+                </div>
+                <button class="staff-button toggle-button">Развернуть</button>
               </div>
             </article>
 
-             <!-- Staff Card 5 (Collapsed) -->
+            <!-- Card 5 -->
             <article class="staff-card">
-                <div class="staff-image">
-                    <img src="img/image 281.png" alt="Фото сотрудника">
-                </div>
-                <div class="staff-info">
-                    <h3>Фамилия Имя Отчество</h3>
-                    <p class="staff-title">Название должности</p>
-                    <p class="staff-company">ТОО "Elke Company"</p>
-                    <button class="staff-button expand-button">Развернуть</button>
-                    <div class="staff-details" style="display: none;">
+              <div class="staff-image">
+                <img src="img/image 281.png" alt="Фото сотрудника">
+              </div>
+              <div class="staff-info">
+                <h3>Фамилия Имя Отчество</h3>
+                <p class="staff-title">Название должности</p>
+                <p class="staff-company">ТОО "Elke Company"</p>
+                <div class="staff-details">
                         <hr>
                         <p><strong>Стаж работы:</strong> N лет</p>
                         <p><strong>Образование:</strong> Название учебного заведения, специальность "Название"</p>
-                    </div>
-                    <button class="staff-button collapse-button" style="display: none;">Свернуть</button>
                 </div>
+                <button class="staff-button toggle-button">Развернуть</button>
+              </div>
             </article>
 
-            <!-- Staff Card 6 (Collapsed) -->
+            <!-- Card 6 -->
             <article class="staff-card">
-                <div class="staff-image">
-                    <img src="img/senior-woman-with-crossed-arms-glasses-see 1.png" alt="Фото сотрудника">
-                </div>
-                <div class="staff-info">
-                    <h3>Фамилия Имя Отчество</h3>
-                    <p class="staff-title">Название должности</p>
-                    <p class="staff-company">ТОО "Elke Company"</p>
-                    <button class="staff-button expand-button">Развернуть</button>
-                    <div class="staff-details" style="display: none;">
+              <div class="staff-image">
+                <img src="img/senior-woman-with-crossed-arms-glasses-see 1.png" alt="Фото сотрудника">
+              </div>
+              <div class="staff-info">
+                <h3>Фамилия Имя Отчество</h3>
+                <p class="staff-title">Название должности</p>
+                <p class="staff-company">ТОО "Elke Company"</p>
+                <div class="staff-details">
                         <hr>
                         <p><strong>Стаж работы:</strong> N лет</p>
                         <p><strong>Образование:</strong> Название учебного заведения, специальность "Название"</p>
-                    </div>
-                    <button class="staff-button collapse-button" style="display: none;">Свернуть</button>
                 </div>
+                <button class="staff-button toggle-button">Развернуть</button>
+              </div>
             </article>
 
-             <!-- Staff Card 7 (Collapsed) -->
+            <!-- Card 7 -->
             <article class="staff-card">
-                <div class="staff-image">
-                    <img src="img/image 281.png" alt="Фото сотрудника">
-                </div>
-                <div class="staff-info">
-                    <h3>Фамилия Имя Отчество</h3>
-                    <p class="staff-title">Название должности</p>
-                    <p class="staff-company">ТОО "Elke Company"</p>
-                    <button class="staff-button expand-button">Развернуть</button>
-                    <div class="staff-details" style="display: none;">
+              <div class="staff-image">
+                <img src="img/image 281.png" alt="Фото сотрудника">
+              </div>
+              <div class="staff-info">
+                <h3>Фамилия Имя Отчество</h3>
+                <p class="staff-title">Название должности</p>
+                <p class="staff-company">ТОО "Elke Company"</p>
+                <div class="staff-details">
                         <hr>
                         <p><strong>Стаж работы:</strong> N лет</p>
                         <p><strong>Образование:</strong> Название учебного заведения, специальность "Название"</p>
-                    </div>
-                    <button class="staff-button collapse-button" style="display: none;">Свернуть</button>
                 </div>
+                <button class="staff-button toggle-button">Развернуть</button>
+              </div>
             </article>
 
-            <!-- Staff Card 8 (Expanded Example) -->
-            <article class="staff-card is-expanded">
-                <div class="staff-image">
-                    <img src="img/senior-woman-with-crossed-arms-glasses-see 1.png" alt="Фото сотрудника">
-                </div>
-                <div class="staff-info">
-                    <h3>Фамилия Имя Отчество</h3>
-                    <p class="staff-title">Название должности</p>
-                    <p class="staff-company">ТОО "Elke Company"</p>
-                    <button class="staff-button expand-button" style="display: none;">Развернуть</button>
-                    <div class="staff-details">
+            <!-- Card 8 -->
+            <article class="staff-card">
+              <div class="staff-image">
+                <img src="img/senior-woman-with-crossed-arms-glasses-see 1.png" alt="Фото сотрудника">
+              </div>
+              <div class="staff-info">
+                <h3>Фамилия Имя Отчество</h3>
+                <p class="staff-title">Название должности</p>
+                <p class="staff-company">ТОО "Elke Company"</p>
+                <div class="staff-details">
                         <hr>
                         <p><strong>Стаж работы:</strong> 20 лет</p>
-                        <p><strong>Образование:</strong> Название высшего учебного заведения, по специальности "Название специальности"</p>
-                    </div>
-                    <button class="staff-button collapse-button">Свернуть</button>
+                        <p><strong>Образование:</strong> Название высшего учебного заведения, специальность "Название специальности"</p>
                 </div>
+                <button class="staff-button toggle-button">Развернуть</button>
+              </div>
             </article>
 
           </div> <!-- /.staff-grid -->
@@ -243,7 +297,7 @@
                 <div class="form-group phone-group">
                   <label for="coop-phone" class="visually-hidden">Номер телефона</label>
                   <span class="phone-prefix">
-                    <img src="img/kz-flag.png" alt="KZ flag" width="20"> <!-- Add a small kz flag image to img folder -->
+                    <img src="img/Kazakhstan (KZ).svg" alt="KZ flag" width="20">
                     +7 ▼
                   </span>
                   <input type="tel" id="coop-phone" name="phone" placeholder="Укажите номер телефона" required>
@@ -264,19 +318,19 @@
               <div class="form-group form-group-full">
                 <label for="coop-message" class="visually-hidden">Ваши цели</label>
                 <textarea id="coop-message" name="message" rows="4" placeholder="Напишите о ваших целях"></textarea>
-                <p class="char-counter">Осталось 160 слов</p> <!-- This needs JS to be functional -->
+                <p class="char-counter">Осталось 160 слов</p>
               </div>
 
               <div class="form-attachment-row">
                   <div class="form-group attachment-group">
                         <label for="coop-file" class="attach-button">
-                            Прикрепить файл <img src="img/attach-icon.png" alt="" width="12"> <!-- Add attach icon to img folder -->
+                            Прикрепить файл <img src="img/attach-icon.png" alt="" width="12">
                         </label>
                         <input type="file" id="coop-file" name="file" accept=".doc,.docx,.pdf" style="display: none;">
                         <span class="attachment-info">до 10 МБ, (DOC, DOCX, PDF)</span>
                   </div>
-                   <!-- Placeholder for showing attached file -->
-                  <div class="attached-file-display" style="display: none;"> <!-- Show this when file is attached -->
+                  <!-- Placeholder for showing attached file -->
+                  <div class="attached-file-display" style="display: none;">
                        <span class="file-name">Название.docx (807 Кб)</span>
                        <button type="button" class="remove-file" aria-label="Удалить файл">×</button>
                   </div>
@@ -287,7 +341,7 @@
                   <div class="recaptcha-box">
                       <input type="checkbox" id="recaptcha-dummy">
                       <label for="recaptcha-dummy">I'm not a robot</label>
-                      <img src="img/recaptcha-logo.png" alt="reCAPTCHA logo" height="30"> <!-- Add recaptcha logo to img folder -->
+                      <img src="img/Frame.svg" alt="reCAPTCHA logo" height="30">
                   </div>
                </div>
 
@@ -304,7 +358,6 @@
         </section>
 
     </div> <!-- /.container -->
-</main>
 <!-- End Main Content Area -->
 
 
@@ -313,21 +366,25 @@
   <div class="container-footer">
     <div class="footer-row">
       <!-- Левая группа: Карта сайта, Услуги, Адрес -->
-      <div class="footer-group">
+      <div class="footer-group footer-links-group">
         <!-- Карта сайта -->
         <div class="footer-col">
           <h4>Карта сайта</h4>
           <ul>
-            <li><a href="#">Главная</a></li>
-            <li><a href="#">Услуги ▾</a></li>
-            <li><a href="#">О нас</a></li>
+            <li><a href="main.html">Главная</a></li>
+            <li class="has-submenu">
+              <a href="Services.html">Услуги</a>
+            </li>
+            <li><a href="about.html">О нас</a></li>
             <li><a href="#">Галерея</a></li>
-            <li><a href="#">Наши клиенты</a></li>
-            <li><a href="#">Krones ▾</a></li>
-            <li><a href="#">Контакты</a></li>
+            <li><a href="projects.html">Наши клиенты</a></li>
+            <li class="has-submenu">
+              <a href="Krones.html">Krones</a>
+            </li>
+            <li><a href="Contacts.html">Контакты</a></li>
           </ul>
         </div>
-    
+
         <!-- Услуги -->
         <div class="footer-col">
           <h4>Услуги</h4>
@@ -336,65 +393,105 @@
             <li><a href="#">Электрический монтаж</a></li>
             <li><a href="#">Монтаж трубопроводов</a></li>
             <li><a href="#">Теплоизоляция трубопроводов</a></li>
-            <li><a href="#">Инжиниринг</a></li>
+            <li><a href="Detailed services.html">Инжиниринг</a></li>
             <li><a href="#">Купажные отделения</a></li>
-            <li><a href="#">Запуск объекта под ключ</a></li>
+            <li><a href="#">Запуск объекта "под ключ"</a></li>
           </ul>
         </div>
-    
+
         <!-- Адрес -->
-        <div class="footer-col">
+        <div class="footer-col footer-address">
           <h4>Адрес</h4>
-          <p>
-            Алматинская обл., Карасайский район,<br>
-            Райымбекский с.о., с. Буланты,<br>
-            Учётный квартал 587, 263
-          </p>
-          <p>
-            Республика Казахстан, г. Астана,<br>
-            пр. Аль-Фараби, д.65
-          </p>
+          <div class="address-block">
+            <p>
+              Алматинская обл., Карасайский район,<br>
+              Райымбекский с.о., с. Буланты,<br>
+              Учётный квартал 587, 263
+            </p>
+            <a href="#" class="map-link"><img src="img/map-icon.svg" alt="Location icon"> Показать на карте</a>
+          </div>
+          <div class="address-block">
+            <p>
+              Республика Казахстан, г. Алматы,<br>
+              пр-т Райымбека, д. 481а
+            </p>
+            <a href="#" class="map-link" ><img src="img/map-icon.svg" alt="Location icon"> Показать на карте</a>
+          </div>
         </div>
       </div>
-    
-      <!-- Отдельная коробка: Телефон -->
-      <div class="phone-box">
+
+      <!-- Средняя коробка: Телефон -->
+      <div class="footer-group phone-box">
         <h4>Телефон</h4>
-        <p>8 (727) 258 25 68</p>
-        <p>8 (727) 258 37 71</p>
-        <p>8 (727) 258 25 69</p>
+        <p><a href="tel:+77272582568">8 (727) 258 25 68</a></p>
+        <p><a href="tel:+77272583771">8 (727) 258 37 71</a></p>
+        <p><a href="tel:+77272582569">8 (727) 258 25 69</a></p>
+        <h4 class="email-title">E-mail</h4>
+        <p><a href="mailto:krones.kz@gmail.com">krones.kz@gmail.com</a></p>
       </div>
 
-      <!-- Кнопка "В начало страницы" (отдельная коробка с вертикальной надписью) -->
-      <div class="footer-box top-button-box">
-        <a href="#top" class="vertical-btn">В начало страницы</a>
+      <!-- Правая коробка: Кнопка "В начало страницы" -->
+      <div class="top-button-box">
+        <a href="#top" class="vertical-btn">
+          <img src="img/Vector.svg" alt="↑" class="arrow-icon-footer">
+          <div class="separator-line"></div> <!-- линия -->
+          <span class="vertical-text">В&nbsp;начало&nbsp;страницы</span>
+        </a>         
       </div>
-    
     </div>
 
     <!-- Средняя полоса: заявка + ISO + политика -->
     <div class="footer-middle">
       <div class="footer-form">
-        <h4>Оставить заявку</h4>
-        <div class="input-row">
-          <div class="country-code">
-            <span>kz</span>
-            <span>+7</span>
-          </div>
-          <input type="text" placeholder="___ ___ __ __">
-          <button class="call-btn">Заказать звонок</button>
+        <!-- единая горизонтальная линия -->
+        <div class="row">
+          <!-- ===== форма «Оставить заявку» ===== -->
+          <form class="phone-form" action="#" method="post">
+            <!-- заголовок -->
+            <h4 class="footer-title">Оставить заявку</h4>
+
+            <!-- ▸ 1‑я строка: выбор страны + телефон -->
+            <div class="input-row">
+              <!-- выбор страны -->
+              <div class="country-select" id="countrySelect">
+                <a type="button" class="country-toggle" id="countryToggle">
+                  <span class="country-iso">KZ</span>&nbsp;
+                  <span class="country-code">+7 ▾</span>
+                </a>
+
+                <ul class="country-list" id="countryList">
+                  <li data-iso="KZ" data-code="+7"><span>KZ</span><span>+7</span></li>
+                  <li data-iso="RU" data-code="+7"><span>RU</span><span>+7</span></li>
+                  <li data-iso="EN" data-code="+44"><span>EN</span><span>+44</span></li>
+                </ul>
+              </div>
+
+              <!-- телефон -->
+              <input id="phoneInput" type="tel"
+                    aria-label="Номер телефона"
+                    required maxlength="18"
+                    autocomplete="tel">
+            </div>
+
+            <!-- ▸ 2‑я строка: кнопка + согласие -->
+            <div class="action-row">
+              <button type="submit" class="call-btn">Заказать звонок</button>
+
+              <p class="consent-text">
+                Нажимая на кнопку, я даю своё согласие на&nbsp;
+                <a href="#">обработку персональных данных</a>
+              </p>
+            </div>
+          </form>
         </div>
-        <p class="consent-text">
-          Нажимая на номер, я даю своё согласие на 
-          <a href="#" style="color: white;">обработку персональных данных</a>
-        </p>
       </div>
+
       <div class="middle-cert">
         <p>Сертификат регистрации</p>
-        <p style="color: white;">ISO 9001:2015</p>
+        <p class="iso-text">ISO 9001:2015</p>
       </div>
       <div class="middle-links">
-        <a href="#">Политика конфиденциальности</a><br>
+        <a href="#">Политика конфиденциальности</a>
         <a href="#">Персональные данные</a>
       </div>
     </div><!-- /.footer-middle -->
@@ -403,16 +500,21 @@
     <div class="footer-bottom">
       <p class="bottom-left">ТОО «ELKE COMPANY», 2025©</p>
       <p class="bottom-right">
-        Дизайн и разработка <a href="#">StudioXYZ</a>
+        Дизайн и разработка
+        <a href="https://pavlenko.kz/" target="_blank" rel="noopener noreferrer">
+          <img src="img/logoP.svg" alt="pavlenko.kz" class="studio-logo">
+        </a>
       </p>
     </div>
 
     <div class="footer-biglogo">
       <img src="img/logo.png" alt="ELKE COMPANY">
     </div>
-  </div>
-</footer>
 
-<script src="script.js"></script>
+  </div>
+</footer> 
+
+<script src="js/script.js"></script>
+<script src="js/Staff.js"></script>
 </body>
 </html>
