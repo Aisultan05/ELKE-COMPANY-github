@@ -582,7 +582,6 @@ main > section:last-of-type {
     width: 100%;
     height: auto;
     display: block;
-    opacity: 0.7;
 }
 
 /* ---------- Gallery Section ---------- */
@@ -779,6 +778,7 @@ main > section:last-of-type {
 .goal-content h2 {
     margin-bottom: 20px;
     font-size: 28px;
+    color: #0061AD;
 }
 
 .goal-content > p {

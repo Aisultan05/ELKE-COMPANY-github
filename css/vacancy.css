@@ -494,7 +494,7 @@ body.popup-active > *:not(.popup-overlay):not(.popup-contact):not(.site-header) 
   font-size: 16px;
   line-height: 1.7;
   color: #555;
-  max-width: 900px;
+  max-width: 1200px;
   margin-bottom: 50px;
 }
 
@@ -519,7 +519,6 @@ body.popup-active > *:not(.popup-overlay):not(.popup-contact):not(.site-header) 
 
 .advantage-item {
   padding: 0;
-  border: 1px solid #e0e0e0;
   border-radius: 4px;
   overflow: hidden;
   background-color: #fff;

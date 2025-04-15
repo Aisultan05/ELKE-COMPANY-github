@@ -162,67 +162,133 @@
       </ol>          
     </nav>
   </div>
-  <section class="contacts-section">
-    <div class="contacts-info">
-      <h2>Контакты</h2>
-      <div class="address-block">
-        <p class="address-title">Адрес</p>
-        <p>Республика Казахстан,<br>г. Алматы, пр. Аль-Фараби, д. 65</p>
-        <a href="#" class="show-on-map">Показать на карте</a>
-      </div>
 
-      <div class="phone-numbers">
-        <p class="phone-title">Телефон — Название отделения</p>
-        <p>8 (727) 258 25 68</p>
+  <section class="contacts-sec">
+    <div class="section-layout">
+        <!-- Левая часть: заголовок -->
+        <div class="section-title">
+            <h2>Контакты</h2>
+        </div>
 
-        <p class="phone-title">Телефон — Название отделения</p>
-        <p>8 (727) 258 37 71</p>
+        <!-- Правая часть: адрес, телефоны, email -->
+        <div class="section-content contacts-info">
+            <div class="address-block">
+                <p class="info-label">Адрес</p>
+                <p>Республика Казахстан,<br>г. Алматы, пр. Аль-Фараби, д. 65</p>
+                <a href="#" class="show-on-map">
+                    <i class="fas fa-map-marker-alt"></i> Показать на карте
+                </a>
+            </div>
 
-        <p class="phone-title">Телефон — Название отделения</p>
-        <p>8 (727) 258 25 69</p>
-      </div>
+            <div class="contact-details">
+                <div class="phone-numbers">
+                    <div class="contact-item">
+                        <div class="contact-text">
+                            <p class="info-label">Телефон — Название отделения</p>
+                            <p class="contact-value">8 (727) 258 25 68</p>
+                        </div>
+                        <div class="contact-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-text">
+                            <p class="info-label">Телефон — Название отделения</p>
+                            <p class="contact-value">8 (727) 258 37 71</p>
+                        </div>
+                        <div class="contact-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-text">
+                            <p class="info-label">Телефон — Название отделения</p>
+                            <p class="contact-value">8 (727) 258 25 69</p>
+                        </div>
+                        <div class="contact-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                    </div>
+                </div>
 
-      <div class="email-address">
-        <p class="email-title">Email</p>
-        <p>krones.kz@gmail.com</p>
-      </div>
+                <div class="email-address">
+                   <div class="contact-item">
+                        <div class="contact-text">
+                            <p class="info-label">Email</p>
+                            <p class="contact-value email-link">krones.kz@gmail.com</p>
+                       </div>
+                        <div class="contact-icon">
+                           <i class="fas fa-envelope"></i>
+                       </div>
+                   </div>
+                </div>
+            </div>
+
+        </div>
     </div>
+</section>
 
-    <div class="collaboration-form">
-      <h2>Сотрудничество</h2>
-
-      <form action="#" method="post" class="collaboration-form-inner">
-        <div class="form-group">
-          <label for="name">Введите ваше имя*</label>
-          <input type="text" id="name" name="name" required>
+<section class="collaboration-sec">
+    <div class="section-layout">
+        <!-- Левая часть: заголовок -->
+        <div class="section-title">
+            <h2>Сотрудничество</h2>
         </div>
 
-        <div class="form-group">
-          <label for="email">E-mail*</label>
-          <input type="email" id="email" name="email" required>
-        </div>
+        <!-- Правая часть: форма -->
+        <div class="section-content collaboration-form">
+            <form action="#" method="post" class="collaboration-form-inner">
+                <div class="form-row">
+                    <div class="form-group form-group-half">
+                        <input type="text" id="name" name="name" placeholder="Введите ваше имя*" required>
+                    </div>
+                    <div class="form-group form-group-half phone-group">
+                        <span class="phone-prefix">+7</span>
+                        <input type="tel" id="phone" name="phone" placeholder="Укажите номер телефона" required>
+                    </div>
+                </div>
+                 <div class="form-row">
+                    <div class="form-group form-group-half">
+                        <input type="email" id="email" name="email" placeholder="E-mail*" required>
+                    </div>
+                     <div class="form-group form-group-half">
+                         <input type="text" id="company" name="company" placeholder="Название компании*" required>
+                     </div>
+                </div>
 
-        <div class="form-group">
-          <label for="message">Напишите о ваших целях</label>
-          <textarea id="message" name="message"></textarea>
-          <span class="chars-left">Осталось 160 слов</span>
-        </div>
+                <div class="form-group">
+                    <textarea id="message" name="message" placeholder="Напишите о ваших целях"></textarea>
+                    <span class="chars-left">Осталось 160 слов</span>
+                </div>
 
-        <div class="form-group file-upload">
-          <label for="file">Прикрепить файл</label>
-          <input type="file" id="file" name="file" accept=".doc,.docx,.pdf">
-          <span class="file-restrictions">до 10 МБ, (DOC, DOCX, PDF)</span>
-        </div>
+                <div class="form-group file-upload-area">
+                   <div class="file-upload-button-wrapper">
+                       <button type="button" class="file-upload-button">
+                           <i class="fas fa-paperclip"></i> Прикрепить файл
+                       </button>
+                       <input type="file" id="file" name="file" accept=".doc,.docx,.pdf" style="display: none;"> <!-- Hidden actual input -->
+                        <span class="file-restrictions">до 10 МБ, (DOC, DOCX, PDF)</span>
+                   </div>
+                    <!-- Example of attached file display -->
+                   <div class="attached-file-display">
+                        <span>Название.docx (807 Кб)</span>
+                        <button type="button" class="remove-file-button">×</button>
+                   </div>
+                </div>
 
-        <div class="form-group recaptcha">
-          
-        </div>
+                <div class="form-group recaptcha-placeholder">
+                    <!-- Placeholder for reCAPTCHA -->
+                    <img src="https://via.placeholder.com/304x78.png?text=I'm+not+a+robot+Placeholder" alt="reCAPTCHA Placeholder" style="display: block; max-width: 100%; height: auto;">
+                </div>
 
-        <button class="black-btn" type="submit">Отправить</button>
-        <p class="consent-note">Нажимая на кнопку, я даю свое согласие<br> на обработку персональных данных</p>
-      </form>
+                <div class="form-actions">
+                    <button class="black-btn" type="submit">Отправить</button>
+                    <p class="consent-note">Нажимая на кнопку, я даю свое согласие на обработку персональных данных</p>
+                </div>
+            </form>
+        </div>
     </div>
-  </section>
+</section>
 
   <section class="location-map">
     <iframe 
@@ -387,6 +453,44 @@
 
   </div>
 </footer> 
+
+<!--
+<script>
+  const fileBtn = document.querySelector('.file-upload-button');
+  const fileInput = document.getElementById('file');
+  if (fileBtn && fileInput) {
+      fileBtn.addEventListener('click', () => {
+          fileInput.click();
+      });
+      // Add logic here to display file name when selected
+      fileInput.addEventListener('change', (event) => {
+          const displayArea = document.querySelector('.attached-file-display'); // Simple example
+          const file = event.target.files[0];
+          if (file && displayArea) {
+               // Clear previous
+              displayArea.innerHTML = `
+                  <span>${file.name} (${(file.size / 1024).toFixed(1)} Кб)</span>
+                  <button type="button" class="remove-file-button">×</button>
+              `;
+              displayArea.style.display = 'flex'; // Show display
+               // Add remove functionality
+               displayArea.querySelector('.remove-file-button').addEventListener('click', () => {
+                   fileInput.value = ''; // Clear the file input
+                   displayArea.style.display = 'none'; // Hide display
+                   displayArea.innerHTML = ''; // Clear content
+               });
+          } else if (displayArea) {
+               displayArea.style.display = 'none';
+               displayArea.innerHTML = '';
+          }
+      });
+      // Initially hide the display area if no file is pre-selected
+      const displayArea = document.querySelector('.attached-file-display');
+      if (displayArea && !fileInput.value) {
+          displayArea.style.display = 'none';
+      }
+  }
+</script> -->
 
 <script src="js/script.js"></script>
 </body>

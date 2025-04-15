@@ -349,8 +349,7 @@ font-weight: 600;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: #fafbfc;
-  border: 1px solid #eceff2;
+  border-top: 1px solid #eceff2;
   border-radius: 2px;
   padding: 12px 16px;
 }
@@ -485,179 +484,354 @@ margin: 0 8px;
 color: #adb5bd;
 }
 
+
+/* ---------- Section Layout ---------- */
+.section-layout {
+display: flex;
+justify-content: flex-start;
+gap: 100px;
+margin-bottom: 60px;
+padding-bottom: 40px;
+border-bottom: 1px solid #e9ecef;
+}
+.section-layout:last-child {
+margin-bottom: 0;
+border-bottom: none;
+}
+
+
+.section-title {
+flex: 0 0 250px;
+padding-right: 20px;
+}
+
+.section-title h2 {
+  margin-top: 0; /* Consistent heading margin */
+  font-size: 24px; /* Example size */
+  font-weight: 600;
+}
+
+.section-content {
+flex: 1;
+min-width: 0;
+}
+
 /* ---------- Contacts Section ---------- */
-.contacts-section {
-  display: flex;
-  justify-content: space-between;
-  gap: 40px;
-  margin-bottom: 40px;
+.contacts-info .info-label {
+font-size: 12px;
+color: rgba(26, 26, 26, 0.50);
+margin-bottom: 4px;
+font-weight: 400;
 }
 
-.contacts-info {
-  flex: 1;
+.contacts-info p {
+margin-top: 0;
+margin-bottom: 8px;
+line-height: 1.5;
+color: #1a1a1a;
 }
 
-.collaboration-form {
-  flex: 1;
+.address-block {
+margin-bottom: 30px;
 }
-
-h2 {
-  font-size: 24px;
-  margin-bottom: 20px;
-  font-weight: bold;
-}
-
-.address-title,
-.phone-title,
-.email-title {
-  font-weight: bold;
-  margin-bottom: 8px;
-  font-size: 12px;
-  color: rgba(26, 26, 26, 0.50);
-}
-
-.address-block,
-.phone-numbers,
-.email-address {
-  margin-bottom: 30px;
-}
-
-.address-block p,
-.phone-numbers p,
-.email-address p {
-    margin-bottom: 8px;
-    line-height: 1.5;
-}
-
-.phone-numbers p:not(.phone-title) {
-   font-size: 18px;
-   color: #212529;
-}
-
-.email-address p:not(.email-title) {
-   font-size: 16px;
-   color: #0056b3;
-   word-break: break-all;
+.address-block p:not(.info-label) {
+font-size: 16px;
 }
 
 
 .show-on-map {
-  color: #007bff;
-  text-decoration: none;
-  font-weight: 500;
-  display: inline-block;
-  margin-top: 10px;
-  padding: 8px 15px;
-  border: 1px solid #007bff;
-  border-radius: 4px;
-  transition: background-color 0.2s, color 0.2s;
+background-color: #0d6efd;
+color: #fff;
+text-decoration: none;
+font-weight: 500;
+display: inline-flex;
+align-items: center;
+gap: 8px;
+margin-top: 10px;
+padding: 10px 16px;
+border: none;
+border-radius: 4px;
+transition: background-color 0.2s;
+font-size: 14px;
 }
+.show-on-map i {
+font-size: 1em;
+}
+
 .show-on-map:hover {
-    background-color: #007bff;
-    color: #fff;
+background-color: #0b5ed7;
+text-decoration: none;
 }
+
+.contact-item {
+display: flex;
+justify-content: space-between;
+align-items: flex-start;
+border-bottom: 1px solid #e9ecef;
+padding: 15px 0;
+}
+.contact-item:last-child {
+border-bottom: none;
+}
+
+.contact-text {
+flex-grow: 1;
+padding-right: 15px; /* Ensure text doesn't touch icon */
+}
+
+.contact-icon {
+flex-shrink: 0;
+margin-left: auto; /* Pushes icon to the right */
+padding-top: 4px;
+color: #6c757d;
+font-size: 18px;
+}
+
+.phone-numbers .contact-value {
+font-size: 18px;
+font-weight: 500;
+color: #1a1a1a;
+margin-bottom: 0;
+ word-break: break-word; /* Prevent overflow */
+}
+
+
+.email-address .contact-value {
+font-size: 16px;
+color: #1a1a1a;
+word-break: break-word;
+ margin-bottom: 0;
+}
+.email-address .email-link {
+color: #0d6efd;
+cursor: pointer;
+word-break: break-all; /* Allow breaking within email */
+}
+.email-address .email-link:hover {
+text-decoration: underline;
+}
+
 
 /* ---------- Collaboration Form ---------- */
 .collaboration-form-inner {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
+display: flex;
+flex-direction: column;
+gap: 20px;
+}
+
+.form-row {
+display: flex;
+gap: 20px;
 }
 
 .form-group {
-  margin-bottom: 0;
+margin-bottom: 0;
+flex-grow: 1;
+}
+.form-group-half {
+ flex-basis: calc(50% - 10px);
+ flex-grow: 0;
 }
 
-label {
-  display: block;
-  margin-bottom: 8px;
-  font-weight: 500;
-  font-size: 14px;
-  color: #495057;
-}
 
 input[type="text"],
 input[type="email"],
-textarea,
-input[type="file"] {
-  width: 100%;
-  padding: 12px 15px;
-  border: 1px solid #ced4da;
-  border-radius: 4px;
-  font-size: 16px;
-  line-height: 1.5;
-  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+input[type="tel"],
+textarea {
+width: 100%;
+padding: 12px 15px;
+border: 1px solid #dee2e6;
+border-radius: 4px;
+font-size: 14px;
+line-height: 1.5;
+transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+background-color: #f8f9fa;
+color: #495057;
+}
+input::placeholder,
+textarea::placeholder {
+color: #6c757d;
+opacity: 1;
 }
 
 input[type="text"]:focus,
 input[type="email"]:focus,
+input[type="tel"]:focus,
 textarea:focus {
-    border-color: #86b7fe;
-    outline: 0;
-    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+border-color: #86b7fe;
+outline: 0;
+box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+background-color: #fff;
 }
 
 textarea {
-  height: 120px;
-  resize: vertical;
+height: 100px;
+resize: vertical;
 }
 
 .chars-left {
-    display: block;
-    text-align: right;
-    font-size: 12px;
-    color: #6c757d;
-    margin-top: 4px;
+display: block;
+text-align: right;
+font-size: 12px;
+color: #6c757d;
+margin-top: 5px;
 }
 
-.file-upload label {
-    cursor: pointer;
+.phone-group {
+position: relative;
+display: flex; /* Needed for prefix alignment even if stacked later */
+align-items: center;
+}
+.phone-prefix {
+position: absolute;
+left: 15px;
+top: 50%; /* Center vertically */
+transform: translateY(-50%);
+font-size: 14px;
+color: #495057;
+pointer-events: none;
+line-height: 1.5;
+}
+#phone {
+padding-left: 40px;
+}
+
+.file-upload-area {
+display: flex;
+flex-wrap: wrap; /* Allow wrapping */
+align-items: center;
+justify-content: space-between;
+gap: 15px;
+border: 1px solid #dee2e6;
+border-radius: 4px;
+padding: 10px 15px;
+background-color: #f8f9fa;
+}
+.file-upload-button-wrapper {
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+flex-shrink: 0; /* Don't shrink button wrapper */
+}
+
+.file-upload-button {
+background-color: #0d6efd;
+color: white;
+padding: 8px 15px;
+border: none;
+border-radius: 4px;
+cursor: pointer;
+font-size: 14px;
+font-weight: 500;
+transition: background-color 0.2s;
+display: inline-flex;
+align-items: center;
+gap: 8px;
+}
+.file-upload-button i {
+font-size: 1em;
+}
+.file-upload-button:hover {
+background-color: #0b5ed7;
 }
 
 .file-restrictions {
-    display: block;
-    font-size: 12px;
-    color: #6c757d;
-    margin-top: 4px;
+display: block;
+font-size: 12px;
+color: #6c757d;
+margin-top: 5px;
 }
 
-.form-group.recaptcha {
-    min-height: 78px;
-    background-color: #f8f9fa;
-    border: 1px dashed #ced4da;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 14px;
-    color: #6c757d;
+.attached-file-display {
+display: flex;
+align-items: center;
+font-size: 14px;
+color: #495057;
+background-color: #e9ecef;
+padding: 4px 8px;
+border-radius: 4px;
+flex-grow: 1; /* Allow to take space but shrink if needed */
+min-width: 150px; /* Minimum width before wrapping text */
+overflow: hidden; /* Hide overflow */
 }
+.attached-file-display span {
+margin-right: 8px;
+white-space: nowrap;
+overflow: hidden;
+text-overflow: ellipsis;
+/* Removed max-width, let flexbox handle it */
+}
+
+.remove-file-button {
+background: none;
+border: none;
+color: #6c757d;
+cursor: pointer;
+font-size: 16px;
+font-weight: bold;
+padding: 0 4px;
+line-height: 1;
+margin-left: auto; /* Push to the end */
+}
+.remove-file-button:hover {
+color: #dc3545;
+}
+
+
+.recaptcha-placeholder {
+min-height: 78px;
+display: flex;
+align-items: center;
+justify-content: flex-start;
+padding: 5px; /* Add slight padding */
+border: 1px solid #dee2e6;
+border-radius: 4px;
+background-color: #f8f9fa;
+}
+.recaptcha-placeholder img {
+border-radius: 3px;
+display: block;
+max-width: 100%;
+height: auto;
+}
+
+
+.form-actions {
+display: flex;
+align-items: center;
+gap: 20px;
+margin-top: 10px;
+flex-wrap: wrap;
+}
+
 
 .black-btn {
-  background-color: #212529;
-  color: white;
-  padding: 12px 25px;
-  border: 1px solid #212529;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 16px;
-  font-weight: 500;
-  transition: background-color 0.2s, border-color 0.2s;
-  align-self: flex-start;
+background-color: #1a1a1a;
+color: white;
+padding: 12px 30px;
+border: 1px solid #1a1a1a;
+border-radius: 4px;
+cursor: pointer;
+font-size: 14px;
+font-weight: 600;
+transition: background-color 0.2s, border-color 0.2s;
+text-transform: uppercase;
+letter-spacing: 0.5px;
+flex-shrink: 0; /* Prevent button shrinking too much */
 }
 .black-btn:hover {
-    background-color: #424649;
-    border-color: #424649;
+background-color: #333;
+border-color: #333;
 }
 
 
 .consent-note {
-  font-size: 12px;
-  margin-top: 15px;
-  color: #6c757d;
-  line-height: 1.5;
-  align-self: flex-start;
+font-size: 12px;
+color: rgba(26, 26, 26, 0.50);
+line-height: 1.6;
+margin: 0;
+padding: 0;
 }
-.consent-note br { display: none; }
 
 /* ---------- Location Map ---------- */
 .location-map {
@@ -1083,6 +1257,10 @@ input[type="tel"]#phoneInput:focus {
   .footer-links-group { flex: 2; }
   .phone-box { flex: 1; }
 
+  .page-container {
+    max-width: 960px;
+}
+
   .nav-item { padding: 9px 20px; font-size: 13px;}
   .main-nav { gap: 10px; }
   .header-actions { gap: 8px; }
@@ -1115,14 +1293,28 @@ input[type="tel"]#phoneInput:focus {
   .site-header { height: 70px; }
   .logo img { height: 50px; }
 
-  .contacts-section {
-      flex-direction: column;
-      gap: 30px;
-  }
-  .contacts-info {
-      margin-right: 0;
-      margin-bottom: 20px;
-  }
+  .page-container {
+    max-width: 720px;
+}
+
+/* Stack layout for both sections */
+.section-layout {
+    flex-direction: column;
+    gap: 30px; /* Reduce gap for stacked layout */
+}
+.section-title {
+    flex-basis: auto; /* Reset flex basis */
+    padding-right: 0; /* Remove padding */
+}
+ .section-title h2 {
+    margin-bottom: 10px; /* Reduce margin below title when stacked */
+ }
+ .section-content {
+      /* No specific changes needed here based on user CSS */
+ }
+ .contacts-sec .section-content.contacts-info {
+     margin-bottom: 0; /* Removed margin-bottom from user CSS */
+ }
 
   .footer-row {
       flex-direction: column;
@@ -1271,6 +1463,27 @@ input[type="tel"]#phoneInput:focus {
           text-align: center;
           font-size: 10px;
       }
+
+      .page-container {
+        max-width: 100%; /* Use full width */
+        padding: 0 15px; /* Standard mobile padding */
+    }
+  
+     h2 { font-size: 24px; } /* Adjusted based on user CSS for mobile */
+  
+     /* Stack form rows */
+      .form-row {
+          flex-direction: column;
+          gap: 20px; /* Maintain gap between stacked fields */
+      }
+      .form-group-half {
+          flex-basis: auto; /* Full width when stacked */
+      }
+      .form-actions {
+          flex-direction: column; /* Stack button and consent text */
+          align-items: flex-start; /* Align items to the left */
+          gap: 15px;
+       }
     
       .footer-row { gap: 20px; }
       .footer-links-group, .phone-box { padding: 15px; }
@@ -1291,13 +1504,65 @@ input[type="tel"]#phoneInput:focus {
       .site-header { height: 55px; }
       .logo img { height: 35px; }
     
-      .contacts-section { gap: 20px; }
-      .address-block, .phone-numbers, .email-address { margin-bottom: 20px; }
-      .show-on-map { padding: 6px 10px; font-size: 12px; }
+      .page-container { padding: 0 10px; } /* Slightly less padding */
+
+      h2 { font-size: 20px; } /* Further reduce title size */
     
-      input[type="text"], input[type="email"], textarea, input[type="tel"]#phoneInput { font-size: 14px; padding: 10px 12px;}
-      .black-btn { padding: 10px 20px; font-size: 14px; }
-      .consent-note { font-size: 11px; }
+      .section-layout {
+          gap: 20px; /* Further reduce gap */
+          padding-bottom: 20px; /* Reduce padding */
+          margin-bottom: 30px; /* Reduce margin */
+      }
+    
+      /* Reduce margins for contact blocks */
+      .address-block,
+      .contact-details /* Target container of phone/email */ {
+          margin-bottom: 20px;
+      }
+      .contact-item {
+          padding: 10px 0; /* Reduce padding */
+      }
+    
+    
+      .show-on-map {
+          padding: 8px 12px; /* Slightly reduce button padding */
+          font-size: 13px; /* Slightly reduce button font size */
+      }
+    
+      /* Reduce form element sizes */
+      input[type="text"], input[type="email"], input[type="tel"], textarea {
+          font-size: 14px;
+          padding: 10px 12px;
+      }
+      .phone-prefix {
+        font-size: 14px;
+        left: 12px; /* Adjust position with padding */
+      }
+      #phone {
+        padding-left: 35px; /* Adjust padding for prefix */
+      }
+    
+      .file-upload-area {
+        padding: 8px 12px;
+        gap: 10px;
+      }
+      .file-upload-button {
+        padding: 6px 12px;
+        font-size: 13px;
+      }
+      .attached-file-display {
+        font-size: 13px;
+      }
+    
+    
+      .black-btn {
+          padding: 10px 20px;
+          font-size: 14px;
+      }
+      .consent-note {
+          font-size: 11px;
+           line-height: 1.5;
+      }
     
       .footer-col h4 { font-size: 12px; }
       .site-footer { font-size: 11px; padding: 30px 0 20px;}

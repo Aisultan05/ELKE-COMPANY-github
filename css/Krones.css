@@ -502,7 +502,7 @@ body.popup-active > *:not(.popup-overlay):not(.popup-contact):not(.site-header) 
   line-height: 1.6;
   color: #555;
   margin-bottom: 40px;
-  max-width: 800px;
+  max-width: 1200px;
 }
 
 /* ---------- Banner ---------- */
@@ -530,21 +530,23 @@ body.popup-active > *:not(.popup-overlay):not(.popup-contact):not(.site-header) 
   position: relative;
   z-index: 1;
   background-color: #fff;
+  width: 100%; 
 }
 
 .tab-link {
-padding: 15px 25px;
-cursor: pointer;
-background-color: transparent;
-border: none;
-border-bottom: 3px solid transparent;
-margin-right: 10px;
-font-size: 16px;
-color: #555;
-font-weight: 500;
-transition: color 0.3s, border-color 0.3s, box-shadow 0.3s, background-color 0.3s;
-position: relative;
-margin-bottom: -1px;
+  flex: 1; 
+  padding: 15px 0;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  border-bottom: 3px solid transparent;
+  font-size: 16px;
+  color: #555;
+  font-weight: 500;
+  transition: color 0.3s, border-color 0.3s, box-shadow 0.3s, background-color 0.3s;
+  position: relative;
+  margin-bottom: -1px;
+  text-align: center;
 }
 
 .tab-link:hover {
