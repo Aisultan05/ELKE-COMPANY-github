@@ -429,3 +429,18 @@ function renderCompaniesList(containerId, companiesArr) {
     container.appendChild(card);
   });
 }
+
+// Swiper-слайдер логотипов компаний
+const swiper = new Swiper('.swiper', {
+  slidesPerView: 'auto',
+  spaceBetween: 60,
+  loop: true,
+  speed: 8000, // чем выше — тем медленнее крутится
+  autoplay: {
+    delay: 0,
+    disableOnInteraction: false,
+  },
+  allowTouchMove: false,
+});
+
+// Swiper-слайдер логотипов компаний

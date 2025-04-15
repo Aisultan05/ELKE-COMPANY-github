@@ -33,7 +33,7 @@
       <div class="header-actions">
 
         <!-- Телефон -->
-        <a href="tel:+77272582568" class="action-item icon-link phone-icon" aria-label="Позвонить">
+        <a id="openPopupIcon" href="tel:+77272582568" class="action-item icon-link phone-icon" aria-label="Позвонить">
           <img src="img/call.svg" alt="Телефон">
         </a>
       
@@ -94,6 +94,60 @@
        </div>
   </div>
 </header>
+
+<!-- Overlay и Pop‑up вынесены за шапку (прямые дети body) -->
+<div id="popupOverlay" class="popup-overlay"></div>
+
+<div id="contactPopup" class="popup-contact" role="dialog" aria-modal="true" aria-labelledby="popupTitle">
+  <div class="popup-content">
+    <h2 id="popupTitle">Контактная информация</h2>
+    
+    <div class="contact-list">
+      <div class="contact-item">
+        <div>
+          <span class="contact-label">Название отделения</span>
+          <span class="contact-number">8 (727) 258‑25‑68</span>
+        </div>
+        <a class="call-icon-popup" href="tel:+77272582568">
+          <img src="img/call_grey.svg" alt="Позвонить">
+        </a>
+      </div>
+      <div class="contact-item">
+        <div>
+          <span class="contact-label">Название отделения</span>
+          <span class="contact-number">8 (727) 258‑25‑68</span>
+        </div>
+        <a class="call-icon-popup" href="tel:+77272582568">
+          <img src="img/call_grey.svg" alt="Позвонить">
+        </a>
+      </div>
+      <div class="contact-item">
+        <div>
+          <span class="contact-label">Название отделения</span>
+          <span class="contact-number">8 (727) 258‑25‑68</span>
+        </div>
+        <a class="call-icon-popup" href="tel:+77272582568">
+          <img src="img/call_grey.svg" alt="Позвонить">
+        </a>
+      </div>
+    </div>
+    
+    <h3>Оставить заявку</h3>
+    
+    <div class="phone-input-area">
+      <span class="country-code-display">KZ</span>
+      <span class="country-code-display">+7 ▾</span>
+      <input id="popupPhoneInput" type="tel" placeholder="Введите номер">
+    </div>
+    
+    <button id="requestCallBtn" class="submit-button" type="button">Заказать звонок</button>
+    
+    <p class="consent-text">
+      Нажимая на кнопку, я даю согласие на
+      <a href="/privacy-policy.html" target="_blank">обработку персональных данных</a>
+    </p>
+  </div>
+</div>
 
 
 <!-- ===== Main Content Start ===== -->
@@ -478,6 +532,7 @@
 
   </div>
 </footer> 
+
 
 <script src="js/script.js"></script>
 </body>

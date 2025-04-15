@@ -1,23 +1,3 @@
-// Переключение вкладок
-
-document.addEventListener('DOMContentLoaded', function () {
-  const tabs = document.querySelectorAll('.tab-btn');
-  const contents = document.querySelectorAll('.tab-content');
-
-  tabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-      tabs.forEach(t => t.classList.remove('active'));
-      contents.forEach(c => c.classList.remove('active'));
-
-      tab.classList.add('active');
-      const target = tab.getAttribute('data-tab');
-      const content = document.getElementById(target);
-      if (content) content.classList.add('active');
-    });
-  });
-});
-// Переключение вкладок
-
 // Галерея с кнопками прокрутки
 const galleryImages = document.querySelector('.gallery-images');
 const btnLeft = document.querySelector('.arrow-left');
@@ -34,61 +14,109 @@ if (galleryImages && btnLeft && btnRight) {
     galleryImages.scrollBy({ left: scrollStep, behavior: 'smooth' });
   });
 }
-
 // Галерея с кнопками прокрутки
 
-// Swiper-слайдер логотипов компаний
-const swiper = new Swiper('.swiper', {
-  slidesPerView: 'auto',
-  spaceBetween: 60,
-  loop: true,
-  speed: 8000, // чем выше — тем медленнее крутится
-  autoplay: {
-    delay: 0,
-    disableOnInteraction: false,
-  },
-  allowTouchMove: false,
-});
-
-// Swiper-слайдер логотипов компаний
-
-// Анимация раскрытия проектов
-document.addEventListener('DOMContentLoaded',()=>{
-  const wrapper = document.getElementById('projects');
-  const cards   = [...wrapper.querySelectorAll('.project-view')];
-
-  // запуск видео у развёрнутой карточки
-  wrapper.querySelector('.is-expanded video')?.play().catch(()=>{});
-
-  cards.forEach(card=>{
-    card.addEventListener('click',e=>{
-      // если кликнули по ссылке — ничего не переключаем
-      if(e.target.closest('a')) return;
-
-      // если кликнули по кнопке или по свёрнутой карточке — переключаем
-      if(e.target.matches('.toggle-btn') || card.classList.contains('is-collapsed')){
-        toggle(card);
+  // поп-ап "Заказать звонок"
+  document.addEventListener('DOMContentLoaded', () => {
+  
+    // --- Contact Popup ---
+    const icon = document.getElementById('openPopupIcon');
+    const popup = document.getElementById('contactPopup');
+    const overlay = document.getElementById('popupOverlay');
+    const bodyForPopup = document.body;
+  
+    if (icon && popup && overlay) {
+      function placePopupDesktop() {
+        popup.style.transform = 'scale(0.95)';
+  
+        const off = 10;
+        const pW = popup.offsetWidth || 358;
+        const pH = popup.offsetHeight;
+        const iconRect = icon.getBoundingClientRect();
+  
+        let topPos = iconRect.bottom + off;
+        let leftPos = iconRect.left - pW - off;
+  
+        if (leftPos < off) {
+          leftPos = iconRect.right + off;
+          if (leftPos + pW > window.innerWidth - off) {
+            leftPos = window.innerWidth - pW - off;
+          }
+        }
+  
+        if (topPos + pH > window.innerHeight - off) {
+          topPos = window.innerHeight - pH - off;
+          if (topPos < off) topPos = off;
+        }
+  
+        if (topPos < off) {
+          topPos = off;
+        }
+  
+        popup.style.top = `${topPos}px`;
+        popup.style.left = `${leftPos}px`;
       }
-    });
+  
+      function openPopup(e) {
+        e && e.preventDefault();
+  
+        if (window.innerWidth >= 768) {
+          placePopupDesktop();
+        } else {
+          popup.style.top = '';
+          popup.style.left = '';
+        }
+  
+        overlay.classList.add('active');
+        popup.classList.add('active');
+        bodyForPopup.classList.add('popup-active');
+  
+        const firstFocusable = popup.querySelector('input, button, a[href]');
+        if (firstFocusable) {
+          firstFocusable.focus();
+        }
+      }
+  
+      function closePopup() {
+        overlay.classList.remove('active');
+        popup.classList.remove('active');
+        bodyForPopup.classList.remove('popup-active');
+      }
+  
+      icon.addEventListener('click', openPopup);
+      overlay.addEventListener('click', e => { if (e.target === overlay) closePopup(); });
+      document.addEventListener('keydown', e => { if (e.key === 'Escape' && popup.classList.contains('active')) closePopup(); });
+  
+      window.addEventListener('resize', () => {
+        if (popup.classList.contains('active') && window.innerWidth >= 768) {
+          placePopupDesktop();
+        } else if (popup.classList.contains('active') && window.innerWidth < 768) {
+          popup.style.top = '';
+          popup.style.left = '';
+        }
+      });
+  
+      // Кнопка "Заказать звонок"
+      const requestBtn = document.getElementById('requestCallBtn');
+      const phoneInput = document.getElementById('popupPhoneInput');
+      if (requestBtn && phoneInput) {
+        requestBtn.addEventListener('click', () => {
+          const raw = phoneInput.value.trim();
+          if (!raw) { alert('Введите номер телефона'); phoneInput.focus(); return; }
+          if (!/^[\d\s()-]+$/.test(raw)) { alert('Номер телефона содержит недопустимые символы.'); phoneInput.focus(); return; }
+          const cleanedNumber = raw.replace(/[\s()-]/g, '');
+          if (cleanedNumber.length < 5) {
+            alert('Пожалуйста, введите корректный номер телефона.'); phoneInput.focus(); return;
+          }
+          alert('Спасибо! Мы свяжемся по номеру: +7 ' + raw);
+          closePopup();
+          phoneInput.value = '';
+        });
+      }
+    }
+  
   });
-
-  function toggle(toExpand){
-    if(toExpand.classList.contains('is-expanded')) return; // уже раскрыта
-
-    const expanded = wrapper.querySelector('.is-expanded');
-
-    // сворачиваем текущую
-    expanded.classList.remove('is-expanded');
-    expanded.classList.add('is-collapsed');
-    expanded.querySelector('video')?.pause();
-
-    // раскрываем выбранную
-    toExpand.classList.remove('is-collapsed');
-    toExpand.classList.add('is-expanded');
-    toExpand.querySelector('video')?.play().catch(()=>{});
-  }
-});
-// Анимация раскрытия проектов
+  // поп-ап "Заказать звонок"
 
 // Выбор страны
 document.addEventListener('DOMContentLoaded', function () {

@@ -14,6 +14,8 @@ body {
   color: #333;
   background-color: #fff;
   line-height: 1.4;
+  /* Add position relative to help stacking context if needed, but try without first */
+  /* position: relative; */
 }
 
 a, ul {
@@ -60,8 +62,8 @@ a, ul {
   align-items: center;
   position: sticky;
   top: 0;
-  z-index: 1000;
-} 
+  z-index: 1000; /* Ensure header is above normal content */
+}
 
 .header-container {
   width: 100%;
@@ -176,7 +178,7 @@ align-items: center;
 justify-content: center;
 width: 40px;
 height: 40px;
-background-color: #fff;  
+background-color: #fff;
 border-radius: 4px;
 border: 1px solid #ccc;
 text-decoration: none;
@@ -266,9 +268,9 @@ text-decoration: underline;
 font-weight: 600;
 }
 
-/* Бургер-меню и Мобильное меню (Copied from previous response) */
+/* Бургер-меню и Мобильное меню */
 .burger-menu-button {
-  display: none; background: none; border: none; cursor: pointer; padding: 10px; margin-left: 15px; z-index: 1051;
+  display: none; background: none; border: none; cursor: pointer; padding: 10px; margin-left: 15px; z-index: 1051; /* Ensure burger is above blurred content but below mobile nav */
 }
 .burger-menu-button span {
   display: block; width: 24px; height: 3px; background-color: #333; margin: 5px 0; transition: all 0.3s ease; border-radius: 1px;
@@ -278,7 +280,7 @@ font-weight: 600;
 .burger-menu-button.active span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
 
 .mobile-nav {
-  display: block; position: fixed; top: 0; left: 0; width: 300px; max-width: 80%; height: 100%; background-color: #fff; box-shadow: 2px 0 10px rgba(0,0,0,0.1); padding: 60px 20px 20px; transform: translateX(-100%); transition: transform 0.3s ease-in-out; z-index: 1050; overflow-y: auto;
+  display: block; position: fixed; top: 0; left: 0; width: 300px; max-width: 80%; height: 100%; background-color: #fff; box-shadow: 2px 0 10px rgba(0,0,0,0.1); padding: 60px 20px 20px; transform: translateX(-100%); transition: transform 0.3s ease-in-out; z-index: 1060; /* Highest z-index */ overflow-y: auto;
 }
 .mobile-nav.active { transform: translateX(0); }
 .close-menu-button {
@@ -301,6 +303,156 @@ font-weight: 600;
 .mobile-language-options { margin-top: 10px; display: flex; gap: 15px; }
 .mobile-language-options a { color: #6c757d; font-weight: 500; }
 .mobile-language-options a.active-lang { color: #212529; text-decoration: underline; }
+
+/* ---------- Overlay и Pop‑up ---------- */
+.popup-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: none;
+  opacity: 0;
+  transition: opacity 0.3s;
+  z-index: 1040; /* Below popup, above blurred content */
+}
+.popup-overlay.active {
+  display: block;
+  opacity: 1;
+}
+
+/* Поп‑ап — СДЕЛАТЬ position: fixed по умолчанию */
+.popup-contact {
+  position: fixed; /* CHANGED from absolute */
+  width: 358px;
+  max-width: 95vw;
+  background: #fff;
+  border: 1px solid #e5e9ed;
+  border-radius: 2px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+  overflow: hidden;
+  display: none;
+  opacity: 0;
+  transform: scale(0.95); /* Initial state for transition */
+  transition: opacity 0.25s, transform 0.25s;
+  z-index: 1050; /* Above overlay */
+  /* Top/Left will be set by JS for desktop */
+}
+.popup-contact.active {
+  display: block;
+  opacity: 1;
+  transform: scale(1); /* Active state for transition */
+}
+
+.popup-content { padding: 24px; }
+.popup-content h2 {
+  margin: 0 0 20px;
+  font: 600 18px/1.3 "Segoe UI", system-ui, sans-serif;
+  color: #495057;
+}
+
+/* --- Список телефонов --- */
+.contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 0 0 32px;
+}
+.contact-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fafbfc;
+  border: 1px solid #eceff2;
+  border-radius: 2px;
+  padding: 12px 16px;
+}
+.contact-label {
+  font: 500 11px/1 "Segoe UI", system-ui, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  color: #9aa4af;
+  margin-bottom: 4px;
+  display: block;
+}
+.contact-number {
+  font: 600 16px/1.2 "Segoe UI", system-ui, sans-serif;
+  color: #212529;
+}
+.call-icon-popup {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: -12px -16px -12px 12px;
+  border-left: 1px solid #eceff2;
+}
+.call-icon-popup img {
+  width: 18px;
+  height: 18px;
+  opacity: 0.55;
+  transition: opacity 0.2s;
+}
+.call-icon-popup:hover img { opacity: 0.9; }
+
+/* --- Форма заявки --- */
+.popup-content h3 {
+  margin: 0 0 16px;
+  font: 600 17px/1.3 "Segoe UI", system-ui, sans-serif;
+  color: #495057;
+}
+.phone-input-area {
+  display: flex;
+  align-items: center;
+  border: 1px solid #eceff2;
+  border-radius: 2px;
+  margin-bottom: 24px;
+}
+.country-code-display {
+  padding: 10px 14px;
+  font: 600 14px/1 "Segoe UI", system-ui, sans-serif;
+  color: #212529;
+  border-right: 1px solid #eceff2;
+  background: #fff;
+}
+.phone-input-area input {
+  flex: 1;
+  padding: 10px 14px;
+  font: 15px "Segoe UI", system-ui, sans-serif;
+  border: none;
+  outline: none;
+}
+.submit-button {
+  width: 100%;
+  padding: 15px 20px;
+  background: #1e1e1e;
+  color: #fff;
+  font: 600 16px/1 "Segoe UI", system-ui, sans-serif;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.submit-button:hover { background: #000; }
+.consent-text {
+  margin: 18px 0 0;
+  font: 400 12px/1.5 "Segoe UI", system-ui, sans-serif;
+  color: #6c757d;
+}
+.consent-text a {
+  color: #1e1e1e;
+  font-weight: 600;
+  text-decoration: underline;
+}
+.consent-text a:hover { text-decoration: none; }
+
+/* ---------- Блюр (фон) ---------- */
+body.popup-active > *:not(.popup-overlay):not(.popup-contact):not(.site-header) {
+  filter: blur(3px);
+  pointer-events: none;
+  user-select: none; 
+}
+
 
 /* ---------- Main Content General Styles ---------- */
 h2 {
@@ -430,7 +582,7 @@ padding-right: 30px;
   object-fit: cover;
   display: block;
 }
-.arrows { 
+.arrows {
   position: absolute;
   bottom: 15px;
   right: 15px;
@@ -460,7 +612,7 @@ padding-right: 30px;
   flex: 1;
   position: relative;
   padding: 30px;
-  background-color: #fff; 
+  background-color: #fff;
   min-height: 280px;
   border-radius: 4px;
   display: flex;
@@ -490,9 +642,9 @@ padding-right: 30px;
   position: absolute;
   right: 0;
   bottom: -20px;
-  width: 70%; 
+  width: 70%;
   height: 100%;
-  opacity: 0.9; 
+  opacity: 0.9;
   pointer-events: none;
 }
 
@@ -660,13 +812,13 @@ padding-right: 30px;
 }
 
 .swiper-wrapper {
-  display: flex; 
+  display: flex;
   transition-timing-function: linear !important;
 }
 
 .swiper-slide {
   width: auto !important; /* Чтобы логотипы занимали только нужную ширину */
-  flex-shrink: 0;          
+  flex-shrink: 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -685,23 +837,9 @@ padding-right: 30px;
   opacity: 1;
 }
 
-.black-button {
-  display: inline-flex;
-  align-items: center;
-  background: #000;
-  color: #fff;
-  padding: 10px 20px;
-  text-decoration: none;
-  border-radius: 6px;
-  font-weight: 500;
-  transition: background 0.3s;
-}
+/* .black-button duplicated, ensure consistency or remove */
 
-.black-button:hover {
-  background: #333;
-}
-
-.arrow-icon {
+.arrow-icon { /* Duplicated definition? Check if needed here */
   margin-left: 10px;
   width: 14px;
   height: 14px;
@@ -717,7 +855,6 @@ padding-right: 30px;
   position: relative;
 }
 
-/* ===== FLEX‑контейнер двух карточек ===== */
 /* ===== FLEX‑контейнер двух карточек ===== */
 .projects-display {
   display: flex;
@@ -894,25 +1031,11 @@ padding-right: 30px;
 }
 
 /* ===== кнопка "Подробнее" ===== */
+/* Duplicated .black-button styles? Consolidate */
 .black-button {
-  display: inline-block;
-  padding: 12px 24px;
-  border-radius: 4px;
-  background: #1A1A1A;
-  color: #fff;
-  font-size: 14px;
-  font-weight: 500;
-  text-decoration: none;
-  transition:
-      background 0.2s,
-      transform 0.2s;
+  /* ... styles ... */
   flex-shrink: 0;
   align-self: flex-start;
-}
-
-.black-button:hover {
-  background: #000;
-  transform: translateY(-1px);
 }
 
 .arrow-char {
@@ -937,9 +1060,9 @@ padding-right: 30px;
 
 .news-title{
   text-align:center;
-  font-size: 24px;
-  font-weight: 500;
-  font-weight: bold; 
+  font-size: 24px; /* Adjust based on h1/h2 hierarchy */
+  /* font-weight: 500; */ /* Already in h2 */
+  font-weight: bold; /* If overriding h2 style */
   color: #1A1A1A;
   margin-bottom: 20px;
 }
@@ -1003,7 +1126,7 @@ padding-right: 30px;
   padding-left: 10px;
   margin-left: auto;
   flex-shrink: 0;
-  width: 20px;
+  width: 20px; /* Quite narrow, might be intended */
 }
 
 .news-card-date {
@@ -1026,7 +1149,7 @@ padding-right: 30px;
 }
 
 .news-card-side a:hover .arrow-icon-new {
-  opacity: 1;
+  opacity: 1; /* Ensure hover effect works */
 }
 
 .btn-wrapper {
@@ -1058,12 +1181,7 @@ padding-right: 30px;
   color: #fff;
 }
 
-.arrow-icon {
-  width: 14px;
-  height: 14px;
-  transform: rotate(-45deg);
-  filter: brightness(0) invert(1);
-}
+/* .arrow-icon duplicated, check if needed here */
 
 /* ---------- Footer ---------- */
 .site-footer {
@@ -1201,44 +1319,47 @@ padding-right: 30px;
 
 .vertical-btn{
     display: flex;
-    flex-direction: column;   
+    flex-direction: column;
     align-items: center;
-    gap: 12px;                
+    gap: 12px;
     width: 60px;
-    height: 360px;            
+    height: 360px;
     padding: 20px 0;
     background: #1A1A1A;
     border: 1px solid #333;
     text-decoration: none;
     transition: background .2s;
   }
-  
+
   .vertical-btn:hover{
-    background: #333;         
+    background: #333;
   }
-  
+
   .separator-line {
-    width: 100%;               
-    height: 1px;              
-    background-color: #333;     
-    margin: 4px 0;             
+    width: 100%;
+    height: 1px;
+    background-color: #333;
+    margin: 4px 0;
   }
-  
+
   .arrow-icon-footer {
     width: 16px;
     height: 16px;
     transform: rotate(-90deg);
     margin-bottom: 8px;
+    /* Ensure icon is visible on dark bg */
+    filter: brightness(0) invert(1);
   }
-  
+
   .vertical-text{
-    writing-mode: vertical-rl;  
-    white-space: nowrap;         
+    writing-mode: vertical-rl;
+    white-space: nowrap;
     font: 700 14px/1.2 "Inter", sans-serif;
     letter-spacing: .5px;
     text-align: center;
+    color: #fff; /* Ensure text is visible */
   }
-  
+
 
 
 /* ===== Footer Middle Section ===== */
@@ -1302,8 +1423,8 @@ padding-right: 30px;
   padding: 8px 14px;
   background:#1a1a1a;
   cursor:pointer;
-  border-right: none;
-  border-radius: 4px 0 0 4px;
+  border-right: none; /* Removed border styling here */
+  /* border-radius: 4px 0 0 4px; */ /* Removed radius */
 }
 .country-iso{
   font-weight:600;
@@ -1323,6 +1444,7 @@ padding-right: 30px;
   left:0;
   z-index:20;
   width:100%;
+  min-width: 80px; /* Ensure dropdown isn't too narrow */
   margin: 0 0 4px;
   padding:4px 0;
   list-style:none;
@@ -1351,7 +1473,7 @@ input[type="tel"]#phoneInput{
   flex:1;
   min-width:180px;
   background:#1a1a1a;
-  border:none;                     
+  border:none;
   padding: 8px 12px;
   font-size:16px;
   color:#fff;
@@ -1359,7 +1481,7 @@ input[type="tel"]#phoneInput{
 }
 input[type="tel"]#phoneInput::placeholder{color:#666;font-style:italic}
 input[type="tel"]#phoneInput:focus {
-    border-color: #777;
+    /* border-color: #777; */ /* No border to color */
     box-shadow: none;
 }
 
@@ -1455,8 +1577,8 @@ input[type="tel"]#phoneInput:focus {
   color: #888;
 }
 
-.bottom-left { flex: 1; text-align: left; }
-.bottom-right { flex: 1; text-align: right; display: flex; align-items: center; justify-content: flex-end; gap: 8px;}
+.bottom-left { flex: 1; text-align: left; min-width: 150px; } /* Added min-width */
+.bottom-right { flex: 1; text-align: right; display: flex; align-items: center; justify-content: flex-end; gap: 8px; min-width: 150px; } /* Added min-width */
 .bottom-right a { display: inline-flex; align-items: center; }
 .studio-logo { height: 18px; width: auto; opacity: 0.7; transition: opacity 0.2s; }
 .studio-logo:hover { opacity: 1; }
@@ -1464,13 +1586,14 @@ input[type="tel"]#phoneInput:focus {
 .footer-biglogo {
   width: 100%;
   text-align: center;
-  margin-top: 20px; 
-  order: 99; 
+  margin-top: 20px;
+  order: 99;
 }
 
 .footer-biglogo img {
   max-width: 100%;
   height: auto;
+  opacity: 0.5; /* Example: make it less prominent */
 }
 
 /* ----- Responsive Styles ----- */
@@ -1481,10 +1604,11 @@ input[type="tel"]#phoneInput:focus {
 /* --- 2. Smaller Laptops / Large Tablets --- */
 @media (max-width: 1199px) {
   .container, .container-footer { width: 960px; }
-  /* Header adjustments */
-  .nav-item { padding: 9px 20px; font-size: 13px;}
+  .header-container { padding-left: 30px; padding-right: 30px; }
+  .nav-item { padding: 9px 18px; font-size: 13px;}
+  .main-nav { gap: 10px; }
+  .main-nav ul { gap: 5px; }
   .header-actions { gap: 8px; }
-  /* Hero */
   .hero-top, .hero-bottom { gap: 20px; }
   .banner-gradient { min-height: 320px; padding: 25px;}
   .banner-image { min-height: 320px; }
@@ -1492,18 +1616,16 @@ input[type="tel"]#phoneInput:focus {
   .clients-block { padding: 25px;}
   .clients-block h2 { font-size: 22px; }
   .gradient-text span { font-size: 22px; }
-  /* About */
   .about-company h2 { font-size: 28px; }
-  /* Services */
-  .company-services h2, .projects .section-title, .news-section .news-title, .our-clients h2 { font-size: 28px; }
+  .company-services h2, /* .projects .section-title (removed if .projects class is gone) */ .news-title, .our-clients h2 { font-size: 28px; }
   .service-text-block h3 { font-size: 20px; }
-  /* Projects */
   .projects-display { gap: 20px; }
-  .project-expanded-view h3 { font-size: 20px; }
-  /* News */
+  /* .project-expanded-view h3 { font-size: 20px; } */ /* Use .project-view h3 */
+  .project-view h3 { font-size: 20px; } /* Apply to base view */
   .news-grid { grid-template-columns: repeat(3, 1fr); gap: 20px;}
   .news-card-title { font-size: 16px; }
   .news-card-image img { height: 180px; }
+  .vertical-btn { height: 320px; }
 }
 
 /* --- 3. Tablets (Portrait) / Small Laptops --- */
@@ -1514,27 +1636,56 @@ input[type="tel"]#phoneInput:focus {
   h3 { font-size: 20px; }
   /* Header */
   .site-header { height: 70px; }
+  .header-container { padding-left: 20px; padding-right: 20px; }
   .logo img { height: 50px; }
   .main-nav { display: none; }
   .burger-menu-button { display: block; }
-  .email-text, .language-options { display: none !important; }
-  .mail-container:hover, .language-container:hover { width: 40px; }
+  .mail-container, .language-container { width: 40px !important; } /* Prevent hover expansion */
+  .mail-container:hover, .language-container:hover { width: 40px; } /* Explicitly reset hover */
+  .email-text, .language-options { display: none !important; opacity: 0 !important; visibility: hidden !important; } /* Hide expanded text */
   /* Hero */
   .hero-top, .hero-bottom { flex-direction: column; gap: 20px; }
   .banner-gradient, .banner-image, .clients-block, .krones-block { flex-basis: auto; width: 100%; min-height: 250px; }
-  .map-image { width: 70%; opacity: 0.1; }
+  .map-image { width: 60%; opacity: 0.7; bottom: 0;}
+  /* About */
+  .about-company { padding: 80px 0; }
   /* Services */
   .content-wrapper { grid-template-columns: 1fr; }
   .service-video, .service-img { aspect-ratio: 16 / 9; }
   /* Projects */
-  .projects-display { grid-template-columns: 1fr; gap: 20px;}
-  .project-collapsed-view video { aspect-ratio: 16 / 10;}
+  .projects-display { flex-direction: column; gap: 20px;} /* Stack projects */
+  .project-view,
+  .project-view.is-expanded,
+  .project-view.is-collapsed {
+      flex-basis: auto; /* Reset flex basis */
+      width: 100%;
+      height: auto; /* Allow height to adjust */
+      flex-direction: column; /* Stack image/text vertically */
+  }
+  .project-view.is-collapsed {
+      filter: none; /* Maybe remove grayscale on stacked view */
+      opacity: 1;
+      cursor: default;
+  }
+  .project-view.is-collapsed .text-block {
+      display: flex; /* Show text block */
+  }
+  .project-view.is-expanded .image-block,
+  .project-view.is-collapsed .image-block {
+     flex-basis: auto; /* Reset flex basis */
+     width: 100%;
+     height: 300px; /* Adjust height as needed */
+  }
+  .toggle-btn { display: none; } /* Hide toggle button */
+  .text-block { min-height: auto; } /* Remove min-height */
+
   /* News */
   .news-grid { grid-template-columns: repeat(2, 1fr); gap: 20px;}
   /* Footer */
   .footer-row { flex-direction: column; gap: 30px; }
-  .footer-links-group { flex-direction: column; gap: 25px; padding: 15px; }
-  .phone-box { padding: 15px; margin-top: 0; }
+  .footer-links-group { flex-direction: column; gap: 25px; padding: 15px; border: none; }
+  .footer-col { flex-basis: auto; }
+  .phone-box { padding: 15px; margin-top: 0; flex-basis: auto; border: 1px solid #333; }
   .top-button-box { display: none; }
   .footer-middle { flex-direction: column; align-items: center; text-align: center; gap: 25px; }
   .footer-form { flex-basis: auto; width: 100%; max-width: 450px; }
@@ -1542,7 +1693,7 @@ input[type="tel"]#phoneInput:focus {
   .middle-links { flex-direction: row; justify-content: center; gap: 15px; }
   .footer-bottom { flex-direction: column; text-align: center; gap: 15px; }
   .bottom-left, .bottom-right { flex-basis: auto; text-align: center; width: 100%; justify-content: center; }
-  .footer-biglogo { opacity: 0.1; max-height: 60px; }
+  .footer-biglogo { opacity: 0.3; max-height: 60px; margin-top: 10px; }
 }
 
 /* --- 4. Mobile Phones (Portrait) --- */
@@ -1553,19 +1704,31 @@ input[type="tel"]#phoneInput:focus {
   h3 { font-size: 18px; }
   /* Header */
   .site-header { height: 60px; }
-  .logo img { height: 40px; }
+  .header-container { padding-left: 15px; padding-right: 15px; }
+  .logo img { height: 40px; margin-right: 5px;}
   .logo-text { display: none; }
   .header-actions { gap: 5px; }
-  .icon-link { width: 36px; height: 36px; padding: 8px; }
+  .icon-link { width: 36px; height: 36px; }
   .icon-link img { width: 16px; height: 16px; }
+  .popup-contact {
+    left: 50%;
+    top: 50%;   
+    width: 90vw;
+    max-width: 400px;
+    transform: translate(-50%, -50%) scale(0.95);
+  }
+  .popup-contact.active {
+    transform: translate(-50%, -50%) scale(1);
+  }
   /* Hero */
   .hero-banner { padding: 30px 0; }
   .hero-top, .hero-bottom { gap: 15px; }
   .banner-gradient { padding: 20px; min-height: 220px; }
-  .banner-image { display: none; }
+  .banner-image { display: none; } /* Hide image block entirely */
   .clients-block, .krones-block { min-height: 200px; padding: 20px; }
   .clients-block h2 { font-size: 20px; margin-bottom: 15px;}
   .clients-block .black-button { font-size: 13px; padding: 10px 18px;}
+  .map-image { width: 80%; opacity: 0.5; }
   .gradient-text span { font-size: 20px; }
   .gradient-text p { font-size: 13px; }
   /* About */
@@ -1573,24 +1736,24 @@ input[type="tel"]#phoneInput:focus {
   .about-company h2 { font-size: 22px; }
   .about-text { font-size: 14px; }
   /* Services */
-  .company-services h2, .projects .section-title, .news-section .news-title, .our-clients h2 { font-size: 24px; margin-bottom: 30px; }
-  .services-tabs { flex-wrap: nowrap; justify-content: flex-start; overflow-x: auto; padding-bottom: 10px; margin-left: -15px; margin-right: -15px; padding-left: 15px; padding-right: 15px;}
-  .services-tabs::-webkit-scrollbar { height: 4px; }
-  .services-tabs::-webkit-scrollbar-thumb { background: #ccc; }
-  .tab-btn { padding: 8px 15px; font-size: 13px; white-space: nowrap; }
+  .company-services h2, /* .projects .section-title, */ .news-title, .our-clients h2 { font-size: 24px; margin-bottom: 30px; }
+  .services-tabs { flex-wrap: nowrap; justify-content: flex-start; overflow-x: auto; padding-bottom: 10px; margin-left: -15px; margin-right: -15px; padding-left: 15px; padding-right: 15px; -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */ scrollbar-width: thin; /* Firefox */ scrollbar-color: #ccc transparent; /* Firefox */ }
+  .services-tabs::-webkit-scrollbar { height: 4px; background: transparent; }
+  .services-tabs::-webkit-scrollbar-thumb { background: #ccc; border-radius: 2px; }
+  .tab-btn { padding: 8px 15px; font-size: 13px; white-space: nowrap; flex-shrink: 0; }
   .service-video, .service-img { height: 200px; }
   .service-text-block h3 { font-size: 18px; }
   .service-text-block p { font-size: 13px; }
-  .company-services .black-button { font-size: 13px; padding: 10px 18px; }
+  .company-services .black-button { font-size: 13px; padding: 10px 18px; width: 100%; max-width: 300px; text-align: center; display: flex; justify-content: center;}
   /* Projects */
-  .projects { padding: 40px 0; }
-  .project-expanded-view .text-block { padding: 20px; }
-  .project-expanded-view h3 { font-size: 18px; }
-  .project-expanded-view p { font-size: 13px; margin-bottom: 20px;}
-  .project-expanded-view .details { margin-bottom: 25px;}
-  .project-expanded-view .details li { font-size: 12px; margin-bottom: 8px; }
-  .project-expanded-view .black-button { font-size: 13px; padding: 10px 18px;}
-  .toggle-btn { width: 30px; height: 30px; font-size: 16px; line-height: 30px;}
+  .projects { padding: 40px 0; } /* Assuming .projects class exists */
+  .project-view .image-block { height: 240px; } /* Adjust stacked image height */
+  .text-block { padding: 20px; }
+  .project-view h3 { font-size: 18px; }
+  .text-block p { font-size: 13px; margin-bottom: 20px;}
+  .details { margin-bottom: 25px; font-size: 12px;}
+  .details li { margin-bottom: 8px; }
+  .black-button { font-size: 13px; padding: 10px 18px;} /* Ensure consistency */
   /* News */
   .news-grid { grid-template-columns: 1fr; gap: 15px;}
   .news-card-image img { height: 200px; }
@@ -1598,19 +1761,21 @@ input[type="tel"]#phoneInput:focus {
   .news-card-text { margin-right: 0; margin-bottom: 15px; }
   .news-card-title { font-size: 16px; }
   .news-card-description { font-size: 14px; -webkit-line-clamp: 4; }
-  .news-card-side { flex-direction: row; width: 100%; border-top: 1px solid #eee; padding-top: 10px; padding-left: 0; margin-top: 0;}
-  .news-card-date { writing-mode: horizontal-tb; transform: none; margin: 0; height: auto; }
-  .arrow-icon-new { margin-left: auto; }
+  .news-card-side { flex-direction: row; justify-content: space-between; align-items: center; width: 100%; border-top: 1px solid #eee; padding-top: 10px; padding-left: 0; margin-top: 0; height: auto;}
+  .news-card-date { writing-mode: horizontal-tb; transform: none; margin: 0; height: auto; margin-bottom: 0; } /* Reset vertical styles */
+  .arrow-icon-new { margin-left: 0; } /* Reset margin if needed */
   /* Button */
   .show-more-button { width: 100%; max-width: 320px; justify-content: center; }
   /* Footer */
-  .footer-group { padding: 15px; }
-  .input-row { flex-direction: column; align-items: stretch; gap: 0; border-bottom: none; }
-  .country-toggle { border-radius: 4px 4px 0 0; border: 1px solid #444; justify-content: center; }
-  input[type="tel"]#phoneInput { border-radius: 0 0 4px 4px; border: 1px solid #444; border-top: none; min-width: auto; text-align: center; }
-  .action-row { flex-direction: column; align-items: center; gap: 10px; }
+  .footer-links-group { padding: 0; } /* Remove padding if border is gone */
+  .input-row { flex-direction: column; align-items: stretch; gap: 0; border-bottom: none; padding-bottom: 0;}
+  .country-select { border: 1px solid #444; border-bottom: none; border-radius: 4px 4px 0 0; }
+  .country-toggle { justify-content: center; padding: 10px 14px;}
+  input[type="tel"]#phoneInput { border-radius: 0 0 4px 4px; border: 1px solid #444; border-top: none; min-width: auto; text-align: center; padding: 10px 14px; font-size: 15px; }
+  .action-row { flex-direction: column; align-items: center; gap: 10px; margin-top: 10px;}
   .call-btn { width: 100%; max-width: 300px; }
-  .middle-links { flex-direction: column; gap: 5px; }
+  .middle-links { flex-direction: column; gap: 5px; margin-top: 15px;}
+  .footer-bottom { padding-top: 15px; }
 }
 
 /* --- 5. Small Mobile Phones --- */
@@ -1623,30 +1788,32 @@ input[type="tel"]#phoneInput:focus {
   /* Hero */
   .gradient-text span { font-size: 18px; }
   .gradient-text p { font-size: 12px; }
-  .banner-gradient { min-height: 200px; }
-  .banner-image { min-height: 220px; }
+  .banner-gradient { min-height: 180px; }
+  .clients-block { min-height: 180px; }
   .clients-block h2 { font-size: 18px; }
+  .map-image { width: 90%; opacity: 0.4; }
   /* About */
   .about-company h2 { font-size: 20px; }
   .about-text { font-size: 13px; }
   /* Services */
-  .company-services h2, .projects .section-title, .news-section .news-title, .our-clients h2 { font-size: 22px; margin-bottom: 25px;}
+  .company-services h2, /* .projects .section-title, */ .news-title, .our-clients h2 { font-size: 22px; margin-bottom: 25px;}
   .tab-btn { padding: 7px 12px; font-size: 12px; }
   .service-text-block h3 { font-size: 17px; }
-  /* Projects */
-  .project-expanded-view h3 { font-size: 17px; }
+  .project-view h3 { font-size: 17px; } /* Projects */
   /* News */
   .news-card-title { font-size: 15px; }
   .news-card-description { font-size: 13px; }
   .show-more-button { font-size: 13px; padding: 11px 20px; }
-  .arrow-icon { width: 13px; height: 13px; }
+  .arrow-icon { width: 13px; height: 13px; } /* Check usage */
   /* Footer */
-  .footer-col h4 { font-size: 12px; }
-  .site-footer { font-size: 11px; padding: 30px 0 20px;}
-  .phone-box p a { font-size: 13px; }
-  .map-link { font-size: 11px; }
-  .call-btn { font-size: 13px; height: 36px; }
+  .footer-col h4 { font-size: 13px; }
+  .site-footer { font-size: 12px; padding: 30px 0 20px;}
+  .footer-address p, .footer-col li a { font-size: 12px; }
+  .phone-box p a { font-size: 14px; }
+  .map-link { font-size: 11px; padding: 6px 10px; }
+  .call-btn { font-size: 13px; padding: 9px 20px; }
   .consent-text { font-size: 10px; }
   .footer-bottom { font-size: 11px; }
   .studio-logo { height: 16px; }
+  .footer-biglogo { max-height: 50px; }
 }
