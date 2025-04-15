@@ -325,6 +325,67 @@ d3.json("CIS.json").then(geoData => {
 .catch(err => console.error("Ошибка загрузки CIS.json:", err));
 
 
+// Новый JS-код для отображения карты на основе структуры GeoJSON
+
+// Задаём размеры SVG контейнера
+const widthMap = 700;
+const heightMap = 500;
+
+// Создаем SVG-контейнер для карты, предполагается, что в HTML есть элемент с id "saudiMap"
+const svg = d3.select("#saudiMap")
+    .attr("width", widthMap)
+    .attr("height", heightMap);
+
+// Создаем элемент tooltip для отображения названия региона, предполагается существование элемента с id "saudi-map-tooltip"
+const tooltip = d3.select("#saudi-map-tooltip");
+
+// Настройка проекции с использованием d3.geoMercator
+const projection = d3.geoMercator()
+    .center([45, 25]) // Центр карты; подберите значения под ваши данные
+    .scale(1300)       // Масштаб отображения; подбирается экспериментально
+    .translate([widthMap / 2, heightMap / 2]);
+
+// Создаем генератор путей
+const path = d3.geoPath().projection(projection);
+
+// Загружаем GeoJSON данные (файл "Saudi.json" должен содержать вашу структуру данных)
+d3.json("sa.json").then(function(geoData) {
+    // geoData должно быть объектом с типом "FeatureCollection"
+    svg.selectAll("path")
+        .data(geoData.features)
+        .enter()
+        .append("path")
+        .attr("d", path)  // Генерация атрибута "d" для каждого пути на основе геометрии
+        .attr("class", "saudi-region")
+        .on("mouseover", function(event, d) {
+            // При наведении отображаем tooltip с названием региона (свойство name из d.properties)
+            tooltip.style("display", "block")
+                   .html(d.properties.name);
+        })
+        .on("mousemove", function(event) {
+            // Обновляем позицию tooltip относительно курсора
+            tooltip.style("left", (event.pageX + 10) + "px")
+                   .style("top", (event.pageY - 20) + "px");
+        })
+        .on("mouseout", function() {
+            // Скрываем tooltip, когда курсор покидает область пути
+            tooltip.style("display", "none");
+        })
+        .on("click", function(event, d) {
+            // При клике: снимаем выделение со всех регионов и выделяем текущий
+            svg.selectAll(".saudi-region").classed("selected", false);
+            d3.select(this).classed("selected", true);
+            
+            // Пример: получение списка компаний по выбранному региону из dataByTab и вызов функции renderCompaniesList
+            const regionName = d.properties.name;
+            const regionCompanies = dataByTab["Saudi"]?.[regionName] || [];
+            renderCompaniesList("projectsListSaudi", regionCompanies);
+        });
+}).catch(function(error) {
+    console.error("Ошибка загрузки GeoJSON данных:", error);
+});
+
+
 /////////////////////////////
 //  ФУНКЦИЯ ВЫВОДА КОМПАНИЙ
 /////////////////////////////

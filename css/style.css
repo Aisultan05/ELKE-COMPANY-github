@@ -328,7 +328,7 @@ padding-right: 30px;
 .section-label {
   color: #0056b3;
   font-size: 13px;
-  font-weight: 500;
+  font-weight: 400;
   text-transform: uppercase;
   margin-bottom: 10px;
   letter-spacing: 0.5px;
@@ -627,14 +627,6 @@ padding-right: 30px;
   z-index: 2;
 }
 
-.section-label {
-  font-size: 14px;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  color: #888;
-  margin-bottom: 10px;
-}
-
 .our-clients h2 {
   font-size: 32px;
   font-weight: 500;
@@ -655,6 +647,42 @@ padding-right: 30px;
 
 .clients-btn-wrapper {
   margin-top: 25px;
+}
+
+.swiper-container {
+  width: 100%;
+  height: auto;
+  margin-top: 20px;
+}
+.swiper {
+  overflow: hidden;
+  width: 100%;
+}
+
+.swiper-wrapper {
+  display: flex; 
+  transition-timing-function: linear !important;
+}
+
+.swiper-slide {
+  width: auto !important; /* Чтобы логотипы занимали только нужную ширину */
+  flex-shrink: 0;          
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 30px;         /* Расстояние между логотипами */
+}
+
+.swiper-slide img {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+  opacity: 0.9;
+  transition: opacity 0.3s;
+}
+
+.swiper-slide img:hover {
+  opacity: 1;
 }
 
 .black-button {
@@ -689,58 +717,214 @@ padding-right: 30px;
   position: relative;
 }
 
-/* ========== Выполненные проекты ========== */
-.projects {
-  padding: 60px 0;
-  background-color: #fff;
-}
-.projects .container { max-width: 1200px; }
-.projects{ color: #6c757d; }
-.projects .section-title { font-size: 32px; margin-bottom: 50px; color: #1A1A1A; font-weight: 500; }
-
+/* ===== FLEX‑контейнер двух карточек ===== */
+/* ===== FLEX‑контейнер двух карточек ===== */
 .projects-display {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 25px;
-  align-items: start;
+  display: flex;
+  gap: 30px;
+  align-items: flex-start; /* Выравнивание карточек по верху */
 }
-.project-expanded-view, .project-collapsed-view {
+
+/* ===== карточка проекта ===== */
+.project-view {
+  flex: 0 1 65%;
+  display: flex;
+  flex-direction: row;
   border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  background: #fff;
   overflow: hidden;
-  background-color: #fff;
-  border-radius: 4px;
+  transition:
+      flex-basis 0.6s cubic-bezier(.645, .045, .355, 1),
+      filter 0.3s,
+      opacity 0.3s;
+  /* НЕ устанавливаем высоту здесь */
 }
-.project-expanded-view .image-block, .project-collapsed-view .image-block { position: relative; line-height: 0;}
-.project-expanded-view video, .project-collapsed-view video {
-  width: 100%; display: block; object-fit: cover;
+
+/* Развёрнутая карточка */
+.project-view.is-expanded {
+  flex-basis: 65%;
+  height: 450px; /* !!! Фиксированная высота = высоте видео */
+  filter: none;
+  opacity: 1;
+  align-items: flex-start; /* Выравнивание видео и текста по верху */
 }
-.project-expanded-view video { aspect-ratio: 16 / 10; }
-.project-collapsed-view video { aspect-ratio: 3 / 4; }
-.project-expanded-view video { background-color: #555; }
-.project-collapsed-view video { background-color: #777; }
 
-.project-expanded-view .text-block { padding: 25px 30px; }
-.project-expanded-view .subtitle { color: #0056b3; font-size: 13px; margin-bottom: 8px; text-transform: uppercase; font-weight: 500; }
-.project-expanded-view h3 { font-size: 22px; margin-bottom: 15px; color: #1A1A1A; font-weight: 500; }
-.project-expanded-view p { font-size: 14px; margin-bottom: 25px; line-height: 1.6; color: #495057; }
-.project-expanded-view .details { list-style: none; padding: 20px 0 0 0; margin: 25px 0 30px; font-size: 13px; color: #495057; border-top: 1px solid #eee; }
-.project-expanded-view .details li { margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
-.project-expanded-view .details li:last-child { margin-bottom: 0; }
-.project-expanded-view .details li img { width: 16px; height: 16px; opacity: 0.7; }
-.project-expanded-view .black-button {  }
-.arrow-char { font-weight: normal; font-size: 1.1em; }
+/* Свёрнутая карточка */
+.project-view.is-collapsed {
+  flex-basis: 35%;
+  height: 450px; /* !!! Фиксированная высота = высоте видео */
+  filter: grayscale(80%);
+  opacity: 0.85;
+  cursor: pointer;
+  transition:
+      flex-basis 0.6s cubic-bezier(.645, .045, .355, 1),
+      filter 0.3s,
+      opacity 0.3s,
+      height 0.6s cubic-bezier(.645, .045, .355, 1);
+}
 
+/* Прячем текст у свёрнутой карточки */
+.project-view.is-collapsed .text-block {
+  display: none;
+}
+
+/* ===== блок видео ===== */
+.image-block {
+  position: relative;
+  background: #eee;
+  height: 450px; /* !!! Фиксированная высота видео-блока */
+  flex-shrink: 0; /* Запрещаем сжиматься по ширине */
+  transition: flex-basis 0.6s cubic-bezier(.645, .045, .355, 1);
+}
+
+/* Видео в развёрнутом виде */
+.project-view.is-expanded .image-block {
+  flex-basis: 45%;
+}
+
+/* Видео в свёрнутом виде */
+.project-view.is-collapsed .image-block {
+  flex-basis: 100%;
+  width: 100%;
+}
+
+.image-block video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ===== кнопка +/- ===== */
 .toggle-btn {
-  position: absolute; bottom: 12px; right: 12px; font-size: 18px; width: 36px; height: 36px; border: none; background: rgba(255, 255, 255, 0.85); border-radius: 50%; cursor: pointer; font-weight: bold; line-height: 36px; text-align: center; transition: background-color 0.2s, color 0.2s; color: #333; z-index: 10; box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 50%;
+  font-size: 24px;
+  line-height: 40px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.9);
+  color: #333;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+  transition:
+      background 0.2s,
+      color 0.2s,
+      transform 0.2s;
+  z-index: 10;
 }
-.toggle-btn:hover { background: #fff; color: #000; }
-.toggle-btn.minus {  }
-.toggle-btn.plus {  }
 
-.project-collapsed-view {
-  position: relative; cursor: pointer; border: 1px solid transparent; filter: grayscale(0.8); opacity: 0.8; transition: filter 0.3s, opacity 0.3s, box-shadow 0.3s;
+.toggle-btn:hover {
+  background: #fff;
+  color: #000;
+  transform: scale(1.05);
 }
-.project-collapsed-view:hover { filter: grayscale(0); opacity: 1; border-color: #ccc; box-shadow: 0 4px 10px rgba(0,0,0,0.1);}
+
+.project-view.is-expanded .toggle-btn::before {
+  content: '−';
+}
+
+.project-view.is-collapsed .toggle-btn::before {
+  content: '+';
+}
+
+/* ===== текстовый блок ===== */
+.text-block {
+  padding: 25px 30px;
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  min-height: 360px; /* Минимальная высота, чтобы соответствовать видео */
+}
+
+.subtitle {
+  color: #6c757d;
+  font-size: 13px;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.text-block h3 {
+  font-size: 24px;
+  margin-bottom: 15px;
+  color: #1A1A1A;
+  font-weight: 600;
+}
+
+.text-block p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #495057;
+  flex-grow: 1;
+  margin-bottom: 20px;
+}
+
+/* ===== детали ===== */
+.details {
+  list-style: none;
+  padding: 15px 0 0;
+  margin: 0 0 20px;
+  border-top: 1px solid #eee;
+  font-size: 14px;
+  color: #495057;
+  flex-shrink: 0;
+}
+
+.details li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.details li:last-child {
+  margin-bottom: 0;
+}
+
+.details img {
+  width: 18px;
+  height: 18px;
+  opacity: 0.6;
+}
+
+/* ===== кнопка "Подробнее" ===== */
+.black-button {
+  display: inline-block;
+  padding: 12px 24px;
+  border-radius: 4px;
+  background: #1A1A1A;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  transition:
+      background 0.2s,
+      transform 0.2s;
+  flex-shrink: 0;
+  align-self: flex-start;
+}
+
+.black-button:hover {
+  background: #000;
+  transform: translateY(-1px);
+}
+
+.arrow-char {
+  display: inline-block;
+  font-size: 1.2em;
+  margin-left: 5px;
+  transition: transform 0.2s;
+}
+
+.black-button:hover .arrow-char {
+  transform: translateX(2px) translateY(-2px);
+}
 
 /* ---------- News Section ---------- */
 
@@ -748,6 +932,15 @@ padding-right: 30px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 25px;
+  margin-bottom: 20px;
+}
+
+.news-title{
+  text-align:center;
+  font-size: 24px;
+  font-weight: 500;
+  font-weight: bold; 
+  color: #1A1A1A;
   margin-bottom: 20px;
 }
 

@@ -437,63 +437,103 @@ font-weight: 600;
 }
 .engineering-text-block p:last-child { margin-bottom: 0; }
 
-/* ---------- Engineering Gallery ---------- */
-.engineering-gallery {
+/* ---------- Gallery Section ---------- */
+.gallery-section {
   margin-bottom: 60px;
+  position: relative;
+  overflow: hidden;
 }
+
 .gallery-images {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 25px;
-  margin-bottom: 25px;
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+  padding-bottom: 15px;
+  padding-left: 15px;
+  margin-left: calc((100% - 1200px) / 2);
+  width: calc(100% - (100% - 1200px));
+  max-width: 100vw;
 }
+
+.gallery-images::-webkit-scrollbar {
+  display: none;
+}
+
+.gallery-images {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
 .gallery-images img {
-  display: block;
-  width: 100%;
-  height: 280px;
+  width: 600px;
+  height: 400px;
   object-fit: cover;
-  flex-shrink: 0;
-  border-radius: 4px;
-  border: 1px solid #e9ecef;
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+  margin-right: 20px;
+}
+
+.gallery-images img:last-child {
+  margin-right: 15px;
 }
 
 .gallery-controls {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  margin-top: 25px;
+  position: relative;
+  min-height: 30px;
 }
-.pagination {
+
+.gallery-counter,
+.gallery-dots,
+.gallery-total {
   font-size: 16px;
+  color: #888;
+  margin: 0 5px;
+}
+
+.gallery-dots {
+  color: #0056b3;
+  font-weight: bold;
+}
+
+.gallery-counter {
   font-weight: 600;
   color: #333;
 }
-.pagination .dot {
-  color: #0056b3;
-  font-weight: bold;
-  margin: 0 5px;
+
+.gallery-total {
+  color: #aaa;
 }
-.arrows, .nav-arrows { display: flex; gap: 12px; }
+
+.arrows {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  gap: 15px;
+}
+
 .arrow {
-  background-color: #f1f3f5;
-  border: 1px solid #ced4da;
-  color: #495057;
-  font-size: 18px;
-  font-weight: bold;
-  width: 40px;
-  height: 40px;
+  all: unset;
+  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  padding: 0;
-  line-height: 1;
-  border-radius: 50%;
 }
-.arrow:hover {
-  background-color: #dee2e6;
-  border-color: #adb5bd;
-  color: #000;
+
+.arrow img {
+  width: 20px;
+  height: 20px;
+  filter: brightness(0) saturate(100%) invert(29%) sepia(89%) saturate(588%) hue-rotate(179deg) brightness(97%) contrast(93%);
+}
+
+.arrow-left img {
+  transform: rotate(180deg);
 }
 
 /* ---------- CTA Form Section ---------- */
@@ -524,7 +564,7 @@ font-weight: 600;
 .form-wrapper {
   max-width: 750px;
   margin: 0 auto;
-  background-color: #fff;
+  background-color: rgba(240, 240, 240, 0.35);
   padding: 30px 35px;
   border: 1px solid #e0e0e0;
   border-radius: 5px;

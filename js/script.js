@@ -37,56 +37,58 @@ if (galleryImages && btnLeft && btnRight) {
 
 // Галерея с кнопками прокрутки
 
+// Swiper-слайдер логотипов компаний
+const swiper = new Swiper('.swiper', {
+  slidesPerView: 'auto',
+  spaceBetween: 60,
+  loop: true,
+  speed: 8000, // чем выше — тем медленнее крутится
+  autoplay: {
+    delay: 0,
+    disableOnInteraction: false,
+  },
+  allowTouchMove: false,
+});
+
+// Swiper-слайдер логотипов компаний
+
 // Анимация раскрытия проектов
-function toggleProject(projectToShow) {
-  const ids = [1, 2];
-  ids.forEach(id => {
-    const expanded = document.querySelector(`#project${id} .expanded-card`);
-    const collapsed = document.querySelector(`#project${id} .collapsed-card`);
+document.addEventListener('DOMContentLoaded',()=>{
+  const wrapper = document.getElementById('projects');
+  const cards   = [...wrapper.querySelectorAll('.project-view')];
 
-    if (id === projectToShow) {
-      collapsed.classList.add('fade-out');
-      expanded.classList.remove('hidden');
-      expanded.classList.add('fade-in');
-      collapsed.classList.remove('fade-in');
+  // запуск видео у развёрнутой карточки
+  wrapper.querySelector('.is-expanded video')?.play().catch(()=>{});
 
-      setTimeout(() => {
-        collapsed.classList.add('hidden');
-        collapsed.classList.remove('fade-out');
-      }, 400);
-    } else {
-      expanded.classList.add('fade-out');
-      collapsed.classList.remove('hidden');
-      collapsed.classList.add('fade-in');
-      expanded.classList.remove('fade-in');
+  cards.forEach(card=>{
+    card.addEventListener('click',e=>{
+      // если кликнули по ссылке — ничего не переключаем
+      if(e.target.closest('a')) return;
 
-      setTimeout(() => {
-        expanded.classList.add('hidden');
-        expanded.classList.remove('fade-out');
-      }, 400);
-    }
+      // если кликнули по кнопке или по свёрнутой карточке — переключаем
+      if(e.target.matches('.toggle-btn') || card.classList.contains('is-collapsed')){
+        toggle(card);
+      }
+    });
   });
-}
-// Анимация раскрытия проектов
 
-// Стрелки карусели партнерства
-document.addEventListener('DOMContentLoaded', function() {
-  const prevBtn = document.querySelector('.prev-btn');
-  const nextBtn = document.querySelector('.next-btn');
+  function toggle(toExpand){
+    if(toExpand.classList.contains('is-expanded')) return; // уже раскрыта
 
-  if (prevBtn) {
-    prevBtn.addEventListener('click', () => {
-      console.log('Previous clicked');
-    });
-  }
+    const expanded = wrapper.querySelector('.is-expanded');
 
-  if (nextBtn) {
-    nextBtn.addEventListener('click', () => {
-      console.log('Next clicked');
-    });
+    // сворачиваем текущую
+    expanded.classList.remove('is-expanded');
+    expanded.classList.add('is-collapsed');
+    expanded.querySelector('video')?.pause();
+
+    // раскрываем выбранную
+    toExpand.classList.remove('is-collapsed');
+    toExpand.classList.add('is-expanded');
+    toExpand.querySelector('video')?.play().catch(()=>{});
   }
 });
-// Стрелки карусели партнерства
+// Анимация раскрытия проектов
 
 // Выбор страны
 document.addEventListener('DOMContentLoaded', function () {
@@ -191,23 +193,3 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 // Мобильное меню
-
-// Swiper-слайдер логотипов компаний
-if (document.querySelector('.companies-swiper')) {
-  const swiper = new Swiper('.companies-swiper', {
-    slidesPerView: 4,
-    spaceBetween: 30,
-    loop: true,
-    autoplay: {
-      delay: 2500,
-      disableOnInteraction: false,
-    },
-    breakpoints: {
-      768: { slidesPerView: 4 },
-      480: { slidesPerView: 2 },
-      0:   { slidesPerView: 1 }
-    }
-  });
-}
-
-// Swiper-слайдер логотипов компаний

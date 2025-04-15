@@ -314,6 +314,26 @@
       </a>
     </div>
   </div>
+  <section class="swiper-container">
+    <div class="swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="img/borjomi.svg" alt="Borjomi"></div>
+        <div class="swiper-slide"><img src="img/Erdinger.svg" alt="Erdinger Weissbrau"></div>
+        <div class="swiper-slide"><img src="img/Heineken.svg" alt="Heineken"></div>
+        <div class="swiper-slide"><img src="img/Cola.svg" alt="Coca-Cola"></div>
+        <div class="swiper-slide"><img src="img/ERES.svg" alt="Efes"></div>
+        <div class="swiper-slide"><img src="img/Pepsi.svg" alt="Pepsi"></div>
+
+        <!-- Повтор для бесконечной прокрутки -->
+        <div class="swiper-slide"><img src="img/borjomi.svg" alt="Borjomi"></div>
+        <div class="swiper-slide"><img src="img/Erdinger.svg" alt="Erdinger Weissbrau"></div>
+        <div class="swiper-slide"><img src="img/Heineken.svg" alt="Heineken"></div>
+        <div class="swiper-slide"><img src="img/Cola.svg" alt="Coca-Cola"></div>
+        <div class="swiper-slide"><img src="img/ERES.svg" alt="Efes"></div>
+        <div class="swiper-slide"><img src="img/Pepsi.svg" alt="Pepsi"></div>
+      </div>
+    </div>
+  </section>
   <img src="img/Vector Maps.svg" alt="Карта" class="clients-map">
 </section>
 <!-- ========== /Наши клиенты ========== -->
@@ -322,139 +342,51 @@
 <!-- ========== Выполненные проекты (ЗАМЕНЕННЫЙ БЛОК) ========== -->
 <section class="projects">
   <div class="container">
-      <!-- Заголовки -->
-      <p class="section-label text-center">ELKE COMPANY</p>
-      <h2 class="section-title">Выполненные проекты</h2>
+    <p class="section-label">ELKE COMPANY</p>
+    <h2 class="section-title">Выполненные проекты</h2>
 
-      <!-- Контейнер для отображения проектов -->
-      <div class="projects-display">
-
-          <!-- Левая колонка: Расширенный вид -->
-          <div class="project-expanded-view" data-project-container="expanded">
-              <!-- Сюда будет динамически вставляться контент активного проекта -->
-              <!-- Начальное состояние: Проект 1 -->
-              <div class="project-content" data-project-id="1">
-                  <div class="image-block">
-                      <video poster="img/project1-poster.jpg" muted loop playsinline id="video-project-1">
-                          <source src="video/project1.mp4" type="video/mp4">
-                          Ваш браузер не поддерживает видео.
-                      </video>
-                      <button class="toggle-btn minus" data-action="collapse" data-target-id="1">−</button>
-                  </div>
-                  <div class="text-block">
-                      <p class="subtitle">Монтаж трубопроводов</p>
-                      <h3>Промышленная система трубопроводов</h3>
-                      <p>
-                          Предназначена для транспортировки жидкостей или газов. Объект включает в себя трубопроводы различного
-                          диаметра с цветовой и графической маркировкой, позволяющей идентифицировать направление потока и тип
-                          транспортируемой среды. Используемые материалы и изоляция труб обеспечивают долговечность системы и её
-                          устойчивость к внешним воздействиям.
-                      </p>
-                      <ul class="details">
-                          <!-- Используем иконки (предполагается Font Awesome или SVG) -->
-                          <li><img src="img/icon-calendar.svg" alt="Дата"> 1 января 2025 г.</li>
-                          <li><img src="img/icon-location.svg" alt="Локация"> Республика Казахстан, г. Астана</li>
-                          <li><img src="img/icon-factory.svg" alt="Объект"> Завод №1 Coca-Cola</li>
-                      </ul>
-                      <a href="#" class="black-button">Перейти к проекту <span class="arrow-char">↗</span></a>
-                  </div>
-              </div>
-          </div>
-
-          <!-- Правая колонка: Свернутый вид -->
-          <div class="project-collapsed-view" data-project-container="collapsed">
-              <!-- Сюда будет динамически вставляться контент неактивного проекта -->
-               <!-- Начальное состояние: Проект 2 -->
-               <div class="project-content" data-project-id="2">
-                   <div class="image-block">
-                        <video poster="img/project2-poster.jpg" muted loop playsinline id="video-project-2-thumb">
-                          <source src="video/project2.mp4" type="video/mp4">
-                           Ваш браузер не поддерживает видео.
-                       </video>
-                       <button class="toggle-btn plus" data-action="expand" data-target-id="2">+</button>
-                   </div>
-                   <!-- Текстовый блок в свернутом виде не нужен -->
-               </div>
-          </div>
-
+    <div class="projects-display" id="projects">
+      <!-- карточка №1 (развёрнута) -->
+      <div class="project-view is-expanded" data-id="1">
+        <div class="image-block">
+          <video poster="https://via.placeholder.com/800x450/CCCCCC/FFFFFF?text=Project+1+16:9"
+                 muted loop playsinline></video>
+          <button class="toggle-btn" data-action="collapse"></button>
+        </div>
+        <div class="text-block">
+          <p class="subtitle">Монтаж трубопроводов</p>
+          <h3>Промышленная система трубопроводов</h3>
+          <p>Предназначена для транспортировки жидкостей или газов. Объект включает в себя трубопроводы различного диаметра…</p>
+          <ul class="details">
+            <li><img src="https://img.icons8.com/ios-glyphs/30/6c757d/calendar.png" alt=""> 1 января 2025 г.</li>
+            <li><img src="https://img.icons8.com/ios-glyphs/30/6c757d/marker.png"   alt=""> Республика Казахстан, г. Астана</li>
+            <li><img src="https://img.icons8.com/ios-glyphs/30/6c757d/factory.png"  alt=""> Завод №1 Coca‑Cola</li>
+          </ul>
+          <a href="#" class="black-button">Перейти к проекту <span class="arrow-char">↗</span></a>
+        </div>
       </div>
-      <!-- /projects-display -->
 
-       <!-- Скрытый контейнер для хранения контента проектов (для переключения) -->
-       <div id="project-templates" style="display: none;">
-          <!-- Шаблон Проекта 1 -->
-          <div data-project-template-id="1">
-              <div class="project-content" data-project-id="1">
-                   <div class="image-block">
-                       <video poster="img/project1-poster.jpg" muted loop playsinline id="video-project-1">
-                           <source src="video/project1.mp4" type="video/mp4">
-                           Ваш браузер не поддерживает видео.
-                       </video>
-                       <button class="toggle-btn minus" data-action="collapse" data-target-id="1">−</button>
-                   </div>
-                   <div class="text-block">
-                       <p class="subtitle">Монтаж трубопроводов</p>
-                       <h3>Промышленная система трубопроводов</h3>
-                       <p>Предназначена для транспортировки жидкостей или газов...</p>
-                       <ul class="details">
-                          <li><img src="img/icon-calendar.svg" alt="Дата"> 1 января 2025 г.</li>
-                          <li><img src="img/icon-location.svg" alt="Локация"> Республика Казахстан, г. Астана</li>
-                          <li><img src="img/icon-factory.svg" alt="Объект"> Завод №1 Coca-Cola</li>
-                       </ul>
-                       <a href="#" class="black-button">Перейти к проекту <span class="arrow-char">↗</span></a>
-                   </div>
-               </div>
-               <!-- Свернутый вид для проекта 1 -->
-               <div class="project-content-collapsed" data-project-id="1">
-                   <div class="image-block">
-                        <video poster="img/project1-poster.jpg" muted loop playsinline id="video-project-1-thumb">
-                          <source src="video/project1.mp4" type="video/mp4">
-                           Ваш браузер не поддерживает видео.
-                       </video>
-                       <button class="toggle-btn plus" data-action="expand" data-target-id="1">+</button>
-                   </div>
-               </div>
-          </div>
-
-          <!-- Шаблон Проекта 2 -->
-          <div data-project-template-id="2">
-               <div class="project-content" data-project-id="2">
-                   <div class="image-block">
-                       <video poster="img/project2-poster.jpg" muted loop playsinline id="video-project-2">
-                           <source src="video/project2.mp4" type="video/mp4">
-                           Ваш браузер не поддерживает видео.
-                       </video>
-                       <button class="toggle-btn minus" data-action="collapse" data-target-id="2">−</button>
-                   </div>
-                   <div class="text-block">
-                       <p class="subtitle">Модернизация производственного цеха</p>
-                       <h3>Цех по розливу напитков</h3>
-                       <p>Внедрение автоматической линии, пуско-наладка, контроль качества...</p>
-                       <ul class="details">
-                          <li><img src="img/icon-calendar.svg" alt="Дата"> 10 февраля 2025 г.</li>
-                          <li><img src="img/icon-location.svg" alt="Локация"> Республика Казахстан, г. Алматы</li>
-                          <li><img src="img/icon-factory.svg" alt="Объект"> Завод PepsiCo</li>
-                       </ul>
-                       <a href="#" class="black-button">Перейти к проекту <span class="arrow-char">↗</span></a>
-                   </div>
-               </div>
-                <!-- Свернутый вид для проекта 2 -->
-               <div class="project-content-collapsed" data-project-id="2">
-                   <div class="image-block">
-                        <video poster="img/project2-poster.jpg" muted loop playsinline id="video-project-2-thumb">
-                           <source src="video/project2.mp4" type="video/mp4">
-                           Ваш браузер не поддерживает видео.
-                       </video>
-                       <button class="toggle-btn plus" data-action="expand" data-target-id="2">+</button>
-                   </div>
-               </div>
-          </div>
-          <!-- Добавьте сюда шаблоны для других проектов, если они есть -->
+      <!-- карточка №2 (свёрнута) -->
+      <div class="project-view is-collapsed" data-id="2">
+        <div class="image-block">
+          <video poster="https://via.placeholder.com/600x800/AAAAAA/FFFFFF?text=Project+2+3:4"
+                 muted loop playsinline></video>
+          <button class="toggle-btn" data-action="expand"></button>
+        </div>
+        <div class="text-block">
+          <p class="subtitle">Модернизация производственного цеха</p>
+          <h3>Цех по розливу напитков</h3>
+          <p>Комплексная модернизация линии розлива газированных напитков. Внедрение автоматизированной системы управления…</p>
+          <ul class="details">
+            <li><img src="https://img.icons8.com/ios-glyphs/30/6c757d/calendar.png" alt=""> 10 февраля 2025 г.</li>
+            <li><img src="https://img.icons8.com/ios-glyphs/30/6c757d/marker.png"   alt=""> Республика Казахстан, г. Алматы</li>
+            <li><img src="https://img.icons8.com/ios-glyphs/30/6c757d/factory.png"  alt=""> Завод PepsiCo</li>
+          </ul>
+          <a href="#" class="black-button">Перейти к проекту <span class="arrow-char">↗</span></a>
+        </div>
       </div>
-      <!-- /project-templates -->
-
+    </div><!-- /projects-display -->
   </div>
-  <!-- /container -->
 </section>
 <!-- ========== /Выполненные проекты ========== -->
 
@@ -724,7 +656,7 @@
   </div>
 </footer> 
 
-<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script src="js/script.js"></script>
 </body>
 </html>

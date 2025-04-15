@@ -673,32 +673,45 @@ font-weight: 600;
 .form-consent a:hover { color: #003d80; }
 
 /* ---------- Page Navigation Arrows ---------- */
-.page-navigation {
-  margin-top: 50px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 0;
+.partnership-section {
+  padding: 25px 0;
+  margin-top: 40px;
   border-top: 1px solid #e0e0e0;
 }
 
-.page-navigation span {
-  font-size: 16px;
-  font-weight: 500;
-  color: #333;
+.partnership-header {
+  display: flex;
+  align-items: center;       /* 👈 выравнивание по вертикали */
 }
 
-.nav-arrows { display: flex; gap: 12px; }
-.nav-arrows a.arrow {
-  font-size: 20px;
-  font-weight: bold;
-  color: #6c757d;
-  text-decoration: none;
-  transition: color 0.2s ease;
-  padding: 5px;
-  line-height: 1;
+.partnership-section h2 {
+  font-size: 24px;
+  font-weight: 500;
+  color: #333;
+  margin: 0;
 }
-.nav-arrows a.arrow:hover { color: #0056b3; }
+
+.arrows {
+  display: flex;
+  gap: 10px;
+  margin-left: 20px;
+}
+
+.arrow {
+  width: 18px;
+  height: 18px;
+  border: none;
+  border-radius: 50%;
+  background-color: transparent;
+  cursor: pointer;
+  filter: brightness(0) saturate(100%);
+  display: block;
+}
+
+.arrow-left {
+  transform: scaleX(-1);
+}
+
 
 /* ---------- Footer ---------- */
 .site-footer {

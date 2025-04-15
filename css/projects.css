@@ -24,7 +24,8 @@ a, ul {
 
 /* ---------- Containers ---------- */
 .container,
-.container-footer {
+.container-footer,
+.swiper-container {
   width: 1200px;
   max-width: 100%;
   margin: 0 auto;
@@ -600,45 +601,34 @@ section:last-of-type {
 }
 
 /* ---------- Companies Logos Section ---------- */
-.companies-logos {
-  padding: 40px 0;
-  margin-bottom: 60px;
-  text-align: center;
-  background-color: #fff;
-  border-top: 1px solid #e9ecef;
-  border-bottom: 1px solid #e9ecef;
-}
-
-.companies-logos h3 {
-  font-size: 24px;
-  font-weight: 500;
-  margin-bottom: 30px;
-  color: #333;
-}
-
-.logos-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 30px 50px;
-}
-
-.logo-item {
-  flex: 0 1 130px;
-  text-align: center;
-}
-
-.logo-item img {
-  max-width: 100%;
+.swiper-container {
   height: auto;
-  max-height: 45px;
-  filter: grayscale(100%);
-  opacity: 0.6;
-  transition: filter 0.3s, opacity 0.3s;
+  margin-bottom: 60px;
+  margin-top: 60px;
 }
-.logo-item img:hover {
-  filter: grayscale(0%);
+.swiper {
+  overflow: hidden;
+}
+
+.swiper-wrapper {
+  transition-timing-function: linear !important;
+}
+
+.swiper-slide {
+  width: auto !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.swiper-slide img {
+  height: 40px;
+  width: auto;
+  opacity: 0.9;
+  transition: opacity 0.3s ease;
+}
+
+.swiper-slide img:hover {
   opacity: 1;
 }
 

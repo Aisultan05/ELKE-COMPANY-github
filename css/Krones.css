@@ -494,61 +494,49 @@ box-shadow: 0 0 8px rgba(0, 86, 179, 0.6);
   margin-bottom: 0;
 }
 
-/* ---------- Placeholder box styles for "Стратегическое видение" ---------- */
-.placeholder-box {
-  border: 1px dashed #ced4da;
-  min-height: 150px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 25px;
-  margin-top: 25px;
-  color: #adb5bd;
-  background-color: #f8f9fa;
-  border-radius: 4px;
-}
-.placeholder-box .arrow-box {
-  font-size: 20px;
-  font-weight: bold;
-  color: #6c757d; 
+.partnership-section {
+  padding: 25px 0;
+  margin-top: 40px;
+  border-top: 1px solid #e0e0e0;
 }
 
-/* ---------- Partnership Section ---------- */
-.partnership-section {
-display: flex;
-justify-content: space-between;
-align-items: center;
-padding: 25px 0;
-margin-top: 40px;
-border-top: 1px solid #e0e0e0;
+.partnership-header {
+  display: flex;
+  align-items: center;       /* 👈 выравнивание по вертикали */
 }
+
 .partnership-section h2 {
-font-size: 24px;
-font-weight: 500;
-color: #333;
-margin: 0;
+  font-size: 24px;
+  font-weight: 500;
+  color: #333;
+  margin: 0;
 }
+
 .arrows {
-bottom: 25px;
-right: 25px;
-display: flex;
-gap: 10px;
+  display: flex;
+  gap: 10px;
+  margin-left: 20px;
 }
+
 .arrow {
-width: 48px;
-height: 48px;
-border: none;
-border-radius: 50%;
-cursor: pointer;
-display: flex;
-align-items: center;
-justify-content: center;
-background-color: transparent;
-color: #000;
+  width: 18px;
+  height: 18px;
+  border: none;
+  border-radius: 50%;
+  background-color: transparent;
+  filter: brightness(0) saturate(100%);
+  display: block;
 }
+
 .arrow-left {
-transform: scaleX(-1);
+  transform: scaleX(-1);
+  cursor: pointer;
 }
+
+.arrow-right {
+  filter: brightness(60%);
+}
+
 
 
 /* ---------- Fade-in Animation ---------- */
