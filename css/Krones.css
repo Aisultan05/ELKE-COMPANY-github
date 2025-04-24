@@ -10,7 +10,7 @@ html {
  }
 
 body {
-  font-family: Arial, sans-serif;
+  font-family: Onest;
   color: #333;
   background: #fff;
   line-height: 1.4;
@@ -25,7 +25,7 @@ a, ul {
 /* ---------- Containers ---------- */
 .container,
 .container-footer {
-  width: 1200px;
+  width: 1400px;
   max-width: 100%;
   margin: 0 auto;
   padding-left: 15px;
@@ -117,7 +117,6 @@ a, ul {
   padding: 10px 24px;
   overflow: hidden;
   white-space: nowrap;
-  border-radius: 4px;
   transition: color 0.3s, border-color 0.3s, background-color 0.3s;
 }
 .nav-item span {
@@ -165,7 +164,6 @@ justify-content: center;
 width: 40px;
 height: 40px;
 background-color: #fff;
-border-radius: 4px;
 border: 1px solid #ccc;
 text-decoration: none;
 flex-shrink: 0;
@@ -215,53 +213,53 @@ pointer-events: auto;
 }
 
 .language-container {
-width: 40px;
-transition: width 0.35s ease;
-position: relative;
-display: flex;
-align-items: center;
-justify-content: flex-end;
-}
-.language-container:hover {
-width: 160px;
-}
-.language-options {
-margin-right: auto;
-display: flex;
-gap: 10px;
-opacity: 0;
-visibility: hidden;
-pointer-events: none;
-transition: opacity 0.3s ease 0.1s;
-}
-.language-container:hover .language-options {
-opacity: 1;
-visibility: visible;
-pointer-events: auto;
-}
-.language-options a {
-text-decoration: none;
-color: #6c757d;
-font-size: 14px;
-transition: color 0.2s ease;
-}
-.language-options a:hover {
-color: #0d6efd;
-}
-.language-options a.active-lang {
-color: #212529;
-text-decoration: underline;
-font-weight: 600;
-}
+  width: 40px;
+  transition: width 0.35s ease;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px; 
+  }
+  .language-container:hover {
+  width: 130px;
+  }
+  .language-options {
+  display: flex;
+  gap: 10px;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.3s ease 0.1s;
+  }
+  .language-container:hover .language-options {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  }
+  .language-options a {
+  text-decoration: none;
+  color: #6c757d;
+  font-size: 14px;
+  transition: color 0.2s ease;
+  }
+  .language-options a:hover {
+  color: #0d6efd;
+  }
+  .language-options a.active-lang {
+  color: #212529;
+  text-decoration: underline;
+  font-weight: 600;
+  }
 
 /* Бургер-меню и Мобильное меню */
 .burger-menu-button {
-  display: none; background: none; border: none; cursor: pointer; padding: 10px; margin-left: 15px; z-index: 1051; /* Ensure burger is above blurred content but below mobile nav */
+  display: none; background: none; border: none; cursor: pointer; padding: 5px; margin-left: 15px; z-index: 1051; border: 1px solid #ccc; width: 36px; height: 36px ;
 }
 .burger-menu-button span {
-  display: block; width: 24px; height: 3px; background-color: #333; margin: 5px 0; transition: all 0.3s ease; border-radius: 1px;
+  display: block; width: 24px; height: 2px; background-color: #5F737E; margin: 5px 0; transition: all 0.3s ease;
 }
-.burger-menu-button.active span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+.burger-menu-button.active span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
 .burger-menu-button.active span:nth-child(2) { opacity: 0; }
 .burger-menu-button.active span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
 
@@ -289,6 +287,11 @@ font-weight: 600;
 .mobile-language-options { margin-top: 10px; display: flex; gap: 15px; }
 .mobile-language-options a { color: #6c757d; font-weight: 500; }
 .mobile-language-options a.active-lang { color: #212529; text-decoration: underline; }
+.tab-icon-img img {
+  transition: transform 0.2s ease; /* Плавность для эффектов */
+  filter: brightness(0) saturate(100%); /* Сбрасывает цвет до черного */
+  transform: rotate(-45deg);
+}
 
 /* ---------- Overlay и Pop‑up ---------- */
 .popup-overlay {
@@ -312,7 +315,6 @@ font-weight: 600;
   max-width: 95vw;
   background: #fff;
   border: 1px solid #e5e9ed;
-  border-radius: 2px;
   box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
   overflow: hidden;
   display: none;
@@ -348,7 +350,6 @@ font-weight: 600;
   justify-content: space-between;
   background: #fafbfc;
   border: 1px solid #eceff2;
-  border-radius: 2px;
   padding: 12px 16px;
 }
 .contact-label {
@@ -391,7 +392,6 @@ font-weight: 600;
   display: flex;
   align-items: center;
   border: 1px solid #eceff2;
-  border-radius: 2px;
   margin-bottom: 24px;
 }
 .country-code-display {
@@ -415,7 +415,6 @@ font-weight: 600;
   color: #fff;
   font: 600 16px/1 "Segoe UI", system-ui, sans-serif;
   border: none;
-  border-radius: 2px;
   cursor: pointer;
   transition: background 0.2s;
 }
@@ -438,7 +437,6 @@ body.popup-active > *:not(.popup-overlay):not(.popup-contact):not(.site-header) 
   pointer-events: none;
   user-select: none; 
 }
-
 
 
 
@@ -489,6 +487,11 @@ body.popup-active > *:not(.popup-overlay):not(.popup-contact):not(.site-header) 
   color: #adb5bd; 
 }
 
+.plain-link{
+  border-right: 2px solid #F0F0F0;
+  margin-right: 10px;
+  padding: 10px;
+}
 /* ---------- Main Title & Intro ---------- */
 .krones-page-content h1 {
   font-size: 36px;
@@ -502,193 +505,331 @@ body.popup-active > *:not(.popup-overlay):not(.popup-contact):not(.site-header) 
   line-height: 1.6;
   color: #555;
   margin-bottom: 40px;
-  max-width: 1200px;
+  max-width: 1400px;
 }
 
 /* ---------- Banner ---------- */
 .krones-banner {
+  position: relative;
+  overflow: hidden;
   margin-bottom: 50px;
   line-height: 0;
 }
+
 .krones-banner img {
   width: 100%;
   height: auto;
   display: block;
   max-height: 500px;
   object-fit: cover;
+  transition: max-height 0.5s ease-in-out;
 }
 
-/* ---------- Tabbed Section ---------- */
-.tabs-section {
-  margin-bottom: 50px;
+.krones-banner .overlay-img {
+  position: absolute;
+  left: 5%;
+  top: 50%;
+  transform: translateY(-50%);
+  
+  width: clamp(120px, 20%, 250px);
+  height: auto;
+  pointer-events: none; 
+  z-index: 10;
 }
 
-.tab-nav {
+@media (max-width: 1024px) {
+  .krones-banner .overlay-img {
+    left: 4%;
+    width: clamp(100px, 25%, 200px);
+  }
+}
+
+@media (max-width: 768px) {
+  .krones-banner .overlay-img {
+    left: 3%;
+    width: clamp(80px, 30%, 180px);
+  }
+}
+
+@media (max-width: 480px) {
+  .krones-banner .overlay-img {
+    left: 5%;
+    width: clamp(60px, 30%, 150px);
+  }
+}
+
+
+.tabs-section-desktop {
+  margin-bottom: 50px; /* Отступ секции снизу */
+}
+.tabs-section-desktop .tab-nav {
   display: flex;
-  border-bottom: 1px solid #e0e0e0;
+  border-bottom: 1px solid #f0f0f0;
   margin-bottom: 0;
   position: relative;
-  z-index: 1;
-  background-color: #fff;
-  width: 100%; 
+  z-index: 2;
 }
-
-.tab-link {
-  flex: 1; 
-  padding: 15px 0;
+.tabs-section-desktop .tab-link {
+  flex: 1;
+  padding: 15px 10px;
   cursor: pointer;
   background-color: transparent;
   border: none;
   border-bottom: 3px solid transparent;
+  font-family: 'Onest', sans-serif;
   font-size: 16px;
   color: #555;
   font-weight: 500;
   transition: color 0.3s, border-color 0.3s, box-shadow 0.3s, background-color 0.3s;
-  position: relative;
-  margin-bottom: -1px;
   text-align: center;
+  position: relative;
+  margin-bottom: -1px; /* Перекрытие границы */
 }
-
-.tab-link:hover {
-color: #0056b3;
-border-bottom-color: #a0cfff;
-background-color: #f0f8ff;
+.tabs-section-desktop .tab-link:hover {
+  color: #0056b3;
+  border-bottom-color: #a0cfff;
+  background-color: #f0f8ff;
 }
-
-.tab-link.active-tab {
-color: #ffffff;
-background-color: #0056b3;
-border-bottom-color: #0056b3;
-font-weight: 600;
-box-shadow: 0 0 8px rgba(0, 86, 179, 0.6);
+.tabs-section-desktop .tab-link.active-tab {
+  color: #ffffff;
+  background-color: #0056b3;
+  border-bottom-color: #0056b3;
+  font-weight: 600;
+  box-shadow: 0 0 8px rgba(0, 86, 179, 0.6);
 }
-
-/* ---------- Tab Content Area ---------- */
-.tab-content {
-  border: 1px solid #e0e0e0;
+.tabs-section-desktop .tab-content-wrapper {
+  border: 1px solid #f0f0f0;
   border-top: none;
-  padding: 35px 30px;
   background-color: #fff;
+  position: relative;
+  z-index: 1;
   margin-top: 0;
 }
-
-.tab-panel {
-  display: none;
-  animation: fadeIn 0.4s ease-out;
+.tabs-section-desktop .tab-panel {
+  display: none; 
+  padding: 35px 30px;
+  animation: fadeInDesktop 0.4s ease-out; 
 }
-.tab-panel.active-panel {
-  display: block;
+.tabs-section-desktop .tab-panel.active-panel {
+  display: block; 
 }
-
-/* ---------- Specific styles for "Технологии" tab ---------- */
-#tab-tech.active-panel {
+.tabs-section-desktop #desktop-tech.active-panel {
   display: flex;
   gap: 40px;
 }
+.tabs-section-desktop .tech-images { flex: 0 0 30%; max-width: 45%; }
+.tabs-section-desktop .main-tech-image { width: 100%; height: auto; display: block; margin-bottom: 20px; border: 1px solid #e9ecef; }
+.tabs-section-desktop .tech-thumbnails { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; }
+.tabs-section-desktop .tech-thumbnails img { width: 100%; height: auto; display: block; border: 1px solid #e9ecef; object-fit: cover; aspect-ratio: 1 / 1; cursor: pointer; transition: opacity 0.2s ease; }
+.tabs-section-desktop .tech-thumbnails img:hover { opacity: 0.8; }
+.tabs-section-desktop .tech-description { flex: 1; }
+.tabs-section-desktop .tech-description p { font-size: 15px; line-height: 1.7; color: #444; margin-bottom: 18px; }
+.tabs-section-desktop .tech-description p:last-child { margin-bottom: 0; }
+.tabs-section-desktop .tech-description strong { color: #333; }
 
-.tech-images {
-  flex: 0 0 45%;
-  max-width: 45%;
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-.main-tech-image {
+
+/* --- Стили для МОБИЛЬНОЙ версии (Аккордеон: .tabs-section-mobile) --- */
+.tabs-section-mobile {
+  margin-bottom: 50px;
+}
+.tabs-section-mobile .collapsible-tab {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   width: 100%;
-  height: auto;
-  display: block;
-  margin-bottom: 20px;
-  border: 1px solid #e9ecef;
-  border-radius: 3px;
-}
-
-.tech-thumbnails {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 15px;
-}
-
-.tech-thumbnails img {
-  width: 100%;
-  height: auto;
-  display: block;
-  border: 1px solid #e9ecef;
-  object-fit: cover;
-  aspect-ratio: 1 / 1;
+  padding: 15px 20px;
+  margin-bottom: 10px;
+  border: 1px solid #f0f0f0;
+  background-color: #fff; 
+  text-align: left;
+  font-family: 'Onest', sans-serif;
+  font-weight: 500;
   cursor: pointer;
-  transition: opacity 0.2s ease;
-  border-radius: 3px;
+  transition: background-color 0.3s ease-out, border-color 0.3s ease-out; /* Плавный переход фона */
 }
-.tech-thumbnails img:hover {
-  opacity: 0.8;
+/* Добавляем нижнюю границу последней кнопке */
+.tabs-section-mobile .collapsible-tab:last-of-type {
+  border-bottom: 1px solid #f0f0f0;
 }
-.tech-thumbnails img.active-thumb {
-  border-color: #0056b3;
-  box-shadow: 0 0 0 2px #a0cfff;
-}
-
-.tech-description {
-  flex: 1;
+/* Убираем нижнюю границу у активной последней кнопки */
+.tabs-section-mobile .collapsible-tab[aria-expanded="true"]:last-of-type {
+   border-bottom: none;
 }
 
-.tech-description h3 {
-  font-size: 22px;
-  font-weight: 600;
-  color: #333;
-  margin-bottom: 20px;
+.tabs-section-mobile .collapsible-tab span:first-child {
+  flex-grow: 1;
+  margin-right: 10px;
 }
 
-.tech-description p {
-  font-size: 15px;
-  line-height: 1.7;
-  color: #444;
-  margin-bottom: 18px;
+/* Стили для ИЗОБРАЖЕНИЯ иконки */
+.tabs-section-mobile .collapsible-tab .tab-icon-img {
+  display: inline-block;
+  flex-shrink: 0;
+  width: 16px;  /* --- Настройте размер иконки --- */
+  height: 16px; /* --- Настройте размер иконки --- */
+  vertical-align: middle;
+  transition: transform 0.3s ease-out, filter 0.3s ease-out; /* Плавность для поворота и цвета */
+
+  /* Начальное состояние: Черный цвет, поворот -45 градусов */
+  filter: brightness(0) saturate(100%); /* Черный */
+  transform: rotate(-45deg);
 }
-.tech-description p:last-child {
-  margin-bottom: 0;
+
+/* Наведение на НЕактивную кнопку аккордеона */
+.tabs-section-mobile .collapsible-tab:not([aria-expanded="true"]):hover {
+  background-color: #e9ecef;
+  border-color: #adb5bd;
+  color: #0056b3;
+}
+
+
+/* Активная кнопка аккордеона */
+.tabs-section-mobile .collapsible-tab[aria-expanded="true"] {
+  background-color: #0056b3; 
+  border-color: #0056b3;    
+  color: #fff;            
+  border-bottom: none;    
+}
+.tabs-section-mobile .collapsible-tab[aria-expanded="true"] .tab-icon-img {
+  filter: none; 
+  transform: rotate(45deg);
+}
+.tabs-section-mobile .collapsible-tab[aria-expanded="true"]:hover {
+   background-color: #004a9a; 
+   border-color: #004a9a;
+}
+
+
+/* Контент аккордеона */
+.tabs-section-mobile .collapsible-content {
+  display: block;
+  visibility: hidden; /* Скрываем, чтобы не занимало места */
+  overflow: hidden;   /* Обрезаем при анимации */
+  max-height: 0;      /* Начальная высота 0 */
+  padding: 0 20px;    /* Убираем вертикальные паддинги при 0 высоте */
+  margin: 0;
+  border-left: 1px solid #f0f0f0;
+  border-right: 1px solid #f0f0f0;
+  border-bottom: 1px solid #f0f0f0;
+  background-color: #fff;
+  /* Плавный переход высоты, паддингов и видимости */
+  transition: max-height 0.35s ease-out, padding 0.35s ease-out, visibility 0s 0.35s;
+}
+/* Активный (раскрытый) контент аккордеона */
+.tabs-section-mobile .collapsible-content.active {
+  visibility: visible; /* Делаем видимым */
+  max-height: 1500px; /* Установите достаточно большую высоту */
+  padding: 20px;      /* Возвращаем паддинги */
+  transition: max-height 0.35s ease-out, padding 0.35s ease-out, visibility 0s 0s; /* Убираем задержку видимости */
+}
+
+/* Стили для контента внутри мобильной версии #mobile-tech */
+.tabs-section-mobile #mobile-tech .tech-images { max-width: 100%; margin-bottom: 20px; }
+.tabs-section-mobile #mobile-tech .main-tech-image { width: 100%; height: auto; display: block; margin-bottom: 15px; border: 1px solid #e9ecef; }
+.tabs-section-mobile #mobile-tech .tech-thumbnails { display: grid; grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)); gap: 10px; }
+.tabs-section-mobile #mobile-tech .tech-thumbnails img { width: 100%; height: auto; display: block; border: 1px solid #e9ecef; object-fit: cover; aspect-ratio: 1 / 1; }
+.tabs-section-mobile #mobile-tech .tech-description p { font-size: 14px; line-height: 1.6; color: #444; margin-bottom: 15px; }
+.tabs-section-mobile #mobile-tech .tech-description p:last-child { margin-bottom: 0; }
+.tabs-section-mobile #mobile-tech .tech-description strong { color: #333; }
+
+
+/* --- ПЕРЕКЛЮЧЕНИЕ ВИДИМОСТИ СЕКЦИЙ --- */
+
+/* По умолчанию (на десктопе) показываем секцию табов, скрываем аккордеон */
+.tabs-section-desktop {
+  display: block; /* Или другое значение по умолчанию для секции */
+}
+.tabs-section-mobile {
+  display: none;
 }
 
 .partnership-section {
   padding: 25px 0;
   margin-top: 40px;
-  border-top: 1px solid #e0e0e0;
+  border-top: 1px solid #f0f0f0;
 }
 
 .partnership-header {
   display: flex;
-  align-items: center;       /* 👈 выравнивание по вертикали */
+  align-items: center;       
 }
 
 .partnership-section h2 {
   font-size: 24px;
   font-weight: 500;
-  color: #333;
+  color: #0061AD;
   margin: 0;
 }
 
+/* ---------- КНОПКИ-СТРЕЛКИ ---------- */
 .arrows {
+  position: relative;
   display: flex;
-  gap: 10px;
-  margin-left: 20px;
+  gap: 25px;
+  margin-left: 30px;
 }
 
 .arrow {
-  width: 18px;
-  height: 18px;
-  border: none;
-  border-radius: 50%;
-  background-color: transparent;
-  filter: brightness(0) saturate(100%);
-  display: block;
-}
-
-.arrow-left {
-  transform: scaleX(-1);
+  all: unset; 
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
+/* ================== 1. Базовый (синий) ================== */
+.arrow img {
+  width: 20px;
+  height: 20px;
+  display: block;
+  filter: invert(1);
+  transition: filter .2s, transform .1s; /* Плавный переход */
+}
+
+.arrow-left img {
+  transform: rotate(180deg);
+}
+
+/* ================== 2. HOVER — тёмно-серый (#5F737E) ================== */
+.arrow:hover img {
+  filter: brightness(0) saturate(100%)
+          invert(47%) sepia(10%) saturate(461%)
+          hue-rotate(160deg) brightness(94%) contrast(88%);
+}
+.arrow-left:hover img {
+   transform: rotate(180deg); 
+}
+
+/* ================== 3. ACTIVE — тёмно-серый (#5F737E) + Scale ================== */
+.arrow:active img {
+  filter: brightness(0) saturate(100%)
+          invert(47%) sepia(10%) saturate(461%)
+          hue-rotate(160deg) brightness(94%) contrast(88%);
+  transform: scale(.95);
+}
+
+.arrow-left:active img {
+   transform: scale(.95) rotate(180deg);
+}
 .arrow-right {
-  filter: brightness(60%);
+  appearance: none;       /* отключить нативный стиль кнопки */
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: default;        /* курсор по-умолчанию */
 }
-
+.arrow-right img {
+  filter: brightness(0) saturate(100%)
+  invert(47%) sepia(10%) saturate(461%)
+  hue-rotate(160deg) brightness(94%) contrast(88%);
+  display: block;         /* чтобы у картинки не было лишних отступов */
+  pointer-events: none;   /* отключаем клики именно на изображении */
+}
 
 
 /* ---------- Fade-in Animation ---------- */
@@ -702,7 +843,7 @@ box-shadow: 0 0 8px rgba(0, 86, 179, 0.6);
   background: #1A1A1A;
   color: #ccc;
   padding: 40px 0;
-  font-family: Arial, sans-serif;
+  font-family: Onest;
   font-size: 13px;
   margin-top: 60px;
 }
@@ -763,7 +904,6 @@ box-shadow: 0 0 8px rgba(0, 86, 179, 0.6);
 .map-link {
   border: 1px solid #555;
   padding: 8px 12px;
-  border-radius: 4px;
   text-decoration: none;
   margin-top: 10px;
   color: #f0f0f0;
@@ -885,7 +1025,7 @@ box-shadow: 0 0 8px rgba(0, 86, 179, 0.6);
   margin-bottom: 30px;
   padding: 30px 0; 
   align-items: flex-end; 
-  font-family:sans-serif;
+  font-family: Onest;
   border-top: 1px solid #333;
   border-bottom: 1px solid #333; 
 }
@@ -939,13 +1079,11 @@ box-shadow: 0 0 8px rgba(0, 86, 179, 0.6);
   background:#1a1a1a;
   cursor:pointer;
   border-right: none; /* Remove right border */
-  border-radius: 4px 0 0 4px; /* Round left corners */
 }
 .country-iso{
   font-weight:600;
   color:#f0f0f0;
   border:1px solid #f0f0f0;
-  border-radius:4px;
   padding:2px 6px;
   font-size: 11px; /* Smaller ISO code */
 }
@@ -964,7 +1102,6 @@ box-shadow: 0 0 8px rgba(0, 86, 179, 0.6);
   list-style:none;
   background:#2a2a2a; /* Darker background */
   border:1px solid #555;
-  border-radius:4px;
   display:none;
   max-height: 150px; /* Limit height */
   overflow-y: auto; /* Add scroll if needed */
@@ -1016,7 +1153,6 @@ input[type="tel"]#phoneInput:focus {
   height: auto; /* Let padding define height */
   padding: 10px 25px; /* Adjust padding */
   border: 1px solid #f0f0f0;
-  border-radius: 4px;
   background: transparent;
   color: #f0f0f0;
   line-height: 1.2;
@@ -1112,154 +1248,153 @@ input[type="tel"]#phoneInput:focus {
 
 
 /* ----- Responsive Styles ----- */
-
-/* --- 1. Large Laptops / Desktops --- */
-/* Base styles apply */
-
-/* --- 2. Smaller Laptops / Large Tablets --- */
+/* --- 2. Smaller Laptops / Large Tablets (General adjustments) --- */
 @media (max-width: 1199px) {
   .container, .container-footer { width: 960px; }
+  .header-container { padding-left: 30px; padding-right: 30px; }
   .krones-page-content h1 { font-size: 34px; }
   .intro-text { font-size: 15px; max-width: 700px;}
-  .tab-link { padding: 14px 20px; font-size: 15px; }
-  #tab-tech { gap: 30px; }
+  /* Adjustments specific to desktop tabs on this screen size */
+  .tab-link { padding: 14px 0; font-size: 15px; } /* Adjust desktop tab padding/font */
+  #tab-tech.active-panel { gap: 30px; } /* Still use desktop layout */
   .tech-description h3 { font-size: 20px; }
   .tech-description p { font-size: 14px; }
   .partnership-section h2 { font-size: 22px; }
+  /* Footer adjustments */
+  /* ... */
 }
 
-/* --- 3. Tablets (Portrait) / Small Laptops --- */
+/* --- 3. Tablets (Portrait) / Small Laptops (ACCORDION STYLES) --- */
 @media (max-width: 991px) {
-  .container, .container-footer { width: 720px; }
-  section { margin-bottom: 40px; }
+    .container, .container-footer { width: 720px; /* Or your desired width */ }
+    section { margin-bottom: 40px; }
 
-  /* Header */
-  .site-header { height: 70px; }
-  .logo img { height: 50px; }
-  .main-nav { display: none; }
-  .burger-menu-button { display: block; }
-  .email-text, .language-options { display: none !important; }
-  .mail-container:hover, .language-container:hover { width: 40px; }
+    /* Header Adjustments */
+    .site-header { height: 70px; }
+    .logo img { height: 50px; }
+    .main-nav { display: none; }
+    .burger-menu-button { display: block; }
+    .mail-container, .language-container { width: 40px !important; }
+    .email-text, .language-options { display: none !important; }
+    .mail-container:hover, .language-container:hover { width: 40px; }
 
-  /* Krones Content */
-  .krones-page-content h1 { font-size: 30px; }
-  .intro-text { font-size: 15px; margin-bottom: 30px;}
-  .krones-banner { margin-bottom: 40px; }
-  .krones-banner img { max-height: 400px; }
+    /* Krones Content Adjustments */
+    .krones-page-content h1 { font-size: 30px; }
+    .intro-text { font-size: 15px; margin-bottom: 30px; margin-top: 30px;}
+    .krones-banner { margin-bottom: 40px; }
+    .krones-banner img { max-height: 400px; }
 
-  .tab-nav { /* Make tabs scrollable */
-      overflow-x: auto;
-      white-space: nowrap;
-      padding-bottom: 0; /* Remove padding for scrollbar */
-      margin-bottom: 0;
-      border-bottom: none; /* Remove border, rely on content border */
+
+    .tabs-section-desktop {
+      display: none;
   }
-  .tab-nav::-webkit-scrollbar { height: 4px; }
-  .tab-nav::-webkit-scrollbar-thumb { background: #ccc; }
-  .tab-link { padding: 12px 18px; font-size: 14px; flex-shrink: 0; margin-bottom: -1px;}
-  .tab-content { padding: 25px 20px; border-top: 1px solid #e0e0e0;}
+    .tabs-section-mobile {
+        display: block; /* Показываем аккордеон */
+    }
 
-  #tab-tech { flex-direction: column; gap: 25px; }
-  .tech-images { flex-basis: auto; max-width: 100%; }
-  .tech-thumbnails { grid-template-columns: repeat(3, 1fr); gap: 10px;} /* Keep 3 thumbnails */
-  .tech-description h3 { font-size: 19px; }
-  .tech-description p { font-size: 14px; }
+    /* Дополнительные подстройки для планшетов/мобильных, если нужны */
+    .tabs-section-mobile #mobile-tech .tech-thumbnails { grid-template-columns: repeat(auto-fit, minmax(70px, 1fr)); }
+    }
+    .tabs-section-mobile #mobile-quality.active{
+      max-height: 100%; 
+      overflow-y: auto;
+    }
 
-  .partnership-section { flex-direction: column; align-items: flex-start; gap: 15px; padding: 20px 0;}
-  .partnership-section h2 { font-size: 20px; }
+    /* ---------- ACCORDION STYLES END ---------- */
+    /* Footer Adaptation */
+    .footer-row { flex-direction: column; gap: 30px; }
+    .footer-links-group { flex-direction: column; gap: 25px; padding: 15px; }
+    .phone-box { padding: 15px; }
+    .top-button-box { display: none; }
+    .footer-middle { flex-direction: column; align-items: center; text-align: center; gap: 25px; }
+    .footer-form { flex-basis: auto; width: 100%; max-width: 450px; }
+    .middle-cert, .middle-links { flex-basis: auto; text-align: center; width: 100%; align-items: center; }
+    .middle-links { flex-direction: row; justify-content: center; gap: 15px; }
+    .footer-bottom { flex-direction: column; text-align: center; gap: 15px; }
+    .bottom-left, .bottom-right { flex-basis: auto; text-align: center; width: 100%; justify-content: center; }
+    .footer-biglogo { opacity: 0.1; max-height: 60px; }
 
-  /* Footer Adaptation */
-  .footer-row { flex-direction: column; gap: 30px; }
-  .footer-links-group { flex-direction: column; gap: 25px; padding: 15px; }
-  .phone-box { padding: 15px; }
-  .top-button-box { display: none; } /* Hide vertical button on tablet */
-  .footer-middle { flex-direction: column; align-items: center; text-align: center; gap: 25px; }
-  .footer-form { flex-basis: auto; width: 100%; max-width: 450px; }
-  .middle-cert, .middle-links { flex-basis: auto; text-align: center; width: 100%; align-items: center; }
-  .middle-links { flex-direction: row; justify-content: center; gap: 15px; }
-  .footer-bottom { flex-direction: column; text-align: center; gap: 15px; }
-  .bottom-left, .bottom-right { flex-basis: auto; text-align: center; width: 100%; justify-content: center; }
-  .footer-biglogo { opacity: 0.1; max-height: 60px; }
-}
 
 /* --- 4. Mobile Phones (Portrait) --- */
 @media (max-width: 767px) {
-  .container, .container-footer { width: 100%; padding: 0 15px; }
-  h1 { font-size: 26px; }
-  h2 { font-size: 22px; }
-  h3 { font-size: 18px; }
-  section { margin-bottom: 30px; }
+    .container, .container-footer { width: 100%; padding: 0 15px; }
+    h1 { font-size: 26px; }
+    h2 { font-size: 22px; }
+    h3 { font-size: 18px; }
+    section { margin-bottom: 30px; }
 
-  /* Header */
-  .site-header { height: 60px; }
-  .logo img { height: 40px; }
-  .logo-text { display: none; }
-  .header-actions { gap: 5px; }
-  .icon-link { width: 36px; height: 36px; padding: 8px; }
-  .icon-link img { width: 16px; height: 16px; }
+    /* Header */
+    .site-header { height: 60px; }
+    .logo img { height: 50px; }
+    .logo-text { display: none; }
+    .header-actions { gap: 5px; }
+    .mail-container, .language-container { width: 36px !important; }
+    .icon-link { width: 36px; height: 36px; padding: 8px; }
+    .icon-link img { width: 16px; height: 16px; }
 
-  .popup-contact {
-    left: 50%;
-    top: 50%;   
-    width: 90vw;
-    max-width: 400px;
-    transform: translate(-50%, -50%) scale(0.95);
-  }
-  .popup-contact.active {
-    transform: translate(-50%, -50%) scale(1);
-  }
+    /* Popup */
+    .popup-contact { width: 90vw; max-width: 400px; /* Centering via transform handled by JS */}
 
-  /* Krones Content */
-  .krones-page-content { padding-bottom: 40px; }
-  .krones-page-content h1 { font-size: 28px; }
-  .intro-text { font-size: 14px; margin-bottom: 25px;}
-  .krones-banner { margin-bottom: 30px; }
-  .krones-banner img { max-height: 300px; }
+    /* Krones Content */
+    .krones-page-content { padding-bottom: 40px; }
+    .krones-page-content h1 { font-size: 28px; }
+    .intro-text { font-size: 14px; margin-bottom: 25px;}
+    .krones-banner { margin-bottom: 30px; }
 
-  .tab-link { padding: 10px 15px; font-size: 13px; }
-  .tab-content { padding: 20px 15px;}
+    .tabs-section-mobile .collapsible-tab { padding: 12px 15px; font-size: 0.95rem; }
+    .tabs-section-mobile .collapsible-tab .tab-icon { font-size: 1.3em; }
+    .tabs-section-mobile .collapsible-content.active { padding: 15px; }
+    .tabs-section-mobile #mobile-tech .tech-description p { font-size: 13px; }
+  
 
-  #tab-tech { gap: 20px; }
-  .tech-thumbnails { grid-template-columns: repeat(2, 1fr); } /* 2 thumbnails */
-  .tech-description h3 { font-size: 18px; margin-bottom: 15px;}
-  .tech-description p { font-size: 14px; line-height: 1.6; margin-bottom: 15px;}
-
-  .partnership-section h2 { font-size: 19px; }
-  .arrow-btn { width: 32px; height: 32px; font-size: 16px; padding: 5px 10px;}
-
-  /* Footer Adaptation */
-  .footer-group { padding: 15px; }
-  .input-row { flex-direction: column; align-items: stretch; gap: 0; border-bottom: none; }
-  .country-toggle { border-radius: 4px 4px 0 0; border: 1px solid #444; justify-content: center; }
-  input[type="tel"]#phoneInput { border-radius: 0 0 4px 4px; border: 1px solid #444; border-top: none; min-width: auto; text-align: center; }
-  .action-row { flex-direction: column; align-items: center; gap: 10px; }
-  .call-btn { width: 100%; max-width: 300px; }
-  .middle-links { flex-direction: column; gap: 5px; }
+    /* Footer Adaptation */
+    .footer-group { padding: 15px; }
+    .input-row { flex-direction: column; align-items: stretch; gap: 0; border-bottom: none; }
+    .country-toggle { border: 1px solid #444; justify-content: center; }
+    input[type="tel"]#phoneInput { border: 1px solid #444; border-top: none; min-width: auto; text-align: center; }
+    .action-row { flex-direction: column; align-items: center; gap: 10px; }
+    .call-btn { width: 100%; max-width: 300px; }
+    .middle-links { flex-direction: column; gap: 5px; }
 }
 
 /* --- 5. Small Mobile Phones --- */
 @media (max-width: 575px) {
-  h1 { font-size: 24px; }
-  h2 { font-size: 20px; }
-  h3 { font-size: 17px; }
-  .krones-page-content h1 { font-size: 24px; }
-  .intro-text { font-size: 13px; }
-  .krones-banner img { max-height: 250px; }
+    h1 { font-size: 24px; }
+    h2 { font-size: 20px; }
+    h3 { font-size: 17px; }
+    .krones-page-content h1 { font-size: 24px; }
+    .intro-text { font-size: 13px; }
 
-  .tab-link { padding: 9px 12px; font-size: 12px; }
-  .tab-content { padding: 15px; }
-  .tech-description h3 { font-size: 17px; }
-  .tech-description p { font-size: 13px; }
-  .partnership-section h2 { font-size: 18px; }
+    .tabs-section > .tab-link {
+      padding: 10px 12px;
+      font-size: 0.9rem;
+    }
+    .tabs-section > .tab-link .tab-icon {
+      font-size: 1.2em;
+    }
+    .tabs-section > .tab-panel.active-panel {
+      padding: 12px;
+    }
+     /* Дальнейшая корректировка текста, если нужно */
+     .tabs-section .tech-description p { font-size: 14px; }
 
-  /* Footer Adaptation */
-  .logo img { height: 35px; }
-  .site-footer h4 { font-size: 13px; }
-  .site-footer { font-size: 11px; padding: 30px 0 20px;}
-  .phone-box p a { font-size: 13px; }
-  input[type="tel"]#phoneInput { padding: 10px 10px; font-size: 14px; }
-  .call-btn { padding: 10px 15px; font-size: 14px; }
-  .consent-text { font-size: 10px; }
-  .bottom-left, .bottom-right { font-size: 10px; }
-  .studio-logo { height: 16px; }
+     .tabs-section-mobile .collapsible-tab { padding: 10px 12px; font-size: 0.9rem; }
+     .tabs-section-mobile .collapsible-tab .tab-icon { font-size: 1.2em; }
+     .tabs-section-mobile .collapsible-content.active { padding: 12px; }
+
+    /* Tech tab adjustments */
+    .tech-description h3 { font-size: 17px; }
+    .tech-description p { font-size: 13px; }
+    .partnership-section h2 { font-size: 18px; }
+
+    /* Footer Adaptation */
+    .logo img { height: 50px; }
+    .site-footer h4 { font-size: 13px; }
+    .site-footer { font-size: 11px; padding: 30px 0 20px;}
+    .phone-box p a { font-size: 13px; }
+    input[type="tel"]#phoneInput { padding: 10px 10px; font-size: 14px; }
+    .call-btn { padding: 10px 15px; font-size: 14px; }
+    .consent-text { font-size: 10px; }
+    .bottom-left, .bottom-right { font-size: 10px; }
+    .studio-logo { height: 16px; }
 }

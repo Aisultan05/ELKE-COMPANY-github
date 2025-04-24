@@ -4,7 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>ELKE COMPANY – Услуги - детальная</title>
-  <link rel="stylesheet" href="css/Detailed services.css" />
+  <link rel="stylesheet" href="css/Detailed services.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600&display=swap" rel="stylesheet">
+
 </head>
 <body>
 <!-- Шапка сайта -->
@@ -15,7 +17,7 @@
   <div class="header-container">
       <!-- Логотип -->
       <div class="logo">
-          <a href="main.html">
+          <a href="index.html">
               <img src="img/Header-logo.svg" alt="ELKE COMPANY Инжиниринговая компания">
               <p class="logo-text">Инжиниринговая<br> компания</p>
           </a>
@@ -111,7 +113,7 @@
           <span class="contact-number">8 (727) 258‑25‑68</span>
         </div>
         <a class="call-icon-popup" href="tel:+77272582568">
-          <img src="img/call_grey.svg" alt="Позвонить">
+          <img src="img/call.svg" alt="Позвонить">
         </a>
       </div>
       <div class="contact-item">
@@ -120,7 +122,7 @@
           <span class="contact-number">8 (727) 258‑25‑68</span>
         </div>
         <a class="call-icon-popup" href="tel:+77272582568">
-          <img src="img/call_grey.svg" alt="Позвонить">
+          <img src="img/call.svg" alt="Позвонить">
         </a>
       </div>
       <div class="contact-item">
@@ -129,7 +131,7 @@
           <span class="contact-number">8 (727) 258‑25‑68</span>
         </div>
         <a class="call-icon-popup" href="tel:+77272582568">
-          <img src="img/call_grey.svg" alt="Позвонить">
+          <img src="img/call.svg" alt="Позвонить">
         </a>
       </div>
     </div>
@@ -155,10 +157,8 @@
     <div class="container breadcrumbs-container">
       <nav aria-label="breadcrumb">
         <ol class="breadcrumbs">
-          <li><a href="main.html" class="plain-link">Главная</a></li>
-          <li><span class="separator">/</span></li>
+          <li><a href="index.html" class="plain-link">Главная</a></li>
           <li><a href="Services.html" class="plain-link">Услуги</a></li>
-          <li><span class="separator">/</span></li>
           <li aria-current="page" class="active">Инжиниринг</li>
         </ol>          
       </nav>
@@ -173,23 +173,18 @@
 
         <section class="engineering-intro">
             <div class="intro-text">
-                <h2>Инжиниринг: проектирование и оптимизация <br> для вашего производства</h2>
+                <h2 style="color: #1A1A1A;">Инжиниринг: проектирование и оптимизация <br> для вашего производства</h2>
                 <p>Любое успешное производство начинается с грамотного проекта. На этапе планирования важно учесть все детали – от расположения оборудования до системы коммуникаций. Инженеры и проектировщики ТОО «Elke Company» помогут вам найти оптимальные решения, обеспечивающие эффективность и надежность работы вашего предприятия.</p>
+
+                <h2>Наш подход</h2>
+                <p>Многолетний опыт в инжиниринге позволяет нам гарантировать качественное выполнение задач любой сложности. В процессе проектирования мы тесно взаимодействуем с Заказчиком, прорабатывая различные варианты размещения производственных линий, машин и вспомогательных элементов. Такой подход помогает учесть все ваши пожелания и создать проект, идеально соответствующий вашим требованиям.</p>
+
+                <h2>Проектирование трубопроводов</h2>
+                <p>Разработка систем трубопроводов – одна из ключевых специализаций нашей компании. <br> Мы предлагаем:</p>
             </div>
             <div class="intro-image">
                 <img src="img/krones-5.png" alt="Aerial view of Elke Company facility"> 
             </div>
-        </section>
-
-        <section class="engineering-text-block">
-            <h2>Наш подход</h2>
-            <p>Многолетний опыт в инжиниринге позволяет нам гарантировать качественное выполнение задач любой сложности. В процессе проектирования мы тесно взаимодействуем с Заказчиком, прорабатывая различные варианты размещения производственных линий, машин и вспомогательных элементов. Такой подход помогает учесть все ваши пожелания и создать проект, идеально соответствующий вашим требованиям.</p>
-        </section>
-
-        <section class="engineering-text-block">
-            <h2>Проектирование трубопроводов</h2>
-            <p>Разработка систем трубопроводов – одна из ключевых специализаций нашей компании.</p>
-            <p>Мы предлагаем:</p> 
         </section>
 
         <!-- Gallery Section -->
@@ -202,9 +197,11 @@
             <img src="img/Image 4" alt="Image 4" />
           </div>
           <div class="gallery-controls container">
-            <span class="gallery-counter">01</span>
-            <span class="gallery-dots">• •</span>
-            <span class="gallery-total">100</span>
+            <div class="gallery-dots">
+              <span class="gallery-counter">01</span>
+              <span class="gallery-dots">• •</span>
+              <span class="gallery-total">100</span>
+            </div>
             <div class="arrows">
               <button class="arrow arrow-left" aria-label="Влево">
                 <img src="img/Vector.svg" alt="">
@@ -217,40 +214,89 @@
         </section>
 
         <section class="cta-form-section">
-            <div class="cta-container">
-                <p class="cta-prompt">Заполните данные, наш менеджер свяжется с вами для подробной консультации</p>
-                <div class="form-wrapper">
-                    <h2>Заказать звонок</h2>
-                    <form class="callback-form">
-                        <div class="form-group">
-                            <input type="text" id="callback-name" name="name" placeholder="Введите ваше имя*" required>
-                        </div>
-                        <div class="form-group phone-group">
-                            <div class="country-code-select">
-                                <img src="img/Kazakhstan (KZ).svg" alt="KZ flag" width="20">
-                                <span>+7</span>
-                                <span class="dropdown-arrow">▾</span> 
-                            </div>
-                            <input type="tel" id="callback-phone" name="phone" placeholder="Укажите номер телефона" required>
-                            <button type="submit" class="submit-button">Заказать звонок</button>
-                        </div>
-                         <p class="form-disclaimer">
-                            Нажимая на кнопку, я даю свое согласие <br> на <a href="#">обработку персональных данных</a>
-                        </p>
-                    </form>
-                </div>
-            </div>
+          <div class="cta-container">
+            <p class="cta-prompt">
+              <!-- Левая скобка -->
+              <svg xmlns="http://www.w3.org/2000/svg" width="8" height="46" viewBox="0 0 8 46" fill="none">
+                <path d="M0 46V0H8V2.80773H2.93617V43.2391H8V46H0Z" fill="#F0F0F0"/>
+              </svg>
+            
+              <!-- Блок с двумя строками -->
+              <span class="cta-text">
+                <span>Заполните данные, наш менеджер свяжется с вами</span>
+                <span>для подробной консультации</span>
+              </span>
+            
+              <!-- Правая скобка -->
+              <svg xmlns="http://www.w3.org/2000/svg" width="8" height="46" viewBox="0 0 8 46" fill="none">
+                <path d="M0 46V43.2391H5.02128V2.80773H0V0H8V46H0Z" fill="#F0F0F0"/>
+              </svg>
+            </p>
+            
+        
+            <div class="form-wrapper">
+              <h2>Заказать звонок</h2>
+              <form class="callback-form" action="#" method="post">
+                <!-- All items including disclaimer are now inside form-row -->
+                <div class="form-row">
+                  <div class="form-group name-group">
+                    <input
+                      type="text"
+                      id="callback-name"
+                      name="name"
+                      placeholder="Введите ваше имя*"
+                      required
+                    >
+                  </div>
+        
+                  <div class="form-group phone-group">
+                    <button type="button" class="country-code-select" aria-label="Выбрать код страны">
+                      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Flag_of_Kazakhstan.svg/32px-Flag_of_Kazakhstan.svg.png" alt="KZ flag">
+                      <span>+7</span>
+                      <span class="dropdown-arrow">▾</span>
+                    </button>
+                    <input
+                      type="tel"
+                      id="callback-phone"
+                      name="phone"
+                      placeholder="Укажите номер телефона"
+                      required
+                    >
+                  </div>
+        
+                  <button type="submit" class="submit-button">Заказать звонок</button>
+        
+                  <!-- Disclaimer moved inside the flex row -->
+                  <p class="form-disclaimer">
+                    <span class="line-1">Нажимая на кнопку, я даю своё согласие</span>
+                    <span class="line-2">
+                      на <a href="#">обработку персональных данных</a>
+                    </span>
+                  </p>
+                                  
+        
+                </div> <!-- end form-row -->
+              </form>
+            </div> <!-- end form-wrapper -->
+        
+          </div> <!-- end cta-container -->
         </section>
 
-        <nav class="bottom-page-nav">
-            <h3>Инжиниринг</h3>
-            <div class="nav-arrows">
-                 <button class="arrow prev-arrow" aria-label="Previous section">←</button>
-                 <button class="arrow next-arrow" aria-label="Next section">→</button>
-            </div>
-        </nav>
-
-    </div><!-- /.content-container -->
+        <section class="partnership-section">
+          <div class="partnership-header">
+            <h2>Инжиниринг</h2>
+            <div class="arrows">
+              <button class="arrow arrow-left" aria-label="Влево">
+                <img src="img/Vector.svg" alt="">
+              </button>
+              <button class="arrow arrow-right" aria-label="Вправо">
+                <img src="img/Vector.svg" alt="">
+              </button>
+            </div>      
+          </div>
+        </section>  
+    </div>
+    
 
 <!-- Подвал сайта -->
 <footer class="site-footer">
@@ -262,7 +308,7 @@
         <div class="footer-col">
           <h4>Карта сайта</h4>
           <ul>
-            <li><a href="main.html">Главная</a></li>
+            <li><a href="index.html">Главная</a></li>
             <li class="has-submenu">
               <a href="Services.html">Услуги</a>
             </li>

@@ -11,7 +11,7 @@ html {
 
 
 body {
-  font-family: Arial, sans-serif;
+  font-family: Onest;
   color: #333;
   background: #fff;
   line-height: 1.4;
@@ -26,7 +26,7 @@ a, ul {
 /* ---------- Containers ---------- */
 .container,
 .container-footer {
-  width: 1200px;
+  width: 1400px;
   max-width: 100%;
   margin: 0 auto;
   padding-left: 15px;
@@ -35,7 +35,6 @@ a, ul {
 
 .content-container {
   padding-top: 30px;
-  padding-bottom: 60px;
 }
 
 .container-fullwidth {
@@ -123,7 +122,6 @@ a, ul {
   padding: 10px 24px;
   overflow: hidden;
   white-space: nowrap;
-  border-radius: 4px;
   transition: color 0.3s, border-color 0.3s, background-color 0.3s;
 }
 .nav-item span {
@@ -171,7 +169,6 @@ justify-content: center;
 width: 40px;
 height: 40px;
 background-color: #fff;
-border-radius: 4px;
 border: 1px solid #ccc;
 text-decoration: none;
 flex-shrink: 0;
@@ -221,53 +218,53 @@ pointer-events: auto;
 }
 
 .language-container {
-width: 40px;
-transition: width 0.35s ease;
-position: relative;
-display: flex;
-align-items: center;
-justify-content: flex-end;
-}
-.language-container:hover {
-width: 160px;
-}
-.language-options {
-margin-right: auto;
-display: flex;
-gap: 10px;
-opacity: 0;
-visibility: hidden;
-pointer-events: none;
-transition: opacity 0.3s ease 0.1s;
-}
-.language-container:hover .language-options {
-opacity: 1;
-visibility: visible;
-pointer-events: auto;
-}
-.language-options a {
-text-decoration: none;
-color: #6c757d;
-font-size: 14px;
-transition: color 0.2s ease;
-}
-.language-options a:hover {
-color: #0d6efd;
-}
-.language-options a.active-lang {
-color: #212529;
-text-decoration: underline;
-font-weight: 600;
-}
+  width: 40px;
+  transition: width 0.35s ease;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px; 
+  }
+  .language-container:hover {
+  width: 130px;
+  }
+  .language-options {
+  display: flex;
+  gap: 10px;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.3s ease 0.1s;
+  }
+  .language-container:hover .language-options {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  }
+  .language-options a {
+  text-decoration: none;
+  color: #6c757d;
+  font-size: 14px;
+  transition: color 0.2s ease;
+  }
+  .language-options a:hover {
+  color: #0d6efd;
+  }
+  .language-options a.active-lang {
+  color: #212529;
+  text-decoration: underline;
+  font-weight: 600;
+  }
 
 /* Бургер-меню и Мобильное меню */
 .burger-menu-button {
-  display: none; background: none; border: none; cursor: pointer; padding: 10px; margin-left: 15px; z-index: 1051; /* Ensure burger is above blurred content but below mobile nav */
+  display: none; background: none; border: none; cursor: pointer; padding: 5px; margin-left: 15px; z-index: 1051; border: 1px solid #ccc; width: 36px; height: 36px ;
 }
 .burger-menu-button span {
-  display: block; width: 24px; height: 3px; background-color: #333; margin: 5px 0; transition: all 0.3s ease; border-radius: 1px;
+  display: block; width: 24px; height: 2px; background-color: #5F737E; margin: 5px 0; transition: all 0.3s ease; 
 }
-.burger-menu-button.active span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+.burger-menu-button.active span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
 .burger-menu-button.active span:nth-child(2) { opacity: 0; }
 .burger-menu-button.active span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
 
@@ -311,14 +308,12 @@ font-weight: 600;
   opacity: 1;
 }
 
-/* Поп‑ап — СДЕЛАТЬ position: fixed по умолчанию */
 .popup-contact {
   position: fixed; /* CHANGED from absolute */
   width: 358px;
   max-width: 95vw;
   background: #fff;
   border: 1px solid #e5e9ed;
-  border-radius: 2px;
   box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
   overflow: hidden;
   display: none;
@@ -326,14 +321,12 @@ font-weight: 600;
   transform: scale(0.95); /* Initial state for transition */
   transition: opacity 0.25s, transform 0.25s;
   z-index: 1050; /* Above overlay */
-  /* Top/Left will be set by JS for desktop */
 }
 .popup-contact.active {
   display: block;
   opacity: 1;
   transform: scale(1); /* Active state for transition */
 }
-
 
 .popup-content { padding: 24px; }
 .popup-content h2 {
@@ -355,7 +348,6 @@ font-weight: 600;
   justify-content: space-between;
   background: #fafbfc;
   border: 1px solid #eceff2;
-  border-radius: 2px;
   padding: 12px 16px;
 }
 .contact-label {
@@ -398,7 +390,6 @@ font-weight: 600;
   display: flex;
   align-items: center;
   border: 1px solid #eceff2;
-  border-radius: 2px;
   margin-bottom: 24px;
 }
 .country-code-display {
@@ -422,7 +413,6 @@ font-weight: 600;
   color: #fff;
   font: 600 16px/1 "Segoe UI", system-ui, sans-serif;
   border: none;
-  border-radius: 2px;
   cursor: pointer;
   transition: background 0.2s;
 }
@@ -445,51 +435,53 @@ body.popup-active > *:not(.popup-overlay):not(.popup-contact):not(.site-header) 
   pointer-events: none;
   user-select: none; 
 }
-
-
 /* ---------- Main Content Area Specific Styles ---------- */
-
 /* ---------- Breadcrumbs ---------- */
 .breadcrumbs-container {
   margin-block: 30px;
-  }
-  
-  .breadcrumbs {
+}
+
+.breadcrumbs {
   display: flex;
   list-style: none;
   padding: 0;
   margin: 0;
   font-size: 14px;
-  color: #6c757d;
-  }
-  
-  .breadcrumbs li {
+  color: #6c757d; 
+}
+
+.breadcrumbs li {
   display: flex;
   align-items: center;
-  }
-  
-  .breadcrumbs a {
-  text-decoration: none;
-  color: #007bff;
-  }
-  
-  .breadcrumbs a.plain-link {
-  color: #6c757d;
-  }
-  
-  .breadcrumbs a:hover {
-  text-decoration: underline;
-  }
-  
-  .breadcrumbs .active {
-  color: #007bff;
-  }
-  
-  .breadcrumbs .separator {
-  margin: 0 8px;
-  color: #adb5bd;
-  }
+}
 
+.breadcrumbs a {
+  text-decoration: none;
+  color: #007bff; 
+}
+
+.breadcrumbs a.plain-link {
+  color: #6c757d; 
+}
+
+.breadcrumbs a:hover {
+  text-decoration: underline;
+}
+
+.breadcrumbs .active {
+  color: #007bff;
+}
+
+.breadcrumbs .separator {
+  margin: 0 8px;
+  color: #adb5bd; 
+}
+
+.plain-link{
+  border-right: 2px solid #F0F0F0;
+  margin-right: 10px;
+  padding: 10px;
+}
 /* ---------- Page Header (Title + Back Button) ---------- */
 .page-header {
   display: flex;
@@ -509,13 +501,12 @@ body.popup-active > *:not(.popup-overlay):not(.popup-contact):not(.site-header) 
 .back-button {
   display: inline-block;
   padding: 10px 20px;
-  border: 1px solid #ced4da;
-  color: #495057;
+  border: 1px solid #000;
+  color: #000;
   background-color: #fff;
   text-decoration: none;
   font-size: 14px;
   font-weight: 500;
-  border-radius: 4px;
   transition: background-color 0.2s, border-color 0.2s;
   flex-shrink: 0;
 }
@@ -540,7 +531,7 @@ body.popup-active > *:not(.popup-overlay):not(.popup-contact):not(.site-header) 
 .intro-text h2 {
   font-size: 26px;
   font-weight: 500;
-  color: #0056b3;
+  color: #0061AD;
   margin-top: 0;
   margin-bottom: 20px;
   line-height: 1.4;
@@ -548,7 +539,7 @@ body.popup-active > *:not(.popup-overlay):not(.popup-contact):not(.site-header) 
 .intro-text h2 br { display: none; }
 
 .intro-text p {
-  font-size: 16px;
+  font-size: 14px;
   line-height: 1.7;
   color: #495057;
   margin-bottom: 1.2em;
@@ -558,7 +549,6 @@ body.popup-active > *:not(.popup-overlay):not(.popup-contact):not(.site-header) 
 .intro-image {
   flex-basis: 48%;
   flex-shrink: 0;
-  border-radius: 4px;
   overflow: hidden;
 }
 .intro-image img {
@@ -568,26 +558,6 @@ body.popup-active > *:not(.popup-overlay):not(.popup-contact):not(.site-header) 
   max-width: 100%;
 }
 
-/* ---------- General Text Blocks ---------- */
-.engineering-text-block {
-  margin-bottom: 40px;
-  max-width: 800px;
-}
-.engineering-text-block h2 {
-  font-size: 26px;
-  font-weight: 500;
-  color: #0056b3;
-  margin-top: 0;
-  margin-bottom: 20px;
-}
-.engineering-text-block p {
-  font-size: 16px;
-  line-height: 1.7;
-  color: #495057;
-  margin-bottom: 1.2em;
-}
-.engineering-text-block p:last-child { margin-bottom: 0; }
-
 /* ---------- Gallery Section ---------- */
 .gallery-section {
   margin-bottom: 60px;
@@ -595,35 +565,45 @@ body.popup-active > *:not(.popup-overlay):not(.popup-contact):not(.site-header) 
   overflow: hidden;
 }
 
+/* --- Базовые стили для .gallery-images (Mobile-First) --- */
 .gallery-images {
-  display: flex;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
-  scroll-behavior: smooth;
-  padding-bottom: 15px;
-  padding-left: 15px;
-  margin-left: calc((100% - 1200px) / 2);
-  width: calc(100% - (100% - 1200px));
-  max-width: 100vw;
+  display: flex;                  
+  overflow-x: auto;             
+  scroll-snap-type: x mandatory;  
+  -webkit-overflow-scrolling: touch; 
+  scroll-behavior: smooth;        
+  padding-bottom: 15px;         
+  width: 100%;                  
+  max-width: 100%;              
+  margin-left: 0;              
+  padding-left: 0;              
+  box-sizing: border-box;       
+
+  -ms-overflow-style: none;     /* IE и Edge */
+  scrollbar-width: none;        /* Firefox */
 }
 
 .gallery-images::-webkit-scrollbar {
   display: none;
 }
 
-.gallery-images {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
+
+@media (min-width: 1401px) {
+  .gallery-images {
+    width: 1400px;                
+    margin-left: calc((100% - 1400px) / 2); 
+    padding-left: 15px;           
+  }
 }
 
+
 .gallery-images img {
-  width: 600px;
-  height: 400px;
-  object-fit: cover;
-  flex: 0 0 auto;
-  scroll-snap-align: start;
-  margin-right: 20px;
+  width: 600px;                 
+  height: 400px;                
+  object-fit: cover;           
+  flex: 0 0 auto;               
+  scroll-snap-align: start;     
+  margin-right: 20px;          
 }
 
 .gallery-images img:last-child {
@@ -636,6 +616,7 @@ body.popup-active > *:not(.popup-overlay):not(.popup-contact):not(.site-header) 
   margin-top: 25px;
   position: relative;
   min-height: 30px;
+  justify-content: space-between;
 }
 
 .gallery-counter,
@@ -660,190 +641,241 @@ body.popup-active > *:not(.popup-overlay):not(.popup-contact):not(.site-header) 
   color: #aaa;
 }
 
+/* ---------- КНОПКИ-СТРЕЛКИ ---------- */
 .arrows {
-  position: absolute;
-  right: 15px;
-  top: 50%;
-  transform: translateY(-50%);
+  position: relative;
   display: flex;
   gap: 15px;
 }
 
 .arrow {
-  all: unset;
+  all: unset; 
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
+/* ================== 1. Базовый (синий) ================== */
 .arrow img {
   width: 20px;
   height: 20px;
-  filter: brightness(0) saturate(100%) invert(29%) sepia(89%) saturate(588%) hue-rotate(179deg) brightness(97%) contrast(93%);
+  display: block; 
+  filter: brightness(0) saturate(100%)
+          invert(29%) sepia(89%) saturate(588%)
+          hue-rotate(179deg) brightness(97%) contrast(93%);
+  transition: filter .2s, transform .1s; /* Плавный переход */
 }
 
 .arrow-left img {
   transform: rotate(180deg);
 }
 
-/* ---------- CTA Form Section ---------- */
-.cta-form-section {
-  margin: 60px -15px -60px -15px;
-  padding: 50px 15px;
+
+/* ================== 2. HOVER — тёмно-серый (#5F737E) ================== */
+.arrow:hover img {
+  filter: brightness(0) saturate(100%)
+          invert(47%) sepia(10%) saturate(461%)
+          hue-rotate(160deg) brightness(94%) contrast(88%);
 }
-.cta-container {
-   margin: 0 auto;
-   max-width: 1200px;
-   padding: 0 15px;
+.arrow-left:hover img {
+   transform: rotate(180deg); 
 }
+
+
+/* ================== 3. ACTIVE — тёмно-серый (#5F737E) + Scale ================== */
+.arrow:active img {
+  filter: brightness(0) saturate(100%)
+          invert(47%) sepia(10%) saturate(461%)
+          hue-rotate(160deg) brightness(94%) contrast(88%);
+  transform: scale(.95);
+}
+
+.arrow-left:active img {
+   transform: scale(.95) rotate(180deg);
+}
+
+
+/* ======  ОБЩИЕ СТИЛИ  ====== */
+.cta-form-section{
+  background:#f8f9fa;
+  padding:40px 30px;
+  max-width:1200px;
+  width:100%;
+}
+
+.cta-container{max-width:1050px;margin:0 auto;}
+
 .cta-prompt {
-  font-size: 16px;
-  color: #495057;
-  text-align: center;
-  margin-bottom: 35px;
-  border: none;
-  padding: 0;
-  display: block;
-  position: static;
-  left: auto;
-  transform: none;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
+  display: flex;
+  align-items: center;     
+  gap: 12px;               
+  margin-bottom: 60px;
 }
-.form-wrapper {
-  max-width: 750px;
-  margin: 0 auto;
-  background-color: rgba(240, 240, 240, 0.35);
-  padding: 30px 35px;
-  border: 1px solid #e0e0e0;
-  border-radius: 5px;
-}
-.form-wrapper h2 {
-  font-size: 24px;
-  font-weight: 500;
-  color: #1A1A1A;
-  margin-top: 0;
-  margin-bottom: 25px;
-  text-align: center;
-}
-.callback-form {}
 
-.form-group { margin-bottom: 20px; }
-.callback-form input[type="text"],
-.callback-form input[type="tel"] {
-  width: 100%;
-  padding: 12px 15px;
-  border: 1px solid #ced4da;
-  border-radius: 4px;
-  font-size: 14px;
-  box-sizing: border-box;
-  height: 48px;
-  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+.cta-prompt svg {
+  flex-shrink: 0;          /* SVG не ужимаются */
+  width: 8px;
+  height: 46px;
 }
-.callback-form input[type="text"]:focus,
-.callback-form input[type="tel"]:focus {
-  border-color: #86b7fe;
-  outline: 0;
-  box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
-}
-.callback-form input::placeholder { color: #6c757d; opacity: 1; }
 
-.phone-group {
-  display: grid;
-  grid-template-columns: auto 1fr auto;
-  gap: 0;
-  align-items: stretch;
-  border: 1px solid #ced4da;
-  border-radius: 4px;
-  overflow: hidden;
-  height: 48px;
+.cta-text {
+  display: flex;
+  flex-direction: column;  /* Две строки одна под другой */
+  font-size: 18px;
+  color: #343a40;
+  line-height: 1.4;
 }
-.phone-group:focus-within {
-   border-color: #86b7fe;
-   box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+
+
+
+.form-wrapper h2{
+  font-size:28px;
+  font-weight:600;
+  color:#212529;
+  margin:0 0 30px;
 }
-.country-code-select {
+
+.callback-form{text-align:left;}
+
+/* ======  FLEX-СТРОКА С ПОЛЯМИ  ====== */
+.form-row{
+  display:flex;
+  align-items:center;   /* вертикальное выравнивание всех элементов */
+  gap:15px;
+  flex-wrap:nowrap;     /* ⬅️ НЕ переносить, пока хватает ширины */
+}
+
+/* поля */
+.form-group{
+  flex:1 1 0;           /* могут ужаться, занимают всё оставшееся */
+  display:flex;
+  min-width: 0; 
+}
+
+input[type="text"],
+input[type="tel"]{
+  flex:1;
+  padding:12px 15px;
+  min-width: 0;
+  height:48px;
+  border:1px solid #ced4da;
+  font-size:12px;
+  color:#495057;
+  background:#fff;
+}
+
+input::placeholder{color:#6c757d;opacity:1;}
+
+/* группа телефона */
+.phone-group{position:relative;}
+.country-code-select{
+  display:flex;align-items:center;gap:8px;
+  padding:0 12px;
+  height:48px;
+  border:1px solid #ced4da;border-right:none;
+  background:#fff;cursor:pointer;white-space:nowrap;
+  flex:0 0 auto;
+}
+.country-code-select img{width:20px;height:auto;}
+.dropdown-arrow{font-size:12px;color:#6c757d;}
+.phone-group input[type="tel"]{border-left:none;}
+
+/* кнопка */
+.submit-button{
+  flex:0 0 210px;       /* фиксированная ширина → легче помещается */
+  padding:0 25px;
+  height:48px;line-height:48px;
+  background:#212529;color:#fff;
+  font-size:16px;font-weight:500;white-space:nowrap;
+  cursor:pointer;transition:.2s background;
+}
+.submit-button:hover{background:#343a40;}
+
+/* дисклеймер */
+.form-row {
   display: flex;
   align-items: center;
-  gap: 5px;
-  padding: 0 10px 0 15px;
-  border: none;
-  border-right: 1px solid #ced4da;
-  background-color: #e9ecef;
-  cursor: pointer;
-  white-space: nowrap;
-  height: 100%;
-  transition: background-color 0.2s;
+  gap: 15px;
+  flex-wrap: nowrap;  /* не даём переносить элементы */
 }
-.country-code-select:hover { background-color: #dee2e6; }
-.country-code-select img { width: 20px; height: auto; }
-.country-code-select span { line-height: 1; font-weight: 500; color: #495057; }
-.dropdown-arrow { font-size: 10px; color: #6c757d; margin-left: 3px;}
 
-.phone-group input[type="tel"] {
-  flex: 1;
-  width: auto;
-  border: none;
-  border-radius: 0;
-  padding: 12px 15px;
-  height: 100%;
-  box-shadow: none !important;
-  outline: none;
-  min-width: 150px;
-}
-.submit-button {
-  padding: 0 25px;
-  background-color: #000;
-  color: #FFFFFF;
-  border: none;
-  border-left: 1px solid #ced4da;
-  border-radius: 0;
-  font-size: 14px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: background-color 0.2s;
-  height: 100%;
-  white-space: nowrap;
-}
-.submit-button:hover { background-color: #333; }
-
+/* Заставляем disclaimer занимать ровно столько, сколько ему нужно */
 .form-disclaimer {
+  flex: 0 0 auto;            /* не растём и не сжимаемся */
+  display: inline-flex;       /* ширина по содержимому */
+  flex-direction: column;     
+  gap: 4px;
+  margin: 0;
   font-size: 12px;
   color: #6c757d;
-  line-height: 1.5;
-  margin-top: 15px;
-  text-align: center;
+  /* min-width: max-content; */ /* при особо капризном браузере можно раскомментировать */
 }
-.form-disclaimer br { display: none; }
-.form-disclaimer a { color: #0056b3; text-decoration: underline; }
-.form-disclaimer a:hover { color: #003d80; }
+
+/* Первая строка */
+.form-disclaimer .line-1 {
+  display: block;
+}
+
+/* Вторая строка целиком на одной линии */
+.form-disclaimer .line-2 {
+  display: block;
+  white-space: nowrap;
+}
+
+/* Ссылка */
+.form-disclaimer .line-2 a {
+  color: #343a40;
+  text-decoration: underline;
+}
+.form-disclaimer .line-2 a:hover {
+  text-decoration: none;
+}
+
+
 
 /* ---------- Bottom Page Navigation ---------- */
-.bottom-page-nav {
-  margin-top: 60px;
-  padding-top: 25px;
-  border-top: 1px solid #e0e0e0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.partnership-section {
+  padding: 30px;
 }
-.bottom-page-nav h3 {
-  font-size: 22px;
+
+.partnership-header {
+  display: flex;
+  align-items: center;  
+  padding: 20px;}
+
+.partnership-section h2 {
+  font-size: 24px;
   font-weight: 500;
-  color: #0056b3;
+  color: #0061AD;
   margin: 0;
 }
-.bottom-page-nav .nav-arrows { }
-.bottom-page-nav .arrow { }
+.partnership-section .arrows {
+  margin-left: 36px;
+}
+
+.partnership-section .arrow-left {
+  appearance: none;       
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: default;        
+}
+.partnership-section .arrow-left img {
+  filter: brightness(0) saturate(100%)
+  invert(47%) sepia(10%) saturate(461%)
+  hue-rotate(160deg) brightness(94%) contrast(88%);
+  display: block;         
+  pointer-events: none;   
+}
+
 
 /* ---------- Footer ---------- */
 .site-footer {
   background: #1A1A1A;
   color: #ccc;
   padding: 40px 0;
-  font-family: Arial, sans-serif;
+  font-family: Onest;
   font-size: 13px;
   margin-top: 60px;
 }
@@ -904,7 +936,6 @@ body.popup-active > *:not(.popup-overlay):not(.popup-contact):not(.site-header) 
 .map-link {
   border: 1px solid #555;
   padding: 8px 12px;
-  border-radius: 4px;
   text-decoration: none;
   margin-top: 10px;
   color: #f0f0f0;
@@ -1021,7 +1052,7 @@ body.popup-active > *:not(.popup-overlay):not(.popup-contact):not(.site-header) 
   margin-bottom: 30px;
   padding: 30px 0; 
   align-items: flex-end; 
-  font-family:sans-serif;
+  font-family: Onest;
   border-top: 1px solid #333;
   border-bottom: 1px solid #333; 
 }
@@ -1071,13 +1102,11 @@ body.popup-active > *:not(.popup-overlay):not(.popup-contact):not(.site-header) 
   background:#1a1a1a;
   cursor:pointer;
   border-right: none;
-  border-radius: 4px 0 0 4px;
 }
 .country-iso{
   font-weight:600;
   color:#f0f0f0;
   border:1px solid #f0f0f0;
-  border-radius:4px;
   padding:2px 6px;
   font-size: 11px;
 }
@@ -1096,7 +1125,6 @@ body.popup-active > *:not(.popup-overlay):not(.popup-contact):not(.site-header) 
   list-style:none;
   background:#2a2a2a;
   border:1px solid #555;
-  border-radius:4px;
   display:none;
   max-height: 150px;
   overflow-y: auto;
@@ -1121,7 +1149,7 @@ input[type="tel"]#phoneInput{
   background:#1a1a1a;
   border:none;                     
   padding: 8px 12px;
-  font-size:16px;
+  font-size:12px;
   color:#f0f0f0;
   outline:none;
 }
@@ -1147,7 +1175,6 @@ input[type="tel"]#phoneInput:focus {
   height: auto;
   padding: 10px 25px;
   border: 1px solid #f0f0f0;
-  border-radius: 4px;
   background: transparent;
   color: #f0f0f0;
   line-height: 1.2;
@@ -1242,69 +1269,86 @@ height: auto;
 
 /* ---------- Responsive Styles ---------- */
 
-/* ---------- 1. Large Laptops / Desktops ---------- */
-/* Base styles apply */
+/* ---------- 2. Tablets / Small Laptops / Large Tablets ---------- */
+@media (max-width: 1024px) {
 
-/* ---------- 2. Smaller Laptops / Large Tablets ---------- */
-@media (max-width: 1199px) {
-.container, .container-footer { width: 960px; }
-.page-header h1 { font-size: 38px; }
-.engineering-intro { gap: 40px; }
-.intro-image { flex-basis: 45%; }
-.intro-text h2, .engineering-text-block h2 { font-size: 24px; }
-.gallery-images { grid-template-columns: repeat(2, 1fr); }
-.gallery-images img { height: 240px; }
-.cta-form-section { margin-left: -15px; margin-right: -15px;}
-.form-wrapper { max-width: 650px; padding: 25px 30px;}
-.bottom-page-nav h3 { font-size: 20px; }
-}
+  /* ——— Контейнеры ——— */
+  .container,
+  .container-footer     { width: 720px; }          /* было 960 и 720 → оставляем 720 */
+  section               { margin-bottom: 40px; }
 
-/* ---------- 3. Tablets (Portrait) / Small Laptops ---------- */
-@media (max-width: 991px) {
-.container, .container-footer { width: 720px; }
-section { margin-bottom: 40px; }
+  /* ——— Header ——— */
+  .site-header          { height: 70px; }
+  .header-container     { padding: 16px 48px; }
+  .logo img             { height: 50px; }
+  .main-nav             { display: none; }
+  .burger-menu-button   { display: block; }
+  .mail-container,
+  .language-container   { width: 40px !important; }
+  .email-text,
+  .language-options     { display: none !important; }
 
-/* ---------- Header ---------- */
-.site-header { height: 70px; }
-.logo img { height: 50px; }
-.main-nav { display: none; }
-.burger-menu-button { display: block; }
-.email-text, .language-options { display: none !important; }
-.mail-container:hover, .language-container:hover { width: 40px; }
+  /* ——— Page title и кнопка «назад» ——— */
+  .page-header          { flex-direction: column; align-items: flex-start;
+                          gap: 15px; margin-bottom: 30px; }
+  .page-header h1       { font-size: 34px; }       /* среднее между 38 и 34 */
+  .back-button          { position: static; }
 
-/* ---------- Content ---------- */
-.page-header { flex-direction: column; align-items: flex-start; gap: 15px; margin-bottom: 30px; }
-.page-header h1 { font-size: 34px; }
-.back-button { position: static; align-self: flex-start; }
-.engineering-intro { flex-direction: column; gap: 30px; margin-bottom: 40px; }
-.intro-image { flex-basis: auto; width: 100%; max-width: 500px; margin: 0 auto; order: 2;}
-.intro-text { order: 1; }
-.intro-text h2, .engineering-text-block h2 { font-size: 22px; }
-.intro-text p, .engineering-text-block p { font-size: 15px; }
-.gallery-images { grid-template-columns: repeat(2, 1fr); gap: 15px; }
-.gallery-images img { height: 200px; }
-.cta-form-section { margin-top: 40px; margin-bottom: -40px;}
-.form-wrapper { max-width: 90%; }
-.phone-group { grid-template-columns: auto 1fr; grid-template-rows: auto auto; gap: 10px; height: auto; border: none; background: none;}
-.phone-group input[type="tel"] { grid-column: 2 / 3; grid-row: 1 / 2; border: 1px solid #ced4da; border-left: none; border-radius: 0 4px 4px 0; height: 48px;}
-.phone-group .country-code-select { grid-column: 1 / 2; grid-row: 1 / 2; border: 1px solid #ced4da; border-right: none; border-radius: 4px 0 0 4px; height: 48px;}
-.submit-button { grid-column: 1 / 3; grid-row: 2 / 3; width: 100%; height: 44px; border: none; border-radius: 4px;}
-.bottom-page-nav { flex-direction: column; align-items: flex-start; gap: 15px;}
-.bottom-page-nav h3 { font-size: 18px; }
-.nav-arrows { align-self: flex-end; }
+  /* ——— Инжиниринг-интро ——— */
+  .engineering-intro    { flex-direction: column; gap: 30px; margin-bottom: 40px; }
+  .intro-image          { flex-basis: auto; width: 100%; max-width: 500px; order: 2; }
+  .intro-text           { order: 1; }
+  .intro-text h2,
+  .engineering-text-block h2 { font-size: 22px; }
 
-/* ---------- Footer Adaptation ---------- */
-.footer-row { flex-direction: column; gap: 30px; }
-.footer-links-group { flex-direction: column; gap: 25px; padding: 15px; }
-.phone-box { padding: 15px; }
-.top-button-box { display: none; }
-.footer-middle { flex-direction: column; align-items: center; text-align: center; gap: 25px; }
-.footer-form { flex-basis: auto; width: 100%; max-width: 450px; }
-.middle-cert, .middle-links { flex-basis: auto; text-align: center; width: 100%; align-items: center; }
-.middle-links { flex-direction: row; justify-content: center; gap: 15px; }
-.footer-bottom { flex-direction: column; text-align: center; gap: 15px; }
-.bottom-left, .bottom-right { flex-basis: auto; text-align: center; width: 100%; justify-content: center; }
-.footer-biglogo { opacity: 0.1; max-height: 60px; }
+  /* ——— Галерея ——— */
+  .gallery-images       { grid-template-columns: repeat(2,1fr); gap: 15px; }
+  .gallery-images img   { height: 200px; }
+
+  /* ——— CTA-форма ——— */
+  .cta-form-section     { max-width: 100%; width: auto; padding: 30px 20px; }
+  .cta-prompt           { align-items: flex-start; gap: 6px; margin-bottom: 40px; }
+
+  .form-wrapper         { display: block; }        /* заголовок сверху */
+  .form-row             { flex-wrap: wrap; align-items: stretch; }
+
+  .form-group,
+  .submit-button,
+  .form-disclaimer      { flex: 1 1 100%; max-width: 100%; }
+
+  .submit-button        { width: 100%; text-align: center; height: 44px; }
+
+  .phone-group          { grid-template-columns: auto 1fr;
+                           grid-template-rows: auto auto; gap: 10px;
+                           height: auto; border: none; background: none; }
+  .phone-group input[type="tel"]
+                        { grid-column: 2/3; border: 1px solid #ced4da;
+                          border-left: none; height: 48px; }
+  .phone-group .country-code-select
+                        { grid-column: 1/2; border: 1px solid #ced4da;
+                          border-right: none; height: 48px; }
+
+  .form-disclaimer      { width: 100%; text-align: left; flex-direction: column; gap: 3px; }
+
+  /* ——— Навигация внизу страницы ——— */
+  .bottom-page-nav      { flex-direction: column; align-items: flex-start; gap: 15px; }
+  .bottom-page-nav h3   { font-size: 18px; }
+
+  /* ——— Footer ——— */
+  .footer-row           { flex-direction: column; gap: 30px; }
+  .footer-links-group   { flex-direction: column; gap: 25px; padding: 15px; }
+  .phone-box            { padding: 15px; }
+  .top-button-box       { display: none; }
+  .footer-middle        { flex-direction: column; align-items: center;
+                          text-align: center; gap: 25px; }
+  .footer-form          { width: 100%; max-width: 450px; }
+  .middle-cert,
+  .middle-links         { width: 100%; text-align: center; }
+  .middle-links         { flex-direction: row; justify-content: center; gap: 15px; }
+  .footer-bottom        { flex-direction: column; text-align: center; gap: 15px; }
+  .bottom-left,
+  .bottom-right         { width: 100%; justify-content: center; }
+  .footer-biglogo       { opacity: 0.1; max-height: 60px; }
 }
 
 /* ---------- 4. Mobile Phones (Portrait) ---------- */
@@ -1315,9 +1359,10 @@ section { margin-bottom: 30px; }
 
 /* ---------- Header ---------- */
 .site-header { height: 60px; }
-.logo img { height: 40px; }
+.logo img { height: 50px; }
 .logo-text { display: none; }
 .header-actions { gap: 5px; }
+.mail-container, .language-container { width: 36px !important; } 
 .icon-link { width: 36px; height: 36px; padding: 8px; }
 .icon-link img { width: 16px; height: 16px; }
 
@@ -1351,25 +1396,30 @@ section { margin-bottom: 30px; }
 .arrow { width: 36px; height: 36px; font-size: 18px;}
 
 /* ---------- CTA Form ---------- */
-.cta-form-section { padding: 30px 15px; margin: 40px -15px -40px -15px; }
-.form-wrapper { padding: 20px; }
-.form-wrapper h2 { font-size: 20px; margin-bottom: 20px;}
-.callback-form input[type="text"] { height: 44px; padding: 10px 12px; font-size: 13px;}
-.phone-group { height: auto; display: flex; flex-direction: column; gap: 10px; border: none; }
-.phone-group input[type="tel"] { grid-column: auto; grid-row: auto; border: 1px solid #ced4da; border-radius: 4px; height: 44px; padding: 10px 12px; font-size: 13px;}
-.phone-group .country-code-select { grid-column: auto; grid-row: auto; border: 1px solid #ced4da; border-radius: 4px; height: 44px; padding: 10px 12px;}
-.submit-button { grid-column: auto; grid-row: auto; height: 44px; padding: 10px 15px; font-size: 14px;}
-.form-disclaimer { font-size: 11px; text-align: center; }
+.cta-form-section{ padding:25px 15px; }
+
+/* уменьшаем шрифт заголовка формы и текст-промпта */
+.form-wrapper h2{ font-size:22px; margin-bottom:20px; }
+.cta-prompt .cta-text{ font-size:16px; }
+
+/* телефонный блок: код страны + поле под кодом */
+.phone-group{
+  flex-direction:column;
+  gap:8px;
+}
+.country-code-select{ width:100%; border-right:1px solid #ced4da; }
+.phone-group input[type="tel"]{ width:100%; }
 
 /* ---------- Bottom Nav ---------- */
-.bottom-page-nav { margin-top: 40px; padding-top: 20px; }
-.bottom-page-nav h3 { font-size: 16px; }
+.partnership-section {
+  display: none;
+}
 
 /* ---------- Footer Adaptation ---------- */
 .footer-group { padding: 15px; }
 .input-row { flex-direction: column; align-items: stretch; gap: 0; border-bottom: none; }
-.country-toggle { border-radius: 4px 4px 0 0; border: 1px solid #444; justify-content: center; }
-input[type="tel"]#phoneInput { border-radius: 0 0 4px 4px; border: 1px solid #444; border-top: none; min-width: auto; text-align: center; }
+.country-toggle { border: 1px solid #444; justify-content: center; }
+input[type="tel"]#phoneInput { border: 1px solid #444; border-top: none; min-width: auto; text-align: center; }
 .action-row { flex-direction: column; align-items: center; gap: 10px; }
 .call-btn { width: 100%; max-width: 300px; }
 .middle-links { flex-direction: column; gap: 5px; }
@@ -1383,7 +1433,7 @@ input[type="tel"]#phoneInput { border-radius: 0 0 4px 4px; border: 1px solid #44
 .gallery-images img { height: 180px; }
 
 /* ---------- Footer Adaptation ---------- */
-.logo img { height: 35px; }
+.logo img { height: 50px; }
 .site-footer h4 { font-size: 13px; }
 .site-footer { font-size: 11px; padding: 30px 0 20px;}
 .phone-box p a { font-size: 13px; }

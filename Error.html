@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>ELKE COMPANY – 404</title>
   <link rel="stylesheet" href="css/Error.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -13,7 +14,7 @@
   <div class="header-container">
       <!-- Логотип -->
       <div class="logo">
-          <a href="main.html">
+          <a href="index.html">
               <img src="img/Header-logo.svg" alt="ELKE COMPANY Инжиниринговая компания">
               <p class="logo-text">Инжиниринговая<br> компания</p>
           </a>
@@ -109,7 +110,7 @@
           <span class="contact-number">8 (727) 258‑25‑68</span>
         </div>
         <a class="call-icon-popup" href="tel:+77272582568">
-          <img src="img/call_grey.svg" alt="Позвонить">
+          <img src="img/call.svg" alt="Позвонить">
         </a>
       </div>
       <div class="contact-item">
@@ -118,7 +119,7 @@
           <span class="contact-number">8 (727) 258‑25‑68</span>
         </div>
         <a class="call-icon-popup" href="tel:+77272582568">
-          <img src="img/call_grey.svg" alt="Позвонить">
+          <img src="img/call.svg" alt="Позвонить">
         </a>
       </div>
       <div class="contact-item">
@@ -127,7 +128,7 @@
           <span class="contact-number">8 (727) 258‑25‑68</span>
         </div>
         <a class="call-icon-popup" href="tel:+77272582568">
-          <img src="img/call_grey.svg" alt="Позвонить">
+          <img src="img/call.svg" alt="Позвонить">
         </a>
       </div>
     </div>
@@ -150,28 +151,73 @@
 </div>
 
 
-  <!-- 404 Error Content Section -->
-  <main class="error-content-section">
-    <div class="error-graphic-container">
-      <div class="error-graphic">
-        <span class="graphic-digit">4</span>
-        <span class="graphic-gear">
-          <!-- Simple representation of the gear -->
-          <div class="gear-shape"></div>
-        </span>
-        <span class="graphic-digit">4</span>
+<!-- 404 Error Content Section -->
+<main class="error-content-section">
+
+  <!-- === КОНТЕЙНЕР ДЛЯ ГРАФИКИ === -->
+  <div class="error-graphic-container">
+
+      <!-- === 1. Вертикальная CSS Анимация (Для ПК и Планшетов) === -->
+      <!-- Этот блок будет СКРЫТ на мобильных -->
+      <div class="error-graphic" id="vertical-graphic">
+          <!-- First 4 -->
+          <div class="graphic-element digit-container">
+              <div class="element-carousel carousel-up">
+                  <img src="img/digit-4.svg" alt="Digit 4">
+                  <img src="img/digit-4.svg" alt="Digit 4">
+              </div>
+          </div>
+          <!-- Gear (0) -->
+          <div class="graphic-element gear-container">
+               <div class="element-carousel carousel-down">
+                  <img src="img/gear-0.svg" alt="Gear representing 0">
+                  <img src="img/gear-0.svg" alt="Gear representing 0">
+              </div>
+          </div>
+          <!-- Second 4 -->
+          <div class="graphic-element digit-container">
+               <div class="element-carousel carousel-up">
+                  <img src="img/digit-4.svg" alt="Digit 4">
+                  <img src="img/digit-4.svg" alt="Digit 4">
+              </div>
+          </div>
       </div>
-    </div>
+      <!-- === Конец Вертикальной Анимации === -->
 
-    <div class="error-text-container">
-      <h1>Страница не найдена</h1>
-      <p>Кажется вы ищете страницу, которая еще не создана или удалена.</p>
-      <a href="/" class="btn-return-home">Вернуться на главную</a>
-      <!-- Use href="/" to link to the homepage -->
-    </div>
-  </main>
-  <!-- End 404 Error Content Section -->
 
+      <!-- === 2. Горизонтальная SWIPER Карусель (Для Мобильных) === -->
+      <!-- Этот блок будет ПОКАЗАН ТОЛЬКО на мобильных -->
+      <div class="swiper-graphic-container" id="swiper-graphic-mobile"> <!-- ID для CSS -->
+        <!-- Контейнер, который ищет JS Swiper -->
+        <div class="my-404-swiper swiper"> <!-- Добавлен класс my-404-swiper -->
+            <div class="swiper-wrapper">
+                <!-- Слайды Swiper (только ОДНО изображение на слайд) -->
+                <!-- Замените src на ваши пути -->
+                <div class="swiper-slide"><img src="img/digit-4.svg" alt="4"></div>
+                <div class="swiper-slide"><img src="img/gear-0.svg" alt="0"></div>
+                <div class="swiper-slide"><img src="img/digit-4.svg" alt="4"></div>
+                <!-- Нет необходимости повторять слайды для loop:true при slidesPerView:1 -->
+            </div>
+            <!-- Добавляем стрелки навигации -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
+    </div>
+      </div>
+      <!-- === Конец Swiper Карусели === -->
+
+  </div>
+  <!-- === КОНЕЦ КОНТЕЙНЕРА ДЛЯ ГРАФИКИ === -->
+
+
+  <!-- Текстовый контейнер (без изменений) -->
+  <div class="error-text-container">
+    <h1>Страница не найдена</h1>
+    <p>Кажется вы ищете страницу, которая еще не создана или удалена.</p>
+    <a href="/" class="btn-return-home">Вернуться на главную</a>
+  </div>
+
+</main>
 <!-- Подвал сайта -->
 <footer class="site-footer">
   <div class="container-footer">
@@ -182,7 +228,7 @@
         <div class="footer-col">
           <h4>Карта сайта</h4>
           <ul>
-            <li><a href="main.html">Главная</a></li>
+            <li><a href="index.html">Главная</a></li>
             <li class="has-submenu">
               <a href="Services.html">Услуги</a>
             </li>
@@ -324,8 +370,9 @@
 
   </div>
 </footer> 
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-
+<script src="js/error.js"></script>
 <script src="js/script.js"></script>
 </body>
 </html>

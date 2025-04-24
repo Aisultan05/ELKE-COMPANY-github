@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ELKE COMPANY – Главная</title>
+  <!-- Link Swiper's CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@25.3.1/build/css/intlTelInput.css">
+  <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@25.3.1/build/js/intlTelInput.min.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- Шапка сайта -->
+<header class="site-header">
+  <div class="header-container">
+      <!-- Логотип -->
+      <div class="logo">
+          <a href="index.html">
+              <img src="img/Header-logo.svg" alt="ELKE COMPANY Инжиниринговая компания">
+              <p class="logo-text">Инжиниринговая<br> компания</p>
+          </a>
+      </div>
+
+      <!-- Навигация (Десктоп) -->
+      <nav class="main-nav">
+          <ul>
+              <li><a href="about.html"      class="nav-item"><span>О компании</span></a></li>
+              <li><a href="Services.html"   class="nav-item"><span>Услуги</span></a></li>
+              <li><a href="projects.html"   class="nav-item"><span>Проекты</span></a></li>
+              <li><a href="Krones.html"     class="nav-item"><span>Krones</span></a></li>
+              <li><a href="Contacts.html"   class="nav-item"><span>Контакты</span></a></li>
+          </ul>
+      </nav>
+
+      <!-- ⬇︎ Новый единый блок справа -->
+      <div class="right-controls">
+        <!-- Иконки (телефон ‑ почта ‑ язык) -->
+        <div class="header-actions">
+
+          <!-- Телефон -->
+          <a id="openPopupIcon" href="tel:+77272582568"
+             class="action-item icon-link phone-icon" aria-label="Позвонить">
+            <img src="img/call.svg" alt="Телефон">
+          </a>
+
+          <!-- Почта -->
+          <div class="action-item mail-container">
+            <a href="mailto:krones.kz@gmail.com" class="icon-link mail-icon" aria-label="Написать Email">
+              <img src="img/mail.svg" alt="Email">
+            </a>
+            <span class="email-text">krones.kz@gmail.com</span>
+          </div>
+
+          <!-- Язык -->
+          <div class="action-item language-container">
+            <div class="language-options">
+              <a href="#" lang="en">EN</a>
+              <a href="#" lang="kz">KZ</a>
+              <a href="#" lang="ru" class="active-lang">RU</a>
+            </div>
+            <a href="#" class="icon-link globe-icon" aria-label="Выбор языка">
+              <img src="img/language.svg" alt="Язык">
+            </a>
+          </div>
+        </div>
+
+        <!-- Бургер‑меню (последним внутри группы) -->
+        <button class="burger-menu-button" aria-label="Открыть меню" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+      </div>
+      <!-- /right-controls -->
+  </div>
+</header>
+<div class="mobile-nav" id="mobileNav" aria-hidden="true">
+  <!-- Header inside mobile menu -->
+  <div class="mobile-nav-header">
+      <div class="mobile-logo">
+          <a href="index.html">
+              <img src="img/Header-logo.svg" alt="ELKE COMPANY Logo">
+          </a>
+      </div>
+      <div class="mobile-header-controls">
+          <a href="tel:+77272582568" class="mobile-icon-link" aria-label="Позвонить">
+              <img src="img/call.svg" alt="Телефон">
+          </a>
+          <button class="close-menu-button" aria-label="Закрыть меню"><img src="img/X.svg"></button>
+      </div>
+  </div>
+  <!-- Navigation links inside mobile menu -->
+  <nav class="mobile-nav-links">
+      <ul>
+          <li><a href="about.html" class="mobile-nav-item">О компании</a></li>
+
+          <!-- Услуги - Accordion Item -->
+          <li class="has-submenu">
+              <!-- Toggle Link -->
+              <a href="#" class="mobile-nav-item submenu-toggle" aria-expanded="false" aria-controls="submenu-services">
+                  <span>Услуги</span>
+              </a>
+              <!-- Submenu -->
+              <ul class="mobile-submenu" id="submenu-services" aria-hidden="true" style="max-height: 350px;">
+                  <li><a href="engineering.html" class="mobile-submenu-item">Инжиниринг</a></li>
+                  <li><a href="mechanical-installation.html" class="mobile-submenu-item">Механический монтаж</a></li>
+                  <li><a href="electrical-installation.html" class="mobile-submenu-item">Электрический монтаж</a></li>
+                  <li><a href="piping-installation.html" class="mobile-submenu-item">Монтаж трубопроводов</a></li>
+                  <li><a href="insulation.html" class="mobile-submenu-item">Теплоизоляция трубопроводов</a></li>
+                  <li><a href="blending-departments.html" class="mobile-submenu-item">Купажные отделения</a></li>
+                  <li><a href="turnkey-launch.html" class="mobile-submenu-item">Запуск объекта "под ключ"</a></li>
+              </ul>
+          </li>
+
+          <li><a href="projects.html" class="mobile-nav-item">Проекты</a></li>
+          <li><a href="Krones.html" class="mobile-nav-item">Krones</a></li>
+          <li><a href="Contacts.html" class="mobile-nav-item">Контакты</a></li>
+      </ul>
+  </nav>
+
+  <!-- Footer section inside mobile menu -->
+  <div class="mobile-nav-footer">
+      <div class="mobile-address">
+          <p class="mobile-footer-label">Адрес</p>
+          <p>Республика Казахстан,<br>г. Алматы, пр. Аль-Фараби, д. 65</p>
+      </div>
+      <div class="mobile-email">
+           <p class="mobile-footer-label">Email</p>
+          <a href="mailto:krones.kz@gmail.com">
+            <span>krones.kz@gmail.com</span>
+            <button type="button" class="mobile-footer-icon" aria-label="Изменить язык">
+            <img src="img/mail.svg" alt="Email Icon"></button>
+          </a>
+      </div>
+      <div class="mobile-language">
+           <p class="mobile-footer-label">Язык</p>
+          <div class="mobile-language-options">
+            <div>
+              <a href="#" lang="ru" class="active-lang">RU</a>
+              <a href="#" lang="en">EN</a>
+              <a href="#" lang="kz">KZ</a>
+            </div>
+              <button type="button" class="mobile-footer-icon" aria-label="Изменить язык">
+              <img src="img/language.svg" alt="Language Icon"> </button>
+          </div>
+      </div>
+  </div>
+</div>
+
+<!-- Overlay и Pop‑up вынесены за шапку (прямые дети body) -->
+<div id="popupOverlay" class="popup-overlay"></div>
+
+<div id="contactPopup" class="popup-contact" role="dialog" aria-modal="true" aria-labelledby="popupTitle">
+  <div class="popup-content">
+    <h2 id="popupTitle">Контактная информация</h2>
+
+    <div class="contact-list">
+      <div class="contact-item">
+        <div>
+          <span class="contact-label">Название отделения</span>
+          <span class="contact-number">8 (727) 258‑25‑68</span>
+        </div>
+        <a class="call-icon-popup" href="tel:+77272582568">
+          <img src="img/call.svg" alt="Позвонить">
+        </a>
+      </div>
+      <div class="contact-item">
+        <div>
+          <span class="contact-label">Название отделения</span>
+          <span class="contact-number">8 (727) 258‑25‑68</span>
+        </div>
+        <a class="call-icon-popup" href="tel:+77272582568">
+          <img src="img/call.svg" alt="Позвонить">
+        </a>
+      </div>
+      <div class="contact-item">
+        <div>
+          <span class="contact-label">Название отделения</span>
+          <span class="contact-number">8 (727) 258‑25‑68</span>
+        </div>
+        <a class="call-icon-popup" href="tel:+77272582568">
+          <img src="img/call.svg" alt="Позвонить">
+        </a>
+      </div>
+    </div>
+
+    <h3>Оставить заявку</h3>
+    <div class="input-row">
+      <input type="tel" class="phone-input" placeholder="Введите номер телефона">
+    </div>
+    
+
+    <button id="requestCallBtn" class="submit-button" type="button">Заказать звонок</button>
+
+    <p class="consent-text">
+      Нажимая на кнопку, я даю согласие на
+      <a href="/privacy-policy.html" target="_blank">обработку персональных данных</a>
+    </p>
+  </div>
+</div>
+
+
+<section class="hero-banner">
+  <div class="container">
+
+    <div class="hero-top">
+      <!-- Левый блок с градиентом -->
+      <div class="banner-gradient">
+        <!-- Внутренний контейнер -->
+        <div class="gradient-content">
+          <!-- Иконка в правом верхнем углу -->
+          <div class="top-corner-icon"> 
+            <a href="about.html">
+            <img src="img/Vector.svg" alt="Иконка о компании" class="rotated-icon">
+          </a>
+        </div>
+          <!-- Текст внутри градиента -->
+          <div class="gradient-text">
+            <span>ELKE COMPANY</span>
+            <p>монтаж объектов под ключ</p>
+          </div>
+        </div>
+
+        <!-- Угловые точки -->
+        <div class="corner-dot top-left"></div>
+        <div class="corner-dot top-right"></div>
+        <div class="corner-dot bottom-left"></div>
+        <div class="corner-dot bottom-right"></div>
+      </div>
+
+      <!-- Правый блок с баннером/картинкой -->
+      <div class="banner-image">
+        <img id="gallery-image" src="img/Preview_Print.png" alt="Галерея изображений">
+        <div class="arrows">
+          <!-- Keep using the classes for JS selection -->
+          <img src="img/Vector.svg" alt="Предыдущее изображение" class="arrow arrow-left">
+          <img src="img/Vector.svg" alt="Следующее изображение" class="arrow arrow-right">
+        </div>
+      </div>
+    </div>
+
+    <!-- Низ: карта мира + krone -->
+    <div class="hero-bottom">
+      <div class="clients-block">
+        <div class="clients-content">
+          <a href="projects.html" class="stats-link">[6 стран] [120+ успешных проектов]</a>
+          <h2>Наши клиенты</h2>
+          <a href="#our-clients" class="black-button">
+            Подробнее 
+            <img src="img/Vector.svg" alt="↗" class="arrow-icon">
+          </a>
+        </div>
+        <img src="img/map.svg" alt="Карта мира" class="map-image"> <!-- Assuming Vector.png is the world map -->
+      </div>
+      <div class="krones-block">
+        <video autoplay muted loop playsinline class="krones-video" poster="img/krones-poster-placeholder.jpg">
+          <source src="https://s3-figma-videos-production-sig.figma.com/video/TEAM/1377592191006498748/14a4f1c50d443e427bf5cab188d37266db06f510?Expires=1745798400&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=QScf5lIpJJnyiYyXKitVNHzpwMS-o6W1~-KjtS4UNmx8eTaqmUJmP2hcFzuWGghpaZchEPJkp6PemuOk~bbZ2teG9RImlRjA4eXJPfQD2hnvMfFwyLfZ7AFD7m5yTdcdaQvHrJ60gURi65qVmzjJgznyVm19gXHuWAvYo4WCrhFqePtyLhWggKNuOOj~~nGzWEakLdU5yDfTHyMWDRhQyrS3oVH47R3KWK~QVW8zdEyI0Y7ubSkfSbQA~eAIb5R1odzI4jiENHMe1S6rnrIQoD218Bz8PlTgx7OdmLT9WOPLztx5OXWGI1pePQgjm0dS~hA71g2qGopHWUk93reH~g__" type="video/mp4">
+          Ваш браузер не поддерживает видео.
+        </video>
+        <img src="img/Krones%201.svg" alt="Krones" class="krones-overlay">
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- Блок «О компании» -->
+<section class="about-company">
+  <div class="container">
+    <p class="section-label">О КОМПАНИИ</p>
+    <h2>
+      <span class="highlight-blue">ELKE COMPANY</span> – ваш
+      <span class="highlight-blue">надёжный партнёр</span><br>
+      в пищевой промышленности
+    </h2>
+    <p class="about-text">
+      В мире индустриального производства качественные услуги играют ключевую роль.
+      Знакомьтесь с ТОО «Elke Company» — компанией, предлагающей решения, выходящие за рамки завтрашнего дня.<br class="desktop-br">
+      ТОО «Elke Company» — компания, которая зарекомендовала себя как надёжный поставщик услуг
+      по шеф-монтажу и пуско-наладке заводов для производства пищевой и не пищевой промышленности.
+    </p>
+  </div>
+</section>
+
+
+
+<!-- ========== Услуги компании ========== -->
+<section class="company-services">
+  <div class="container">
+    <p class="section-label" >ELKE COMPANY</p> 
+    <h2 class="section-title">Услуги компании</h2> 
+
+    <!-- Табы -->
+    <div class="services-tabs">
+      <button class="tab-btn active" data-tab="engineering">Инжиниринг</button>
+      <button class="tab-btn" data-tab="mech">Механический монтаж</button>
+      <button class="tab-btn" data-tab="elec">Электрический монтаж</button>
+      <button class="tab-btn" data-tab="pipes">Монтаж трубопроводов</button>
+      <button class="tab-btn" data-tab="insul">Монтаж изоляции</button>
+      <button class="tab-btn" data-tab="mixing">Купажные отделения</button>
+      <button class="tab-btn" data-tab="turnkey">Запуск объекта под ключ</button>
+    </div>
+
+    <!-- Контент табов -->
+    <div class="tabs-content">
+
+      <!-- Engineering Tab -->
+      <div class="tab-content active" id="engineering">
+        <div class="content-wrapper">
+          <video class="service-video" src="https://s3-figma-videos-production-sig.figma.com/video/TEAM/1377592191006498748/ab6c2853c9a0aac4934c7f5e5994693405a05082?Expires=1745798400&amp;Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&amp;Signature=KWL0wF~380lF-GlZWMd~wQUakXozVAAR9rmEXC8tBEL-42lxalECTjU756ZCjprJ0kIowt~Anjwrp2hu3CcNJcOG1ImKflaF-n4JvrooJ2PKMsF0L7i8Eeo5mMpWUQfFGvkLQroYzJcrWnbOLiOjw5NViJwTDUOKBWEJEVb1wJSe6BrAcQZglqievn2YRghNgM5s1XXgOpBpynypgC1XC4AtZA5HNazz1LObRp7KdfuWyOUVMlIddp80EhMCKW0xCdCy8aIUGIrR6ZgHJGVQLdU0Y27UixFEY8ynn8GHfj1ingy6dicDKvf5PGOrRRpEVN-6GXChwMY4hZJzSznNuw__" autoplay="" muted="" loop="" playsinline=""></video>
+          <img class="service-img" src="img/image ing (4).jpg" alt="Инжиниринг">
+          <div class="service-text-block">
+            <a href="Detailed services.html">
+            <img src="img/Vector.svg" alt="Подробнее" class="service-expand-icon"></a>
+            <div class="service-text-content">
+            <h3>Проектирование труб, план размещения оборудования</h3>
+            <p>Наша команда инженеров разрабатывает детальный проект, который включает все необходимые элементы для успешного выполнения работы. Мы работаем в тесном сотрудничестве с клиентами, чтобы все детали были учтены.</p>
+          </div>
+          </div>
+        </div>
+        <a href="Services.html" class="black-button">
+          Все услуги <img src="img/Vector.svg" alt="↗" class="arrow-icon"> 
+        </a>
+      </div>
+
+      <!-- Mechanical Tab -->
+      <div class="tab-content" id="mech">
+        <div class="content-wrapper">
+          <div class="service-video" style="background: url('img/service-mech1.jpg') center/cover;"></div>
+          <img class="service-img" src="img/service-mech1.jpg" alt="Механический монтаж">
+          <div class="service-text-block">
+            <img src="img/Vector.svg" alt="Подробнее" class="service-expand-icon">
+            <h3>Монтаж оборудования</h3>
+            <p>Установка линий розлива, резервуаров, насосных станций.</p>
+          </div>
+        </div>
+        <a href="#" class="black-button">
+          Все услуги <img src="img/Vector.svg" alt="↗" class="arrow-icon">
+        </a>
+      </div>
+
+      <!-- Electrical Tab -->
+      <div class="tab-content" id="elec">
+        <div class="content-wrapper">
+           <div class="service-video" style="background: url('img/service-elec1.jpg') center/cover;"></div>
+           <img class="service-img" src="img/service-elec1.jpg" alt="Электрический монтаж">
+           <div class="service-text-block">
+              <img src="img/Vector.svg" alt="Подробнее" class="service-expand-icon">
+              <div class="service-text-content">
+                <h3>Прокладка кабелей</h3>
+                <p>Силовые и слаботочные кабельные системы, монтаж шкафов.</p>
+              </div>
+           </div>
+          </div>
+        <a href="#" class="black-button">
+          Все услуги <img src="img/Vector.svg" alt="↗" class="arrow-icon">
+        </a>
+      </div>
+
+        <!-- Add other tab-content divs similarly -->
+        <div class="tab-content" id="pipes">...</div>
+        <div class="tab-content" id="insul">...</div>
+        <div class="tab-content" id="mixing">...</div>
+        <div class="tab-content" id="turnkey">...</div>
+
+    </div><!-- /tabs-content -->
+
+  </div><!-- /container -->
+</section>
+<!-- ========== /Услуги компании ========== -->
+
+
+<!-- ========== Наши клиенты ========== -->
+<section class="our-clients" id="clients-section">
+  <!-- Текстовый контент -->
+  <div class="container clients-text-container">
+      <p class="section-label">ELKE COMPANY</p>
+      <h2 class="section-title">Наши клиенты</h2>
+      <p class="clients-description">
+          Среди наших клиентов — как крупные международные концерны, так и малые локальные предприятия.<br>
+          Мы гордимся тем, что смогли помочь многим компаниям оптимизировать свои производственные процессы по всему миру.
+      </p>
+      <div class="clients-btn-wrapper">
+          <a href="projects.html" class="black-button">Подробнее
+              <img src="img/Vector.svg" alt="↗" class="arrow-icon">
+          </a>
+      </div>
+  </div>
+
+  <div class="client-logos-fade-wrapper">
+      <div class="swiper client-logos-slider">
+          <div class="swiper-wrapper">
+              <div class="swiper-slide"><img src="img/borjomi.svg" alt="Borjomi"></div>
+              <div class="swiper-slide"><img src="img/Erdinger.svg" alt="Erdinger Weissbrau"></div>
+              <div class="swiper-slide"><img src="img/Heineken.svg" alt="Heineken"></div>
+              <div class="swiper-slide"><img src="img/Cola.svg" alt="Coca-Cola"></div>
+              <div class="swiper-slide"><img src="img/ERES.svg" alt="Efes"></div> <!-- Проверьте имя файла Efes -->
+              <div class="swiper-slide"><img src="img/Pepsi.svg" alt="Pepsi"></div>
+          </div>
+      </div>
+  </div>
+
+  <div class="map-container">
+    <img src="img/Vector Maps.svg" alt="Карта мира" class="clients-map-base">
+  
+    <div class="pin" id="pin-borjomi"  style="top: 38%; left: 58%;  animation-delay: 0s;"></div>
+    <div class="pin" id="pin-erdinger" style="top: 34%; left: 51.5%; animation-delay: 2.5s;"></div>
+    <div class="pin" id="pin-heineken" style="top: 40%; left: 48%;  animation-delay: 5s;"></div>
+    <div class="pin" id="pin-cola"     style="top: 42%; left: 65%;  animation-delay: 7.5s;"></div>
+    <div class="pin" id="pin-efes"     style="top: 48%; left: 57%;  animation-delay: 10s;"></div>
+    <div class="pin" id="pin-pepsi"    style="top: 40%; left: 72%;  animation-delay: 12.5s;"></div>
+  </div>
+</section>
+<!-- ========== /Наши клиенты ========== -->
+
+<section class="projects">
+  <div class="container">
+    <p class="section-label">ELKE COMPANY</p>
+    <h2 class="section-title">Выполненные проекты</h2>
+
+    <div class="projects-display" id="projects">
+
+      <!-- ================= Кард 1 ================= -->
+      <!-- Start expanded on desktop/tablet, may start collapsed on mobile depending on JS -->
+      <div class="project-view is-expanded" data-id="1">
+        <div class="image-block" style="background-image: url('img/image2.png');">
+          <video src="https://s3-figma-videos-production-sig.figma.com/video/TEAM/1377592191006498748/f5cf846b6755759cb8fe4c80dcde639d36665862?Expires=1745798400&amp;Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&amp;Signature=WNg0jVBPJ0gEsoTcXCderNwOWIbkGsrvIbu0uSMudMQlztzk6SdphPK4B9qX9RVourXPQTsjUzaQD8x3OfvJWvZgd4GiLOlglQAxfJjZyblL7XUF1HhSw5uekSZJwp0JNw-EmJRnc25jr0GxCdBQH~1cZZiol4jNbysWxfo~GeOVluMYu~YZ6rARiKlBfTLZ~uRqua99NHboSsBiutGOvta5Msus7jnm7Elox~gKHJWqQMAVY~pG~3DLoYJ~Kiv6H96TvpJc9IWKmkXsVgv~hQlrbUCsyFiJjDVloUoltpYIXw53c~43swmillOtj9khksxJMjGDrDTawphDQZSLuw__" poster="img/image2.png" autoplay="" muted="" loop="" playsinline=""></video>
+          <button class="toggle-btn" data-action="collapse" aria-label="Свернуть проект"></button>
+        </div>
+        <div class="text-block">
+          <p class="subtitle">Монтаж трубопроводов</p>
+          <h3>Промышленная система трубопроводов №1</h3>
+          <p>предназначенная для транспортировки жидкостей или газов. Объект включает в себя трубопроводы различного диаметра с цветовой и графической маркировкой, позволяющей идентифицировать направление потока и тип транспортируемой среды. Используемые материалы и изоляция труб обеспечивают долговечность системы и её устойчивость к внешним воздействиям.</p>
+          <!-- Кнопка Развернуть/Свернуть Детали (Показывается на планшете/мобильном) -->
+          <a class="details-toggle-btn" aria-expanded="false" aria-controls="details-list-1">
+              Развернуть детали
+          </a>
+          <!-- Список Деталей -->
+          <ul class="details" id="details-list-1" aria-hidden="true">
+             <li><img src="img/calendar.svg" alt="Calendar icon"> 1 января 2025 г.</li>
+             <li><img src="img/share_location.svg" alt="Location icon"> Республика Казахстан, г. Астана</li>
+             <li><img src="img/precision.svg" alt="Factory icon"> Завод №1 Coca-Cola</li>
+          </ul>
+          <a href="projects.html" class="black-button more-button">
+              Перейти к проекту
+              <img src="img/Vector.svg" alt="↗" class="arrow-icon">
+          </a>
+        </div>
+      </div>
+
+      <!-- ================= Кард 2 ================= -->
+      <div class="project-view is-collapsed" data-id="2">
+        <div class="image-block" style="background-image: url('img/image28.png');">
+          <video src="https://s3-figma-videos-production-sig.figma.com/video/TEAM/1377592191006498748/e1f3de6b0908f3b24392133d24b215d718d33df8?Expires=1745798400&amp;Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&amp;Signature=ALxWJuqUXeesyEJ9CkNs4pnawnF44yUenD~t95SRvemNzfzlZp9d5Ag8zGfGmeS8QLR-c5nfmhwwJNZ5A~a0sik~X0Jv~BW70eq6ZaY~tCe7tMomINZ4zYOJXpz4BfWN1NYZEcKkdj6R59QIl0hMGUOcbWMHebwnKqB5WRUu1BD1dHtogk5brSZ3ega3MS2nex6CyIXsw6XzbAdH-6zMfAgOEOIJlttVqHbqWbNVwes~mMFoouMu9XegMpxA8CNrgIfIBEpePE05bK93Nclg7u9kJu0tK0VXosDGa9l9NhvphLgQ2tfaHgsn3P6xNI-Ozktooqlg0pq13-LBOliPDw__" poster="img/image28.png" autoplay="" muted="" loop="" playsinline=""></video>
+          <button class="toggle-btn" data-action="expand" aria-label="Развернуть проект"></button>
+        </div>
+        <div class="text-block">
+          <p class="subtitle">Автоматизация процессов</p>
+          <h3>Система управления производством №2</h3>
+          <p>предназначенная для транспортировки жидкостей или газов. Объект включает в себя трубопроводы различного диаметра с цветовой и графической маркировкой, позволяющей идентифицировать направление потока и тип транспортируемой среды.</p>
+           <!-- Кнопка Развернуть/Свернуть Детали -->
+           <a class="details-toggle-btn" aria-expanded="false" aria-controls="details-list-2">
+              Развернуть детали
+           </a>
+          <!-- Список Деталей -->
+          <ul class="details" id="details-list-2" aria-hidden="true">
+            <li><img src="img/calendar.svg" alt="Calendar icon"> 15 февраля 2025 г.</li>
+            <li><img src="img/share_location.svg" alt="Location icon"> Республика Казахстан, г. Алматы</li>
+            <li><img src="img/precision.svg" alt="Factory icon"> Завод "Рахат"</li>
+          </ul>
+          <a href="projects.html" class="black-button more-button">
+            Перейти к проекту
+            <img src="img/Vector.svg" alt="↗" class="arrow-icon">
+        </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- Секция новостей -->
+<section class="news-section">
+  <div class="container"> 
+    <!-- Верхняя подпись (если нужна) -->
+    <p class="section-label">ELKE COMPANY</p>
+    <!-- Заголовок -->
+    <h2 class="section-title">Новости и события</h2> <!-- Use standard section title -->
+
+    <!-- Грид с карточками -->
+    <div class="news-grid">
+      <!-- Карточка 1 -->
+      <article class="news-card">
+        <div class="news-card-image">
+          <img src="img/image (4).png" alt="Coca-Cola plant">
+        </div>
+        <div class="news-card-content-wrapper">
+          <div class="news-card-text">
+            <h3 class="news-card-title">
+              Coca-Cola Europacific Partners внедряет новые технологии на заводах в Германии
+            </h3>
+            <p class="news-card-description">
+              Coca-Cola Europacific Partners продолжает инвестировать в улучшение
+              производственных мощностей. На трёх заводах компании в Германии
+              началась масштабная модернизация..
+            </p>
+          </div>
+          <div class="news-card-side">
+            <div class="news-card-date">9 января 2025 г.</div>
+            <a href="Detailed news.html" aria-label="Читать новость Coca-Cola" class="news-card-icon">
+              <img src="img/Vector.svg" alt="↗" class="arrow-icon-new">
+            </a>
+          </div>
+      </article>
+
+      <!-- Карточка 2 -->
+      <article class="news-card">
+        <div class="news-card-image">
+          <img src="img/image (3).png" alt="Aseptic lines">
+        </div>
+        <div class="news-card-content-wrapper">
+          <div class="news-card-text">
+            <h3 class="news-card-title">Три асептические линии за три года</h3>
+            <p class="news-card-description">
+              За три года Elke Company внедрила три современные линии с асептической технологией.
+              Оборудование от ведущих производителей обеспечивает высокую гибкость и производительность,
+              что позволяет..
+            </p>
+          </div>
+          <div class="news-card-side">
+            <span class="news-card-date">8 января 2025 г.</span>
+            <a href="Detailed news.html" aria-label="Читать новость Асептические линии" class="news-card-icon">
+              <img src="img/Vector.svg" alt="↗" class="arrow-icon-new">
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Карточка 3 -->
+      <article class="news-card hide-on-tablet">
+        <div class="news-card-image">
+          <img src="img/image (2).png" alt="Digitalization concept">
+        </div>
+        <div class="news-card-content-wrapper">
+          <div class="news-card-text">
+            <h3 class="news-card-title">Цифровизация на борту: курс на эффективное производство</h3>
+            <p class="news-card-description">
+              Цифровые технологии помогают вывести производство на новый уровень.
+              Высокотехнологичная система позволяет с максимальной эффективностью
+              разливать продукцию, сохраняя её уникальное качество.
+            </p>
+          </div>
+          <div class="news-card-side">
+            <span class="news-card-date">2 января 2025 г.</span>
+            <a href="Detailed news.html" aria-label="Читать новость Цифровизация" class="news-card-icon">
+              <img src="img/Vector.svg" alt="↗" class="arrow-icon-new">
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Карточка 4 -->
+      <article class="news-card hide-on-tablet">
+        <div class="news-card-image">
+          <img src="img/image (1).png" alt="Alternative proteins">
+        </div>
+        <div class="news-card-content-wrapper">
+          <div class="news-card-text">
+            <h3 class="news-card-title">Альтернативные белки: еда будущего?</h3>
+            <p class="news-card-description">
+              Инновационные подходы к питанию выходят на первый план: насекомые, водоросли,
+              микробное брожение и культивированное мясо всё чаще рассматриваются
+              как перспективные альтернативные источники белка.
+            </p>
+          </div>
+          <div class="news-card-side">
+            <span class="news-card-date">25 декабря 2024 г.</span>
+            <a href="Detailed news.html" aria-label="Читать новость Альтернативные белки" class="news-card-icon">
+              <img src="img/Vector.svg" alt="↗" class="arrow-icon-new">
+            </a>
+          </div>
+        </div>
+      </article>
+    </div> <!-- /.news-grid -->
+
+    <div class="news-btn-wrapper"> <!-- Renamed class -->
+      <a href="News.html" class="black-button show-more-news-button">Смотреть все новости
+        <img src="img/Vector.svg" alt="↗" class="arrow-icon">
+      </a>
+    </div>
+  </div> <!-- /.container -->
+</section> <!-- /.news-section -->
+
+
+<!-- Подвал сайта -->
+<footer class="site-footer">
+  <div class="container-footer"> <!-- Added a container for better control -->
+
+    <div class="footer-row top-row"> <!-- Renamed for clarity, holds top elements -->
+
+      <!-- Wrapper for left content (Links + Address) -->
+      <div class="footer-left-content">
+        <!-- Group for Карта сайта & Услуги -->
+            <div class="footer-main-links">
+              <div class="footer-col">
+                  <h4>Карта сайта</h4>
+                  <ul>
+                      <li><a href="index.html">Главная</a></li>
+                      <!-- Modified li for Services -->
+                      <li>
+                          <a href="Services.html" class="foot-item">
+                              <span class="link-text">Услуги</span> <!-- Optional wrapper for text -->
+                              <span class="circle-toggle" id="services-toggle"> <!-- Added ID -->
+                                  <!-- Initial SVG (Plus) will be inserted by JS -->
+                              </span>
+                          </a>
+                      </li>
+                      <!-- Modified li for About Us -->
+                      <li>
+                          <a href="about.html" class="foot-item">
+                             <span class="link-text">О нас</span> <!-- Optional wrapper for text -->
+                             <span class="circle-toggle" id="about-toggle"> <!-- Added ID -->
+                                  <!-- Initial SVG (Plus) will be inserted by JS -->
+                             </span>
+                          </a>
+                      </li>
+                      <li><a href="#">Галерея</a></li>
+                      <li><a href="projects.html">Наши клиенты</a></li>
+                      <li><a href="Krones.html" class="foot-item">Krones</a></li>
+                      <li><a href="Contacts.html">Контакты</a></li>
+                  </ul>
+              </div>
+              <!-- This is the column whose content will change -->
+              <div class="footer-col" id="dynamic-content-area">
+                  <h4 id="dynamic-heading">Услуги</h4>
+                  <ul id="dynamic-list">
+                      <li><a href="#">Механический монтаж</a></li>
+                      <li><a href="#">Электрический монтаж</a></li>
+                      <li><a href="#">Монтаж трубопроводов</a></li>
+                      <li><a href="#">Теплоизоляция трубопроводов</a></li>
+                      <li><a href="Detailed services.html">Инжиниринг</a></li>
+                      <li><a href="#">Купажные отделения</a></li>
+                      <li><a href="#">Запуск объекта "под ключ"</a></li>
+                  </ul>
+              </div>
+          </div>
+
+        <div class="top-button-box-mobile">
+          <a href="#top" class="vertical-btn"> <!-- Ensure #top or body has id="top" -->
+            <img src="img/Vector.svg" alt="↑" class="arrow-icon-footer">
+            <div class="separator-line"></div> <!-- линия -->
+            <span class="vertical-text">В начало страницы</span>
+          </a>
+        </div>
+
+        <!-- Адрес column (moved inside wrapper but structurally separate for mobile) -->
+        <div class="footer-col footer-address">
+          <h4>Адрес</h4>
+          <div class="address-block">
+            <p>
+              Алматинская обл., Карасайский район,<br>
+              Райымбекский с.о., с. Буланты,<br>
+              Учётный квартал 587, 263
+            </p>
+            <a href="#" class="map-link"><img src="img/map-icon.svg" alt="Location icon"> Показать на карте</a>
+          </div>
+          <div class="address-block">
+            <p>
+              Республика Казахстан, г. Алматы,<br>
+              пр. Аль-Фараби, д.65 
+            </p>
+            <a href="#" class="map-link" ><img src="img/map-icon.svg" alt="Location icon"> Показать на карте</a>
+          </div>
+        </div>
+      </div> <!-- End footer-left-content -->
+
+
+      <!-- Телефон column -->
+      <div class="footer-group phone-box">
+        <h4>Телефон</h4>
+        <p><a href="tel:+77272582568">8 (727) 258 25 68</a></p>
+        <p><a href="tel:+77272583771">8 (727) 258 37 71</a></p>
+        <p><a href="tel:+77272582569">8 (727) 258 25 69</a></p>
+        <h4 class="email-title">E-mail</h4>
+        <p><a href="mailto:krones.kz@gmail.com">krones.kz@gmail.com</a></p>
+      </div>
+
+      <!-- Правая коробка: Кнопка "В начало страницы" -->
+      <div class="top-button-box">
+        <a href="#top" class="vertical-btn"> <!-- Ensure #top or body has id="top" -->
+          <img src="img/Vector.svg" alt="↑" class="arrow-icon-footer">
+          <div class="separator-line"></div> <!-- линия -->
+          <span class="vertical-text">В начало страницы</span>
+        </a>
+      </div>
+
+    </div> <!-- End footer-row top-row -->
+
+    <!-- Средняя полоса: заявка + ISO + политика -->
+    <div class="footer-middle">
+      <div class="footer-form">
+        <!-- единая горизонтальная линия -->
+        <div class="row">
+              <!-- ===== форма «Оставить заявку» ===== -->
+              <form class="phone-form" action="#" method="post">
+                <h4 class="footer-title">Оставить заявку</h4>
+
+                <!-- ▸ 1-я строка: три телефона -->
+                <div class="input-row">
+                  <input type="tel" class="phone-input" placeholder="Введите номер телефона">
+                </div>
+
+
+                <!-- ▸ 2-я строка: кнопка + согласие -->
+                <div class="action-row">
+                  <button type="submit" class="call-btn">Заказать звонок</button>
+                  <p class="consent-text">
+                    Нажимая на кнопку, я даю своё согласие <br>
+                    на <a href="#">обработку персональных данных</a>
+                  </p>
+                </div>
+              </form>
+        </div>
+      </div>
+
+      <div class="middle-cert">
+        <p>Сертификат регистрации</p>
+        <p class="iso-text">ISO 9001:2015</p>
+      </div>
+      <div class="middle-links">
+        <a href="#">Политика конфиденциальности</a>
+        <a href="#">Персональные данные</a>
+      </div>
+    </div><!-- /.footer-middle -->
+
+    <!-- Нижняя полоса: копирайт, большой логотип, «Дизайн» -->
+    <div class="footer-bottom">
+      <p class="footer-bottom-left">ТОО «ELKE COMPANY», 2025©</p>
+      <p class="footer-bottom-right">
+        Дизайн и разработка
+        <a href="https://pavlenko.kz/" target="_blank" rel="noopener noreferrer">
+          <img src="img/logoP.svg" alt="pavlenko.kz" class="studio-logo">
+        </a>
+      </p>
+    </div>
+
+    <div class="footer-biglogo">
+      <img src="img/logo.png" alt="ELKE COMPANY">
+    </div>
+
+  </div> <!-- End container-footer -->
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script src="js/script.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

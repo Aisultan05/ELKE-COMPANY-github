@@ -4,11 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>ELKE COMPANY – Проекты</title>
-
-  <!-- Подключаем стили вашего проекта -->
   <link rel="stylesheet" href="css/projects.css" />
-
-  <!-- Пример: Swiper CSS (если нужно) -->
+  <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600&display=swap" rel="stylesheet">
   <link
     rel="stylesheet"
     href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
@@ -21,7 +18,7 @@
   <div class="header-container">
       <!-- Логотип -->
       <div class="logo">
-          <a href="main.html">
+          <a href="index.html">
               <img src="img/Header-logo.svg" alt="ELKE COMPANY Инжиниринговая компания">
               <p class="logo-text">Инжиниринговая<br> компания</p>
           </a>
@@ -117,7 +114,7 @@
           <span class="contact-number">8 (727) 258‑25‑68</span>
         </div>
         <a class="call-icon-popup" href="tel:+77272582568">
-          <img src="img/call_grey.svg" alt="Позвонить">
+          <img src="img/call.svg" alt="Позвонить">
         </a>
       </div>
       <div class="contact-item">
@@ -126,7 +123,7 @@
           <span class="contact-number">8 (727) 258‑25‑68</span>
         </div>
         <a class="call-icon-popup" href="tel:+77272582568">
-          <img src="img/call_grey.svg" alt="Позвонить">
+          <img src="img/call.svg" alt="Позвонить">
         </a>
       </div>
       <div class="contact-item">
@@ -135,7 +132,7 @@
           <span class="contact-number">8 (727) 258‑25‑68</span>
         </div>
         <a class="call-icon-popup" href="tel:+77272582568">
-          <img src="img/call_grey.svg" alt="Позвонить">
+          <img src="img/call.svg" alt="Позвонить">
         </a>
       </div>
     </div>
@@ -173,8 +170,7 @@
 <div class="container breadcrumbs-container">
   <nav aria-label="breadcrumb">
     <ol class="breadcrumbs">
-      <li><a href="main.html" class="plain-link">Главная</a></li>
-      <li><span class="separator">/</span></li>
+      <li><a href="index.html" class="plain-link">Главная</a></li>
       <li aria-current="page" class="active">Проекты</li>
     </ol>          
   </nav>
@@ -193,26 +189,63 @@
     <button class="tab" data-tab="CIS">СНГ</button>
     <button class="tab" data-tab="Saudi">Саудовская Аравия</button>
     <button class="tab" data-tab="Africa">Африка</button>
-    <button class="reset-selection-btn">Сбросить выделение</button>
+    <button class="reset-selection-btn desktop-reset">Сбросить выделение</button>
   </div>
 
   <!-- Вкладка «Казахстан» -->
   <div class="geo-content active-geo-content" data-tab-content="Kazakhstan">
+    <!-- Блок статистики (по умолчанию скрыт) -->
+    <div class="tab-stats">
+      <div class="stat-item">
+        <div class="stat-number">>24</div>
+        <p class="stat-description">лет опыта работы<br>в Казахстане</p>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">4</div>
+        <p class="stat-description">крупных предприятия<br>на обслуживании</p>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">1500</div>
+        <p class="stat-description">выполненных проектов</p>
+      </div>
+    </div>
+    <!-- Конец блока статистики -->
+
     <div class="projects-list" id="projectsListKazakhstan">
       <p>Нажмите на регион карты Казахстана, чтобы увидеть компании</p>
+      <!-- Сюда JS будет добавлять карточки компаний -->
     </div>
     <div class="kz-map-container">
       <svg id="kzMap"></svg>
       <div id="kz-map-tooltip" class="map-tooltip"></div>
     </div>
+    <div class="reset-button-wrapper"> <!-- order: 3 (tablet/mobile) -->
+      <button class="reset-selection-btn mobile-reset">Сбросить выделение</button>
+    </div>
   </div>
 
   <!-- Вкладка «Европа» -->
   <div class="geo-content" data-tab-content="Europe">
+    <!-- Блок статистики (по умолчанию скрыт, ЗАПОЛНИТЕ ДАННЫМИ!) -->
+    <div class="tab-stats">
+      <div class="stat-item">
+        <div class="stat-number">>15</div>
+        <p class="stat-description">лет опыта работы<br>в Европе</p>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">12</div>
+        <p class="stat-description">международных<br>партнеров</p>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">800+</div>
+        <p class="stat-description">реализованных проектов</p>
+      </div>
+    </div>
+    <!-- Конец блока статистики -->
     <div class="projects-list" id="projectsListEurope">
       <p>Нажмите на страну в Европе, чтобы увидеть проекты</p>
     </div>
-    <div class="kz-map-container"> <!-- Можно тот же класс -->
+    <div class="kz-map-container">
       <svg id="euMap"></svg>
       <div id="eu-map-tooltip" class="map-tooltip"></div>
     </div>
@@ -220,6 +253,22 @@
 
   <!-- Вкладка «Азия» -->
   <div class="geo-content" data-tab-content="Asia">
+     <!-- Блок статистики (по умолчанию скрыт, ЗАПОЛНИТЕ ДАННЫМИ!) -->
+     <div class="tab-stats">
+       <div class="stat-item">
+         <div class="stat-number">>10</div>
+         <p class="stat-description">лет присутствия<br>в Азии</p>
+       </div>
+       <div class="stat-item">
+         <div class="stat-number">8</div>
+         <p class="stat-description">ключевых клиентов<br>в регионе</p>
+       </div>
+       <div class="stat-item">
+         <div class="stat-number">500+</div>
+         <p class="stat-description">проектов</p>
+       </div>
+     </div>
+     <!-- Конец блока статистики -->
     <div class="projects-list" id="projectsListAsia">
       <p>Нажмите на страну в Азии, чтобы увидеть проекты</p>
     </div>
@@ -231,6 +280,22 @@
 
   <!-- Вкладка «СНГ» -->
   <div class="geo-content" data-tab-content="CIS">
+     <!-- Блок статистики (по умолчанию скрыт, ЗАПОЛНИТЕ ДАННЫМИ!) -->
+     <div class="tab-stats">
+       <div class="stat-item">
+         <div class="stat-number">>20</div>
+         <p class="stat-description">лет работы<br>в странах СНГ</p>
+       </div>
+       <div class="stat-item">
+         <div class="stat-number">15+</div>
+         <p class="stat-description">стран охвата<br>в СНГ</p>
+       </div>
+       <div class="stat-item">
+         <div class="stat-number">1200+</div>
+         <p class="stat-description">выполненных проектов</p>
+       </div>
+     </div>
+     <!-- Конец блока статистики -->
     <div class="projects-list" id="projectsListCIS">
       <p>Нажмите на страну СНГ, чтобы увидеть проекты</p>
     </div>
@@ -242,8 +307,24 @@
 
   <!-- Вкладка «Саудовская Аравия» -->
   <div class="geo-content" data-tab-content="Saudi">
+     <!-- Блок статистики (по умолчанию скрыт, ЗАПОЛНИТЕ ДАННЫМИ!) -->
+     <div class="tab-stats">
+       <div class="stat-item">
+         <div class="stat-number">>5</div>
+         <p class="stat-description">лет опыта<br>в Саудовской Аравии</p>
+       </div>
+       <div class="stat-item">
+         <div class="stat-number">3</div>
+         <p class="stat-description">крупных проекта<br>в стадии реализации</p>
+       </div>
+       <div class="stat-item">
+         <div class="stat-number">100+</div>
+         <p class="stat-description">поставок оборудования</p>
+       </div>
+     </div>
+     <!-- Конец блока статистики -->
     <div class="projects-list" id="projectsListSaudi">
-      <p>Нажмите на страну Саудовской Аравии, чтобы увидеть проекты</p>
+      <p>Нажмите на регион Саудовской Аравии, чтобы увидеть проекты</p>
     </div>
     <div class="kz-map-container">
       <svg id="saudiMap"></svg>
@@ -253,6 +334,22 @@
 
   <!-- Вкладка «Африка» -->
   <div class="geo-content" data-tab-content="Africa">
+     <!-- Блок статистики (по умолчанию скрыт, ЗАПОЛНИТЕ ДАННЫМИ!) -->
+     <div class="tab-stats">
+       <div class="stat-item">
+         <div class="stat-number">>8</div>
+         <p class="stat-description">лет работы<br>на африканском континенте</p>
+       </div>
+       <div class="stat-item">
+         <div class="stat-number">6</div>
+         <p class="stat-description">стран присутствия<br>в Африке</p>
+       </div>
+       <div class="stat-item">
+         <div class="stat-number">350+</div>
+         <p class="stat-description">успешных проектов</p>
+       </div>
+     </div>
+     <!-- Конец блока статистики -->
     <div class="projects-list" id="projectsListAfrica">
       <p>Нажмите на страну в Африке, чтобы увидеть проекты</p>
     </div>
@@ -263,6 +360,7 @@
   </div>
 
 </section>
+<!-- Конец блока «География проектов» -->
 
 
 
@@ -291,68 +389,68 @@
 </section>
 
 <!-- Основные направления -->
-<section class="main-directions container">
-  <h2>Основные направления:</h2>
-  <div class="directions-grid">
+  <section class="main-directions container">
+    <h2>Основные направления:</h2>
+    <div class="directions-grid">
+        
+      <!-- 1-я карточка -->
+      <a href="link1.html" class="direction-card">
+        <div class="direction-icon">
+          <img src="img/Shapes 1.svg" alt="иконка">
+        </div>
+        <h4>механический монтаж технологического оборудования</h4>
+      </a>
+
+      <!-- 2-я карточка (пример "активной") -->
+      <a href="link2.html" class="direction-card">
+        <div class="direction-icon">
+          <img src="img/Shapes 2.svg" alt="иконка">
+        </div>
+        <h4>электрический монтаж технологического оборудования</h4>
+      </a>
+
+      <!-- 3-я карточка -->
+      <a href="link3.html" class="direction-card">
+        <div class="direction-icon">
+          <img src="img/Shapes 3.svg" alt="иконка">
+        </div>
+        <h4>монтаж технологических трубопроводов и металлоконструкций</h4>
+      </a>
+
+      <!-- 4-я карточка -->
+      <a href="link4.html" class="direction-card">
+        <div class="direction-icon">
+          <img src="img/Shapes 4.svg" alt="иконка">
+        </div>
+        <h4>теплоизоляция трубопроводов и емкостного оборудования</h4>
+      </a>
+
+      <!-- 5-я карточка -->
+      <a href="Detailed services.html" class="direction-card">
+        <div class="direction-icon">
+          <img src="img/Shapes 6.svg" alt="иконка">
+        </div>
+        <h4>инжиниринг (разработка индивидуальных технологических решений)</h4>
+      </a>
+
+      <!-- 6-я карточка -->
+      <a href="link5.html" class="direction-card">
+        <div class="direction-icon">
+          <img src="img/Shapes 5.svg" alt="иконка">
+        </div>
+        <h4>купажные отделения (собственное производство)</h4>
+      </a>
+
+      <!-- 7-я карточка -->
+      <a href="link7.html" class="direction-card">
+        <div class="direction-icon">
+          <img src="img/Shapes 7.svg" alt="иконка">
+        </div>
+        <h4>запуск объекта под ключ</h4>
+      </a>
       
-    <!-- 1-я карточка -->
-    <a href="link1.html" class="direction-card">
-      <div class="direction-icon">
-        <img src="img/Shapes 1.svg" alt="иконка">
-      </div>
-      <h4>механический монтаж технологического оборудования</h4>
-    </a>
-
-    <!-- 2-я карточка (пример "активной") -->
-    <a href="link2.html" class="direction-card">
-      <div class="direction-icon">
-        <img src="img/Shapes 2.svg" alt="иконка">
-      </div>
-      <h4>электрический монтаж технологического оборудования</h4>
-    </a>
-
-    <!-- 3-я карточка -->
-    <a href="link3.html" class="direction-card">
-      <div class="direction-icon">
-        <img src="img/Shapes 3.svg" alt="иконка">
-      </div>
-      <h4>монтаж технологических трубопроводов и металлоконструкций</h4>
-    </a>
-
-    <!-- 4-я карточка -->
-    <a href="link4.html" class="direction-card">
-      <div class="direction-icon">
-        <img src="img/Shapes 4.svg" alt="иконка">
-      </div>
-      <h4>теплоизоляция трубопроводов и емкостного оборудования</h4>
-    </a>
-
-    <!-- 5-я карточка -->
-    <a href="link5.html" class="direction-card">
-      <div class="direction-icon">
-        <img src="img/Shapes 5.svg" alt="иконка">
-      </div>
-      <h4>запуск объекта под ключ</h4>
-    </a>
-
-    <!-- 6-я карточка -->
-    <a href="Detailed services.html" class="direction-card">
-      <div class="direction-icon">
-        <img src="img/Shapes 6.svg" alt="иконка">
-      </div>
-      <h4>инжиниринг (разработка индивидуальных технологических решений)</h4>
-    </a>
-
-    <!-- 7-я карточка -->
-    <a href="link7.html" class="direction-card">
-      <div class="direction-icon">
-        <img src="img/Shapes 7.svg" alt="иконка">
-      </div>
-      <h4>купажные отделения (собственное производство)</h4>
-    </a>
-    
-  </div>
-</section>
+    </div>
+  </section>
 
 <!-- Подвал сайта -->
 <footer class="site-footer">
@@ -364,7 +462,7 @@
         <div class="footer-col">
           <h4>Карта сайта</h4>
           <ul>
-            <li><a href="main.html">Главная</a></li>
+            <li><a href="index.html">Главная</a></li>
             <li class="has-submenu">
               <a href="Services.html">Услуги</a>
             </li>

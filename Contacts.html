@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>ELKE COMPANY – Контакты</title>
   <link rel="stylesheet" href="css/Contacts.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -13,7 +14,7 @@
   <div class="header-container">
       <!-- Логотип -->
       <div class="logo">
-          <a href="main.html">
+          <a href="index.html">
               <img src="img/Header-logo.svg" alt="ELKE COMPANY Инжиниринговая компания">
               <p class="logo-text">Инжиниринговая<br> компания</p>
           </a>
@@ -109,7 +110,7 @@
           <span class="contact-number">8 (727) 258‑25‑68</span>
         </div>
         <a class="call-icon-popup" href="tel:+77272582568">
-          <img src="img/call_grey.svg" alt="Позвонить">
+          <img src="img/call.svg" alt="Позвонить">
         </a>
       </div>
       <div class="contact-item">
@@ -118,7 +119,7 @@
           <span class="contact-number">8 (727) 258‑25‑68</span>
         </div>
         <a class="call-icon-popup" href="tel:+77272582568">
-          <img src="img/call_grey.svg" alt="Позвонить">
+          <img src="img/call.svg" alt="Позвонить">
         </a>
       </div>
       <div class="contact-item">
@@ -127,7 +128,7 @@
           <span class="contact-number">8 (727) 258‑25‑68</span>
         </div>
         <a class="call-icon-popup" href="tel:+77272582568">
-          <img src="img/call_grey.svg" alt="Позвонить">
+          <img src="img/call.svg" alt="Позвонить">
         </a>
       </div>
     </div>
@@ -153,15 +154,14 @@
 
 <div class="container">
     <!-- Хлебные крошки -->
-  <div class="container breadcrumbs-container">
-    <nav aria-label="breadcrumb">
-      <ol class="breadcrumbs">
-        <li><a href="main.html" class="plain-link">Главная</a></li>
-        <li><span class="separator">/</span></li>
-        <li aria-current="page" class="active">Контакты</li>
-      </ol>          
-    </nav>
-  </div>
+    <div class="container breadcrumbs-container">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumbs">
+          <li><a href="index.html" class="plain-link">Главная</a></li>
+          <li aria-current="page" class="active">Контакты</li>
+        </ol>          
+      </nav>
+    </div>
 
   <section class="contacts-sec">
     <div class="section-layout">
@@ -175,9 +175,7 @@
             <div class="address-block">
                 <p class="info-label">Адрес</p>
                 <p>Республика Казахстан,<br>г. Алматы, пр. Аль-Фараби, д. 65</p>
-                <a href="#" class="show-on-map">
-                    <i class="fas fa-map-marker-alt"></i> Показать на карте
-                </a>
+                  <a href="#" class="show-on-map"><img src="img/map-icon.svg" alt="Location icon"> Показать на карте</a>
             </div>
 
             <div class="contact-details">
@@ -187,27 +185,27 @@
                             <p class="info-label">Телефон — Название отделения</p>
                             <p class="contact-value">8 (727) 258 25 68</p>
                         </div>
-                        <div class="contact-icon">
-                            <i class="fas fa-phone-alt"></i>
-                        </div>
+                        <a class="icon-link" href="tel:+7(727) 258 25 68">
+                          <img src="img/call.svg" alt="Позвонить">
+                        </a>
                     </div>
                     <div class="contact-item">
                         <div class="contact-text">
                             <p class="info-label">Телефон — Название отделения</p>
                             <p class="contact-value">8 (727) 258 37 71</p>
                         </div>
-                        <div class="contact-icon">
-                            <i class="fas fa-phone-alt"></i>
-                        </div>
+                        <a class="icon-link" href="tel:+7(727) 258 37 71">
+                          <img src="img/call.svg" alt="Позвонить">
+                        </a>
                     </div>
                     <div class="contact-item">
                         <div class="contact-text">
                             <p class="info-label">Телефон — Название отделения</p>
                             <p class="contact-value">8 (727) 258 25 69</p>
                         </div>
-                        <div class="contact-icon">
-                            <i class="fas fa-phone-alt"></i>
-                        </div>
+                        <a class="icon-link" href="tel:+7(727) 258 25 69">
+                          <img src="img/call.svg" alt="Позвонить">
+                        </a>
                     </div>
                 </div>
 
@@ -217,9 +215,9 @@
                             <p class="info-label">Email</p>
                             <p class="contact-value email-link">krones.kz@gmail.com</p>
                        </div>
-                        <div class="contact-icon">
-                           <i class="fas fa-envelope"></i>
-                       </div>
+                       <a href="mailto:krones.kz@gmail.com" class="icon-link" aria-label="Написать Email">
+                        <img src="img/mail.svg" alt="Email">
+                      </a>
                    </div>
                 </div>
             </div>
@@ -228,67 +226,110 @@
     </div>
 </section>
 
+<!-- Начало секции Сотрудничество -->
 <section class="collaboration-sec">
-    <div class="section-layout">
-        <!-- Левая часть: заголовок -->
-        <div class="section-title">
-            <h2>Сотрудничество</h2>
-        </div>
+  <div class="section-layout">
+      <!-- Левая часть: Заголовок секции -->
+      <div class="section-title">
+          <h2>Сотрудничество</h2>
+      </div>
 
-        <!-- Правая часть: форма -->
-        <div class="section-content collaboration-form">
-            <form action="#" method="post" class="collaboration-form-inner">
-                <div class="form-row">
-                    <div class="form-group form-group-half">
-                        <input type="text" id="name" name="name" placeholder="Введите ваше имя*" required>
-                    </div>
-                    <div class="form-group form-group-half phone-group">
-                        <span class="phone-prefix">+7</span>
-                        <input type="tel" id="phone" name="phone" placeholder="Укажите номер телефона" required>
-                    </div>
-                </div>
-                 <div class="form-row">
-                    <div class="form-group form-group-half">
-                        <input type="email" id="email" name="email" placeholder="E-mail*" required>
-                    </div>
-                     <div class="form-group form-group-half">
-                         <input type="text" id="company" name="company" placeholder="Название компании*" required>
-                     </div>
-                </div>
+      <!-- Правая часть: Форма -->
+      <div class="section-content collaboration-form">
 
-                <div class="form-group">
-                    <textarea id="message" name="message" placeholder="Напишите о ваших целях"></textarea>
-                    <span class="chars-left">Осталось 160 слов</span>
-                </div>
+          <!-- Форма обратной связи -->
+          <form id="collabForm" action="#" method="post" class="collaboration-form-inner" novalidate>
 
-                <div class="form-group file-upload-area">
-                   <div class="file-upload-button-wrapper">
-                       <button type="button" class="file-upload-button">
-                           <i class="fas fa-paperclip"></i> Прикрепить файл
-                       </button>
-                       <input type="file" id="file" name="file" accept=".doc,.docx,.pdf" style="display: none;"> <!-- Hidden actual input -->
-                        <span class="file-restrictions">до 10 МБ, (DOC, DOCX, PDF)</span>
+              <!-- Блок для отображения общей ошибки формы -->
+              <div id="general-error" class="error-message" style="background-color: #f8d7da; color: #721c24; padding: 10px; border: 1px solid #f5c6cb; display: none; margin-bottom: 15px;">
+                  <!-- Текст ошибки будет вставлен сюда через JS -->
+              </div>
+
+              <!-- Первый ряд: Имя и Телефон -->
+              <div class="form-row">
+                  <div class="form-group form-group-half">
+                      <label for="name" class="sr-only">Имя</label> <!-- Скрытая метка для доступности -->
+                      <input type="text" id="name" name="name" placeholder="Введите ваше имя*" required>
+                      <span class="error-message" id="name-error"></span>
+                  </div>
+                  <div class="form-group form-group-half phone-group">
+                      <label for="phone" class="sr-only">Телефон</label> <!-- Скрытая метка -->
+                      <!-- Префикс телефона (можно стилизовать для выбора страны, если нужно) -->
+                      <span class="phone-prefix">
+                          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAALCAIAAAD5gJpuAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEBSURBVBhXY4AK/v//PwMDwz///sP8+PEjuLm5yMoqISL49u1bSL8B9h8eHkrMzc34+fkbGBgYGBg4/v1bxMQECQnJyMjICAoKSUpK+vr1Kzg4ODAwMLy8vAwMDAwMjPz9+5eVlYWLi4uenoFCQkMbN2789u0bXLhwBQkJCSUlRUREhMFgQURERLdu3Xrv3j1sbGxSUlIiIiJ8fX0ZGBgYGBgYGBhYWFg4ODjGxMScP3++sbHx7Nmz7969+w8fPvz48SMBAYHx8fGtra0/f/78/v17RkZGampqYmJibm5uyMhIZ2fn379/v379+vjx40AqJUCAAEy8GgZWM6aCAAAAAElFTkSuQmCC" alt="KZ Flag" width="16" height="11">
+                          +7 ▾
+                      </span>
+                      <input type="tel" id="phone" name="phone" placeholder="Укажите номер телефона*" required>
+                       <span class="error-message" id="phone-error"></span>
+                  </div>
+              </div>
+
+               <!-- Второй ряд: E-mail и Название компании -->
+               <div class="form-row">
+                  <div class="form-group form-group-half">
+                      <label for="email" class="sr-only">E-mail</label> <!-- Скрытая метка -->
+                      <input type="email" id="email" name="email" placeholder="E-mail*" required>
+                       <span class="error-message" id="email-error"></span>
+                  </div>
+                   <div class="form-group form-group-half">
+                      <label for="company" class="sr-only">Название компании</label> <!-- Скрытая метка -->
+                       <input type="text" id="company" name="company" placeholder="Название компании*" required>
+                        <span class="error-message" id="company-error"></span>
                    </div>
-                    <!-- Example of attached file display -->
-                   <div class="attached-file-display">
-                        <span>Название.docx (807 Кб)</span>
-                        <button type="button" class="remove-file-button">×</button>
-                   </div>
-                </div>
+              </div>
 
-                <div class="form-group recaptcha-placeholder">
-                    <!-- Placeholder for reCAPTCHA -->
-                    <img src="https://via.placeholder.com/304x78.png?text=I'm+not+a+robot+Placeholder" alt="reCAPTCHA Placeholder" style="display: block; max-width: 100%; height: auto;">
-                </div>
+              <!-- Поле Сообщение -->
+              <div class="form-group">
+                  <label for="message" class="sr-only">Ваши цели</label> <!-- Скрытая метка -->
+                  <textarea id="message" name="message" placeholder="Напишите о ваших целях" rows="4"></textarea>
+                  <span class="chars-left" id="chars-left-counter">Осталось 160 слов</span>
+                   <span class="error-message" id="message-error"></span>
+              </div>
 
-                <div class="form-actions">
-                    <button class="black-btn" type="submit">Отправить</button>
-                    <p class="consent-note">Нажимая на кнопку, я даю свое согласие на обработку персональных данных</p>
+              <!-- Область загрузки файла -->
+              <div class="form-group file-upload-area">
+                <!-- Левая часть: Кнопка и инпут -->
+                <div class="file-upload-button-wrapper">
+                    <button type="button" class="file-upload-button" onclick="document.getElementById('fileInput').click()">
+                        <i class="fas fa-paperclip"></i> Прикрепить файл
+                    </button>
+                    <!-- Скрытый инпут для выбора файла -->
+                    <input
+                        type="file"
+                        id="fileInput"
+                        name="file"
+                        accept=".doc,.docx,.pdf"
+                        style="display: none;"
+                        aria-label="Прикрепить файл"
+                    >
+                    <span class="file-restrictions">до 10 МБ, (DOC, DOCX, PDF)</span>
                 </div>
-            </form>
-        </div>
-    </div>
-</section>
+                <!-- Правая часть: Отображение выбранного файла -->
+                <div class="attached-file-display" id="fileList" style="display: none;" aria-live="polite">
+                    <!-- Информация о файле будет вставлена сюда через JS -->
+                </div>
+                 <!-- Сообщение об ошибке для файла -->
+                 <span class="error-message" id="file-error" style="width: 100%; flex-basis: 100%; margin-top: 5px;"></span>
+             </div>
+
+              <!-- Placeholder для reCAPTCHA -->
+              <div class="form-group recaptcha-placeholder">
+                  <!-- Замените img на реальный виджет reCAPTCHA -->
+                  <img src="https://via.placeholder.com/304x78.png?text=reCAPTCHA+Placeholder" alt="reCAPTCHA Placeholder" style="border: 1px solid #dee2e6;">
+                   <span class="error-message" id="recaptcha-error"></span>
+              </div>
+
+              <!-- Действия формы: Кнопка и Согласие -->
+              <div class="form-actions">
+                  <button class="black-btn" type="submit">Отправить</button>
+                  <p class="consent-note">Нажимая на кнопку, я даю свое согласие на <a href="/privacy-policy.html" target="_blank" rel="noopener noreferrer">обработку персональных данных</a></p>
+                  <!-- Замените /privacy-policy.html на реальную ссылку -->
+              </div>
+          </form> <!-- Конец формы -->
+
+      </div> <!-- Конец .section-content -->
+  </div> <!-- Конец .section-layout -->
+</section> <!-- Конец секции .collaboration-sec -->
 
   <section class="location-map">
     <iframe 
@@ -311,7 +352,7 @@
         <div class="footer-col">
           <h4>Карта сайта</h4>
           <ul>
-            <li><a href="main.html">Главная</a></li>
+            <li><a href="index.html">Главная</a></li>
             <li class="has-submenu">
               <a href="Services.html">Услуги</a>
             </li>
@@ -492,6 +533,40 @@
   }
 </script> -->
 
+<script>
+  document.getElementById('file').addEventListener('change', function () {
+      const fileList = document.getElementById('fileList');
+      fileList.innerHTML = ''; // Очищаем предыдущие
+  
+      const file = this.files[0];
+  
+      if (!file) return;
+  
+      // Ограничение по размеру: 10 МБ
+      if (file.size > 10 * 1024 * 1024) {
+          fileList.innerHTML = '<span style="color:red;">Файл слишком большой (макс 10 МБ)</span>';
+          this.value = ''; // очищаем input
+          return;
+      }
+  
+      const fileSize = (file.size / 1024).toFixed(1); // размер в КБ
+      const listItem = document.createElement('div');
+      listItem.innerHTML = `
+          <span>${file.name} (${fileSize} Кб)</span>
+          <button type="button" class="remove-file-button" onclick="removeFile()">×</button>
+      `;
+      fileList.appendChild(listItem);
+  });
+  
+  // Удаление файла
+  function removeFile() {
+      const input = document.getElementById('file');
+      input.value = ''; // сбрасываем выбранный файл
+      document.getElementById('fileList').innerHTML = '';
+  }
+  </script>
+
+<script src="js/forms.js"></script>
 <script src="js/script.js"></script>
 </body>
 </html>

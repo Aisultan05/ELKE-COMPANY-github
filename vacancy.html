@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>ELKE COMPANY – Вакансии</title>
   <link rel="stylesheet" href="css/vacancy.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -13,7 +14,7 @@
   <div class="header-container">
       <!-- Логотип -->
       <div class="logo">
-          <a href="main.html">
+          <a href="index.html">
               <img src="img/Header-logo.svg" alt="ELKE COMPANY Инжиниринговая компания">
               <p class="logo-text">Инжиниринговая<br> компания</p>
           </a>
@@ -109,7 +110,7 @@
           <span class="contact-number">8 (727) 258‑25‑68</span>
         </div>
         <a class="call-icon-popup" href="tel:+77272582568">
-          <img src="img/call_grey.svg" alt="Позвонить">
+          <img src="img/call.svg" alt="Позвонить">
         </a>
       </div>
       <div class="contact-item">
@@ -118,7 +119,7 @@
           <span class="contact-number">8 (727) 258‑25‑68</span>
         </div>
         <a class="call-icon-popup" href="tel:+77272582568">
-          <img src="img/call_grey.svg" alt="Позвонить">
+          <img src="img/call.svg" alt="Позвонить">
         </a>
       </div>
       <div class="contact-item">
@@ -127,7 +128,7 @@
           <span class="contact-number">8 (727) 258‑25‑68</span>
         </div>
         <a class="call-icon-popup" href="tel:+77272582568">
-          <img src="img/call_grey.svg" alt="Позвонить">
+          <img src="img/call.svg" alt="Позвонить">
         </a>
       </div>
     </div>
@@ -155,10 +156,8 @@
       <div class="container breadcrumbs-container">
         <nav aria-label="breadcrumb">
           <ol class="breadcrumbs">
-            <li><a href="main.html" class="plain-link">Главная</a></li>
-            <li><span class="separator">/</span></li>
+            <li><a href="index.html" class="plain-link">Главная</a></li>
             <li><a href="about.html" class="plain-link">О компании</a></li>
-            <li><span class="separator">/</span></li>
             <li aria-current="page" class="active">Вакансии</li>
           </ol>          
         </nav>
@@ -194,12 +193,19 @@
           </div>
       </section>
 
-      <!-- Открытые вакансии -->
-      <section class="vacancies">
-          <h2 class="section-title">Открытые вакансии</h2>
+    <!-- Combined Section with 2-Column Layout -->
+    <section class="vacancies-and-resume two-column-layout">
+
+      <!-- === Left Column === -->
+      <h2 class="section-title vacancies-title">Открытые вакансии</h2>
+
+      <!-- === Right Column Wrapper === -->
+      <div class="main-content-area">
+
+          <!-- Vacancy List Part -->
           <div class="vacancy-list">
-              <!-- Пример вакансии (можно дублировать для других) -->
-              <details class="vacancy-item">
+              <!-- Vacancy 1 (Expanded in example) -->
+              <details class="vacancy-item" open>
                   <summary class="vacancy-summary">
                       <span class="vacancy-title">Должность</span>
                       <span class="vacancy-experience">Опыт работы от 1 года</span>
@@ -223,74 +229,86 @@
                       </ul>
                   </div>
               </details>
-              
-              <!-- Можно добавить другие <details> сюда -->
+
+              <!-- Vacancy 2 (Collapsed Example) -->
                <details class="vacancy-item">
                   <summary class="vacancy-summary">
-                      <span class="vacancy-title">Должность 2</span>
-                      <span class="vacancy-experience">Опыт работы от 3 лет</span>
+                      <span class="vacancy-title">Должность</span>
+                      <span class="vacancy-experience">Опыт работы от 1 года</span>
                   </summary>
                   <div class="vacancy-details">
                       <h4>Обязанности</h4>
                       <ul>
-                          <li>Обязанность 1</li>
-                          <li>Обязанность 2</li>
+                          <li>Пример обязанности 1</li>
+                          <li>Пример обязанности 2</li>
                       </ul>
                       <h4>Требования</h4>
                       <ul>
-                          <li>Требование 1</li>
-                          <li>Требование 2</li>
+                          <li>Пример требования 1</li>
+                          <li>Пример требования 2</li>
                       </ul>
                   </div>
               </details>
-
           </div>
-      </section>
 
-      <!-- Отправить резюме -->
-      <section class="resume-section">
-          <h2 class="section-title">Отправить резюме</h2>
-          <form action="#" method="post" class="resume-form">
-              <div class="form-grid">
-                  <div class="form-group">
-                      <input type="text" id="name" name="name" placeholder="Введите ваше имя*" required>
-                  </div>
-                  <div class="form-group phone-input-group">
-                       <div class="country-code-form">
-                          <img src="img/Kazakhstan (KZ).svg" alt="KZ flag" width="20"> <!-- Замените на реальный путь к флагу -->
-                          <span>+7</span>
-                          <span class="arrow-down">▼</span>
-                       </div>
-                      <input type="tel" id="phone" name="phone" placeholder="Укажите номер телефона" required>
-                  </div>
-                  <div class="form-group file-input-group">
-                      <input type="file" id="resume-file" name="resume-file" class="hidden-file-input">
-                      <label for="resume-file" class="file-input-label">
-                          <span class="file-name-display">Название.docx (807 кб)</span> 
-                          <span class="file-delete-btn">✕</span>
-                      </label>
-                      <!-- Примечание: Реальное отображение имени файла и кнопка удаления требуют JavaScript -->
-                  </div>
-                  <div class="form-group submit-group">
-                       <button type="submit" class="submit-btn">Отправить</button>
-                  </div>
+      <!-- Отправить резюме Part -->
+      <div class="resume-part">
+        <h2 class="section-title resume-title">Отправить резюме</h2>
+    
+        <form action="#" method="post" class="resume-form" onsubmit="return false;">
+          <!-- GRID with three inputs -->
+          <div class="form-grid">
+            <div class="form-group name-group">
+              <input type="text" id="name" name="name" placeholder="Введите ваше имя*" required>
+            </div>
+            <div class="form-group phone-group">
+              <div class="phone-input-container">
+                <div class="country-code-selector" tabindex="0">
+                  <img src="img/Kazakhstan (KZ).svg" alt="Flag" class="country-flag">
+                  <span class="country-code-text">+7</span>
+                  <span class="dropdown-arrow"></span>
+                </div>
+                <input type="tel" id="phone" name="phone" class="phone-number-input" placeholder="Укажите номер телефона" required>
               </div>
-               <p class="form-consent">
-                  Нажимая на кнопку, я даю свое согласие <br> на <a href="#">обработку персональных данных</a>
-               </p>
-          </form>
-      </section>
-
-       <!-- Навигация (стрелки) -->
-       <div class="page-navigation">
-        <div class="partnership-header">
-          <h2>Вакансии Elke Company</h2>
-          <div class="arrows">
-            <img src="img/Vector.svg" alt="Влево" class="arrow arrow-left">
-            <img src="img/Vector.svg" alt="Вправо" class="arrow arrow-right">
+            </div>
+            <div class="form-group file-group file-input-group">
+              <input type="file" id="resume-file" name="resume-file" class="hidden-file-input" onchange="displayFileName(this)">
+              <label for="resume-file" class="file-input-label" data-placeholder="Прикрепить файл">
+                <span class="file-name-display"></span>
+                <span class="file-delete-btn" onclick="clearFileInput(event);event.preventDefault();">✕</span>
+              </label>
+            </div>
+          </div><!-- /grid -->
+    
+          <!-- Button + Consent in one ROW (stack on mobile) -->
+          <div class="submit-consent-wrapper">
+            <button type="submit" class="submit-btn">Отправить</button>
+            <p class="form-consent">Нажимая на кнопку, я даю свое согласие <br> на <a href="#">обработку персональных данных</a></p>
           </div>
-        </div>
-       </div>
+    
+        </form>
+      </div>
+
+   </div> <!-- End of Right Column Wrapper -->
+
+  </section> <!-- End of combined section -->
+
+  <!-- Навигация (стрелки) -->
+  <div class="page-navigation">
+    <div class="partnership-header">
+      <h2>Вакансии Elke Company</h2>
+      <div class="arrows">
+        <!-- Обернули IMG в BUTTON -->
+        <button class="arrow arrow-left">
+          <img src="img/Vector.svg" alt="Влево">
+        </button>
+        <!-- Обернули IMG в BUTTON -->
+        <button class="arrow arrow-right">
+          <img src="img/Vector.svg" alt="Вправо">
+        </button>
+      </div>
+    </div>
+  </div>
 
   </div><!-- /.container -->
 
@@ -304,7 +322,7 @@
         <div class="footer-col">
           <h4>Карта сайта</h4>
           <ul>
-            <li><a href="main.html">Главная</a></li>
+            <li><a href="index.html">Главная</a></li>
             <li class="has-submenu">
               <a href="Services.html">Услуги</a>
             </li>

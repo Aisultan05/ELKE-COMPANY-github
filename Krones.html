@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>ELKE COMPANY – Krones</title>
   <link rel="stylesheet" href="css/Krones.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -13,7 +14,7 @@
   <div class="header-container">
       <!-- Логотип -->
       <div class="logo">
-          <a href="main.html">
+          <a href="index.html">
               <img src="img/Header-logo.svg" alt="ELKE COMPANY Инжиниринговая компания">
               <p class="logo-text">Инжиниринговая<br> компания</p>
           </a>
@@ -109,7 +110,7 @@
           <span class="contact-number">8 (727) 258‑25‑68</span>
         </div>
         <a class="call-icon-popup" href="tel:+77272582568">
-          <img src="img/call_grey.svg" alt="Позвонить">
+          <img src="img/call.svg" alt="Позвонить">
         </a>
       </div>
       <div class="contact-item">
@@ -118,7 +119,7 @@
           <span class="contact-number">8 (727) 258‑25‑68</span>
         </div>
         <a class="call-icon-popup" href="tel:+77272582568">
-          <img src="img/call_grey.svg" alt="Позвонить">
+          <img src="img/call.svg" alt="Позвонить">
         </a>
       </div>
       <div class="contact-item">
@@ -127,7 +128,7 @@
           <span class="contact-number">8 (727) 258‑25‑68</span>
         </div>
         <a class="call-icon-popup" href="tel:+77272582568">
-          <img src="img/call_grey.svg" alt="Позвонить">
+          <img src="img/call.svg" alt="Позвонить">
         </a>
       </div>
     </div>
@@ -156,8 +157,7 @@
       <div class="container breadcrumbs-container">
         <nav aria-label="breadcrumb">
           <ol class="breadcrumbs">
-            <li><a href="main.html" class="plain-link">Главная</a></li>
-            <li><span class="separator">/</span></li>
+            <li><a href="index.html" class="plain-link">Главная</a></li>
             <li aria-current="page" class="active">Krones</li>
           </ol>          
         </nav>
@@ -171,74 +171,144 @@
 
       <!-- Banner Image -->
       <div class="krones-banner">
-          <img src="img/image 282.svg" alt="Krones Technology Banner">
+          <img src="img/item.png" alt="Krones Technology Banner">
+          <img src="img/Group.svg" alt="Наложенное изображение" class="overlay-img">
       </div>
 
-      <!-- Tabbed Section -->
-      <section class="tabs-section">
-          <nav class="tab-nav">
-              <button class="tab-link active-tab" data-tab="tab-tech">Технологии</button>
-              <button class="tab-link" data-tab="tab-quality">Качество</button>
-              <button class="tab-link" data-tab="tab-innovation">Инновации</button>
-              <button class="tab-link" data-tab="tab-vision">Стратегическое видение</button>
-          </nav>
+      <!-- ========================== -->
+      <!-- СЕКЦИЯ ДЛЯ ДЕСКТОПА (ТАБЫ) -->
+      <!-- ========================== -->
+      <section class="tabs-section-desktop" id="tabs-section-desktop">
+        <nav class="tab-nav" role="tablist">
+            <button class="tab-link active-tab" data-tab="desktop-tech" id="desktop-tech-tab" role="tab" aria-selected="true" aria-controls="desktop-tech">
+                <span>Технологии</span>
+                <!-- Иконка не нужна -->
+            </button>
+            <button class="tab-link" data-tab="desktop-quality" id="desktop-quality-tab" role="tab" aria-selected="false" aria-controls="desktop-quality">
+                <span>Качество</span>
+            </button>
+            <button class="tab-link" data-tab="desktop-innovation" id="desktop-innovation-tab" role="tab" aria-selected="false" aria-controls="desktop-innovation">
+                <span>Инновации</span>
+            </button>
+            <button class="tab-link" data-tab="desktop-vision" id="desktop-vision-tab" role="tab" aria-selected="false" aria-controls="desktop-vision">
+                <span>Стратегическое видение</span>
+            </button>
+        </nav>
 
-          <div class="tab-content">
-              <!-- Tab 1: Технологии -->
-              <div id="tab-tech" class="tab-panel active-panel">
-                  <div class="tech-images">
-                      <img src="img/krones-204 1.svg" alt="Krones Laser Cutting" class="main-tech-image">
-                      <div class="tech-thumbnails">
-                          <img src="img/krones-204 2.svg" alt="Krones Technology Thumbnail 1">
-                          <img src="img/krones-186.svg" alt="Krones Technology Thumbnail 2">
-                          <img src="img/krones-223.svg" alt="Krones Technology Thumbnail 3">
-                      </div>
-                  </div>
-                  <div class="tech-description">
-                      <p>
-                        <strong>KRONES AG</strong> — ведущая специализированная компания по разработке, изготовлению и установке оборудования для разлива в бутылки, консервирования и пакетирования, чья активность лежит в диапазоне от поставок индивидуальных машин до проектов со сдачей «под ключ», включая заводы по разливу напитков и молочных продуктов, пивоваренные цеха и комплектные пивоварни.
-                      </p>
-                      <p>
-                          Фирма выпускает полный список установок и машин, охватывающий все сферы процесса производства: от обработки сырья и потока материалов от розлива до упаковки продукта и интегрирует комплектные IT-системы. Возможно также комплексное проектирование готовых заводов по изготовлению напитков. Krones AG является единственным производителем установок для розлива напитков, владеющим методом ПЭТ-тары для вторичной переработки ПЭТ «Bottle-to-Bottle-Recycling», дающим возможность снижения затрат и экономии ресурсов при использовании тары для розлива и упаковки. Особое внимание компания посвящает сырью при производстве бутылок из ПЭТ. Создав самую легкую на сегодняшний день бутылку из ПЭТ для негазированной воды весом 6,6 г, компания Krones выиграла в 2008 году немецкий приз в области розничной упаковки.
-                      </p>
-                      <p>
-                          При разработке новых установок и машин с наиболее лучшим использованием энергии и сырья фирма использует собственную программу развития и совершенствования «enviro». Документацию по расходу средств подтверждает сертификат TÜV.
-                      </p>
-                  </div>
-              </div>
+        <div class="tab-content-wrapper">
+            <!-- Tab 1: Технологии (Десктоп) -->
+            <div id="desktop-tech" class="tab-panel active-panel" role="tabpanel" aria-labelledby="desktop-tech-tab">
+                <div class="tech-images">
+                    <img src="img/krones-203.png" alt="Krones Laser Cutting" class="main-tech-image">
+                    <div class="tech-thumbnails">
+                        <img src="img/krones-203.png" alt="Krones Technology Thumbnail 1">
+                        <img src="img/krones-186.png" alt="Krones Technology Thumbnail 2">
+                        <img src="img/krones-223.png" alt="Krones Technology Thumbnail 3">
+                    </div>
+                </div>
+                <div class="tech-description">
+                    <p>
+                      <strong>KRONES AG</strong> — ведущая специализированная компания по разработке, изготовлению и установке оборудования для разлива в бутылки, консервирования и пакетирования, чья активность лежит в диапазоне от поставок индивидуальных машин до проектов со сдачей «под ключ», включая заводы по разливу напитков и молочных продуктов, пивоваренные цеха и комплектные пивоварни.
+                    </p>
+                    <p>
+                        Фирма выпускает полный список установок и машин, охватывающий все сферы процесса производства: от обработки сырья и потока материалов от розлива до упаковки продукта и интегрирует комплектные IT-системы. Возможно также комплексное проектирование готовых заводов по изготовлению напитков. Krones AG является единственным производителем установок для розлива напитков, владеющим методом ПЭТ-тары для вторичной переработки ПЭТ «Bottle-to-Bottle-Recycling», дающим возможность снижения затрат и экономии ресурсов при использовании тары для розлива и упаковки. Особое внимание компания посвящает сырью при производстве бутылок из ПЭТ. Создав самую легкую на сегодняшний день бутылку из ПЭТ для негазированной воды весом 6,6 г, компания Krones выиграла в 2008 году немецкий приз в области розничной упаковки.
+                    </p>
+                    <p>
+                        При разработке новых установок и машин с наиболее лучшим использованием энергии и сырья фирма использует собственную программу развития и совершенствования «enviro». Документацию по расходу средств подтверждает сертификат TÜV.
+                    </p>
+                </div>
+            </div>
 
-              <!-- Tab 2: Качество (Add content later if needed) -->
-              <div id="tab-quality" class="tab-panel">
-                  <p>Содержимое вкладки "Качество"...</p>
-              </div>
+            <!-- Tab 2: Качество (Десктоп) -->
+            <div id="desktop-quality" class="tab-panel" role="tabpanel" aria-labelledby="desktop-quality-tab">
+                 <p>ВАШ КОНТЕНТ ДЛЯ ВКЛАДКИ "КАЧЕСТВО"...</p>
+            </div>
 
-              <!-- Tab 3: Инновации (Add content later if needed) -->
-              <div id="tab-innovation" class="tab-panel">
-                   <p>Содержимое вкладки "Инновации"...</p>
-              </div>
+            <!-- Tab 3: Инновации (Десктоп) -->
+            <div id="desktop-innovation" class="tab-panel" role="tabpanel" aria-labelledby="desktop-innovation-tab">
+                 <p>ВАШ КОНТЕНТ ДЛЯ ВКЛАДКИ "ИННОВАЦИИ"...</p>
+            </div>
 
-               <!-- Tab 4: Стратегическое видение (Add content later if needed) -->
-               <div id="tab-vision" class="tab-panel">
-                  <p>Содержимое вкладки "Стратегическое видение"...</p>
-                  <!-- Placeholder for the empty box with arrows if needed -->
-                  <div class="placeholder-box">
-                     <span class="arrow-box left-arrow"><--</span>
-                     <span class="arrow-box right-arrow">--></span>
-                  </div>
-               </div>
-          </div>
-      </section>
+             <!-- Tab 4: Стратегическое видение (Десктоп) -->
+             <div id="desktop-vision" class="tab-panel" role="tabpanel" aria-labelledby="desktop-vision-tab">
+                <p>ВАШ КОНТЕНТ ДЛЯ ВКЛАДКИ "СТРАТЕГИЧЕСКОЕ ВИДЕНИЕ"...</p>
+             </div>
+        </div>
+    </section> <!-- Конец tabs-section-desktop -->
+
+    <!-- =========================================== -->
+    <!-- СЕКЦИЯ ДЛЯ МОБИЛЬНЫХ/ПЛАНШЕТОВ (АККОРДЕОН) -->
+    <!-- =========================================== -->
+    <section class="tabs-section-mobile" id="tabs-section-mobile">
+        <!-- Item 1: Технологии -->
+        <button class="collapsible-tab" aria-expanded="false" aria-controls="mobile-tech">
+            <span>Технологии</span>
+            <img src="img/Vector.svg" class="tab-icon-img" alt="Раскрыть">
+        </button>
+        <div id="mobile-tech" class="collapsible-content" aria-hidden="true">
+             <div class="tech-images">
+                <img src="img/krones-203.png" alt="Krones Laser Cutting" class="main-tech-image">
+                <div class="tech-thumbnails">
+                    <img src="img/krones-203.png" alt="Krones Technology Thumbnail 1">
+                    <img src="img/krones-186.png" alt="Krones Technology Thumbnail 2">
+                    <img src="img/krones-223.png" alt="Krones Technology Thumbnail 3">
+                </div>
+            </div>
+            <div class="tech-description">
+                <p>
+                  <strong>KRONES AG</strong> — ведущая специализированная компания по разработке, изготовлению и установке оборудования для разлива в бутылки, консервирования и пакетирования, чья активность лежит в диапазоне от поставок индивидуальных машин до проектов со сдачей «под ключ», включая заводы по разливу напитков и молочных продуктов, пивоваренные цеха и комплектные пивоварни.
+                </p>
+                <p>
+                    Фирма выпускает полный список установок и машин, охватывающий все сферы процесса производства: от обработки сырья и потока материалов от розлива до упаковки продукта и интегрирует комплектные IT-системы. Возможно также комплексное проектирование готовых заводов по изготовлению напитков. Krones AG является единственным производителем установок для розлива напитков, владеющим методом ПЭТ-тары для вторичной переработки ПЭТ «Bottle-to-Bottle-Recycling», дающим возможность снижения затрат и экономии ресурсов при использовании тары для розлива и упаковки. Особое внимание компания посвящает сырью при производстве бутылок из ПЭТ. Создав самую легкую на сегодняшний день бутылку из ПЭТ для негазированной воды весом 6,6 г, компания Krones выиграла в 2008 году немецкий приз в области розничной упаковки.
+                </p>
+                <p>
+                    При разработке новых установок и машин с наиболее лучшим использованием энергии и сырья фирма использует собственную программу развития и совершенствования «enviro». Документацию по расходу средств подтверждает сертификат TÜV.
+                </p>
+            </div>
+        </div>
+
+        <!-- Item 2: Качество -->
+        <button class="collapsible-tab" aria-expanded="false" aria-controls="mobile-quality">
+            <span>Качество</span>
+            <img src="img/Vector.svg" class="tab-icon-img" alt="Раскрыть">
+        </button>
+        <div id="mobile-quality" class="collapsible-content" aria-hidden="true">
+             <p>ВАШ КОНТЕНТ ДЛЯ ВКЛАДКИ "КАЧЕСТВО"...</p>
+        </div>
+
+        <!-- Item 3: Инновации -->
+        <button class="collapsible-tab" aria-expanded="false" aria-controls="mobile-innovation">
+            <span>Инновации</span>
+            <img src="img/Vector.svg" class="tab-icon-img" alt="Раскрыть">
+        </button>
+         <div id="mobile-innovation" class="collapsible-content" aria-hidden="true">
+             <p>ВАШ КОНТЕНТ ДЛЯ ВКЛАДКИ "ИННОВАЦИИ"...</p>
+         </div>
+
+        <!-- Item 4: Стратегическое видение -->
+        <button class="collapsible-tab" aria-expanded="false" aria-controls="mobile-vision">
+            <span>Стратегическое видение</span>
+            <img src="img/Vector.svg" class="tab-icon-img" alt="Раскрыть">
+        </button>
+        <div id="mobile-vision" class="collapsible-content" aria-hidden="true">
+             <p>ВАШ КОНТЕНТ ДЛЯ ВКЛАДКИ "СТРАТЕГИЧЕСКОЕ ВИДЕНИЕ"...</p>
+        </div>
+    </section> <!-- Конец tabs-section-mobile -->
 
       <!-- Partnership Section -->
       <section class="partnership-section">
         <div class="partnership-header">
           <h2>Партнерство Krones</h2>
           <div class="arrows">
-            <img src="img/Vector.svg" alt="Влево" class="arrow arrow-left">
-            <img src="img/Vector.svg" alt="Вправо" class="arrow arrow-right">
-          </div>
+            <button class="arrow arrow-left" aria-label="Влево">
+              <img src="img/Vector.svg" alt="">
+            </button>
+            <button class="arrow arrow-right" aria-label="Вправо">
+              <img src="img/Vector.svg" alt="">
+            </button>
+          </div>      
         </div>
-      </section>      
+      </section>  
 
   </div> <!-- /.container -->
 <!-- End Main Krones Content Area -->
@@ -253,7 +323,7 @@
         <div class="footer-col">
           <h4>Карта сайта</h4>
           <ul>
-            <li><a href="main.html">Главная</a></li>
+            <li><a href="index.html">Главная</a></li>
             <li class="has-submenu">
               <a href="Services.html">Услуги</a>
             </li>
